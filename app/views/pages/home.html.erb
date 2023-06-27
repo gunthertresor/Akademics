@@ -6,6 +6,12 @@
         <p>Notre plateforme met en relation les étudiants et les professeurs, offrant un accès à une variété de cours dans tous les domaines.<br> Que vous recherchiez des cours gratuits ou payants, Akademics a ce qu'il vous faut.</p>
     </div>
 
+
+    <% @courses.each do |course| %>
+        <h1><%= course.title %></h1>
+        <h2><%= course.name %></h2>
+    <% end %>
+
     <div class="featured-courses">
     <h2>Cours en vedette</h2>
     <div class="course-card">
