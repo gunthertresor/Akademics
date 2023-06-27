@@ -16,8 +16,7 @@ User.destroy_all
 # Review.destroy_all
 
 puts "-------------- create students --------------"
-studentbart = User.new(first_name: "bart", last_name: "simpson", password: "rerere", phone_number: "089 983 2183", email: "bart.simpson@gmail.com", address: "stringfield")
-studenthomer = User.new(first_name: "homer", last_name: "simpson", password: "rerere", phone_number: "089 983 2183", email: "homer.simpson@gmail.com", address: "stringfield")
-studentmarge = User.new(first_name: "marge", last_name: "simpson", password: "rerere", phone_number: "089 983 2183", email: "marge.simpson@gmail.com", address: "stringfield")
-studentlisa = User.new(first_name: "lisa", last_name: "simpson", phone_number: "089 983 2183", email: "lisa.simpson@gmail.com", address: "stringfield")
-studentmaggie = User.new(first_name: "maggie", last_name: "simpson", phone_number: "089 983 2183", email: "maggie.simpson@gmail.com", address: "stringfield")
+john = User.create(first_name: 'john', last_name: "pool", email: "john.pool@gmail.fr", password: "rerere", phone_number: "343 123 4321")
+jack = User.create(first_name: 'jack', last_name: "hash", email: "jack.hash@gmail.fr", password: "rerere", phone_number: "923 245 3531")
+joe = User.create(first_name: 'joe', last_name: "rails", email: "joe.rails@gmail.com", password: "rerere", phone_number: "453 165 4311")
+jim = User.create(first_name: 'jim', last_name: "ruby", email: "jim.ruby@gmail.com", password: "rerere", phone_number: "313 543 1345")
