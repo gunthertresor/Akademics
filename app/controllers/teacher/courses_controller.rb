@@ -1,26 +1,55 @@
 class Teacher::CoursesController < ApplicationController
 
+    # skip_before_action :authenticate_user!, only: [:index, :show]
+    # before_action :set_course, only: %i[ show ]
 
-  def create
-    @pool = Pool.new(pool_params)
-    @pool.user = current_user
-    @pool.save
-    redirect_to root_path
-  end
+    def index
+        # @pools = Pool.where('address ILIKE ?', "%#{params[:query]}%")
 
-  def destroy
-    @pool = Pool.find(params[:id])
-    @pool.destroy
-    redirect_to owner_bookings_path
-  end
+        # if params[:query].present?
+        #   @pools = Pool.where('address ILIKE ?', "%#{params[:query]}%")
+        # else
+        #   @pools = Pool.all
+        # end
+        # @courses = Course.all
+        @courses = Course.where(user_id: current_user)
+    end
 
-  private
+    def new
+        @course = Course.new
+    end
 
-  def set_course
-    @course = Course.find(params[:id])
-  end
+    def show
+        @course = Course.new
+    end
 
-  def course_params
-    params.require(:course).permit(:name, :price, :description, :max_people, :address, :url_photo)
-  end
+    def edit
+    end
+
+    def update
+
+    end
+
+    def create
+        @course = Course.new(course_params)
+        @course.user = current_user
+        @course.save
+        redirect_to owner_courses_path
+    end
+
+    def destroy
+        @course = Course.find(params[:id])
+        @course.destroy
+        redirect_to owner_courses_path
+    end
+
+    private
+
+    # def set_course
+    #   @pool = Pool.find(params[:id])
+    # end
+
+    def course_params
+        params.require(:course).permit(:name, :title, :description, :price, :content, :grade)
+    end
 end
