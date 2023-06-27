@@ -10,8 +10,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body><%= render "shared/navbar" %>
-<%= render "shared/flashes" %>
+  <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flashes" %>
+    <div class="background-container">
+        <div class="background-rouded-div1"></div>
+        <div class="background-rouded-div2"></div>
+        <%# <div class="background-rouded-div3"></div> %>
+    </div>
 
     <%= yield %>
   </body>

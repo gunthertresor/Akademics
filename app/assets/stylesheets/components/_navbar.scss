@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  // background: rgb(255, 255, 255);
+  color: rgb(251, 248, 245);
+  background: rgb(112,87,140);
+  background: linear-gradient(90deg, rgba(112,87,140,1) 0%, rgba(140,92,185,0.9724483543417367) 100%);
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +12,62 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+}
+
+// ---------------------------------------------
+.nav-link {
+  color: $light-gray;
+}
+
+.navbar-brand {
+    width: 220px;
+    height: 55px;
+
+    .logo-letter {
+        position: relative;
+        div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 42px;
+            height: 42px;
+            border-radius: 5px;
+            border: 1px solid $light-gray;
+            text-align: center;
+            justify-content: center;
+            transition: all 200ms ease-in-out;
+        }
+        h1 {
+            position: absolute;
+            left: 8px;
+            top: -0px;
+            color: $light-gray;
+            font-size: 34px;
+        }
+    }
+    .logo-letter-rest {
+        position: absolute;
+        left: 50px;
+        color: $light-gray;
+        transform: translate(10px, -0px);
+        font-size: 34px;
+    }
+    &:hover {
+        .logo-letter > div {
+            transform: rotate(45deg);
+            scale: 0.95;
+        }
+    }
+}
+
+.login-link {
+    border: 1px solid rgba(128, 128, 128, 0.01);
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: rgb(197, 197, 197);
+
+    &:hover {
+        border: 1px solid white;
+        color: white;
+    }
 }

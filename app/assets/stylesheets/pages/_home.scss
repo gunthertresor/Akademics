@@ -1,1 +1,52 @@
 // Specific CSS for your home-page
+* {
+    // margin: 0px;
+    // padding: 0px;
+    color: rgb(18, 18, 18);
+    text-decoration: none;
+    font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.background-container {
+    margin: 0px;
+    padding: 0px;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    position: absolute;
+}
+
+.background-rouded-div1 {
+    top: -500px;
+    left: -500px;
+    position: absolute;
+    border-radius: 50%;
+    width: 2000px;
+    height: 2000px;
+    background: rgb(239,237,241);
+    background: linear-gradient(90deg, rgba(239,237,241,1) 0%, rgba(207,207,207,0.9724483543417367) 100%);
+}
+.background-rouded-div2 {
+    top: 500px;
+    left: 700px;
+    position: absolute;
+    border-radius: 50%;
+    width: 1000px;
+    height: 1000px;
+    transform: rotate(-90deg);
+    background: rgb(239,237,241);
+    background: linear-gradient(90deg, rgba(239,237,241,1) 0%, rgba(207,207,207,0.9724483543417367) 100%);
+}
+// .background-rouded-div3 {
+//   bottom: -500px;
+//   right: -500px;
+//   position: absolute;
+//   border-radius: 50%;
+//   width: 500px;
+//   height: 500px;
+//   background: rgb(53,20,138);
+//   background: linear-gradient(90deg, rgba(53,20,138,1) 0%, rgba(93,9,121,1) 26%, rgba(115,0,255,0.9724483543417367) 100%);
+// }

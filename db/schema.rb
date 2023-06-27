@@ -10,9 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_26_193429) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_27_084932) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "classes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.string "name"
+    t.date "class_date"
+    t.time "start_date"
+    t.time "end_date"
+    t.integer "max_people"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["course_id"], name: "index_classes_on_course_id"
+    t.index ["user_id"], name: "index_classes_on_user_id"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "title"
+    t.string "name"
+    t.string "category"
+    t.text "description"
+    t.text "content"
+    t.float "price"
+    t.integer "grade"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_courses_on_user_id"
+  end
+
+  create_table "enrollments", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "classe_id", null: false
+    t.date "enrollment_date"
+    t.boolean "cancelled"
+    t.text "cancellation_reason"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["classe_id"], name: "index_enrollments_on_classe_id"
+    t.index ["user_id"], name: "index_enrollments_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "enrollment_id", null: false
+    t.integer "rating"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["enrollment_id"], name: "index_reviews_on_enrollment_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +73,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_26_193429) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "phone_number"
+    t.string "address"
+    t.string "status"
+    t.date "birth_date"
+    t.string "url_avatar"
+    t.text "profil"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "classes", "courses"
+  add_foreign_key "classes", "users"
+  add_foreign_key "courses", "users"
+  add_foreign_key "enrollments", "classes", column: "classe_id"
+  add_foreign_key "enrollments", "users"
+  add_foreign_key "reviews", "enrollments"
+  add_foreign_key "reviews", "users"
 end
