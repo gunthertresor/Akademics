@@ -8,6 +8,7 @@ class User < ApplicationRecord
   has_many :reviews, through: :enrollments
   has_many :enrollments
 
-  # validates :first_name, presence: true
-  # validates :email, confirmation: true
+  validates :first_name, presence: true
+  validates :last_name, presence: true
+  validates :email, confirmation: true
 end
