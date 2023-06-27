@@ -1,14 +1,15 @@
-<div class="signup-card">
+<div>
     <h2>Sign up</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: { turbo: :false }) do |f| %>
       <%= f.error_notification %>
 
       <div class="form-inputs">
-        <%= f.input :email,
+        <%= f.input :email, label: false,
                     required: true,
                     autofocus: true,
-                    input_html: { autocomplete: "email", placeholder: "Your email", class: "form-input" } %>
-        <%= f.input :password,
+                    input_html: { autocomplete: "email", class: "input100" },
+								label_html: { class: "label-input100" }%>
+        <%= f.input :password, label: false,
                     required: true,
                     hint: ("#{@minimum_password_length} minimum characters" if @minimum_password_length),
                     input_html: { autocomplete: "new-password", placeholder: "Your password", class: "form-input" } %>
