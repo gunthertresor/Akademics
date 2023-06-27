@@ -6,6 +6,6 @@ class PagesController < ApplicationController
     # @teacher = User.find(1)
     # @courses.teacher = @teacher
 
-    @teacher = Teacher.all
+    @teacher = User.all
   end
 end
