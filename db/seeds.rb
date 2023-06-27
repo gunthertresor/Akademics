@@ -22,7 +22,7 @@ marge = User.create(first_name: 'marge', last_name: "simpson", email: "marge.sim
 maggy = User.create(first_name: 'maggy', last_name: "simpson", email: "maggy.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "student")
 abraham = User.create(first_name: 'abraham', last_name: "simpson", email: "abraham.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
 mona = User.create(first_name: 'mona', last_name: "simpson", email: "mona.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
-clancy = User.create(first_name: 'clancy', last_name: "simpson", email: "mona.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
+clancy = User.create(first_name: 'clancy', last_name: "simpson", email: "clancy.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
 
 puts "-------------- create Courses --------------"
 coursabraham1 = Course.create(user_id: abraham.id, title: "square goemetry", name: "goemetry course", category: "mathematiques", description: "study of square goemetry", content: "square goemetry is about angle...", price: 50, grade: 1)
