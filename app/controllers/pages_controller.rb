@@ -5,5 +5,7 @@ class PagesController < ApplicationController
     @courses = Course.all
     # @teacher = User.find(1)
     # @courses.teacher = @teacher
+
+    @teacher = Teacher.all
   end
 end
