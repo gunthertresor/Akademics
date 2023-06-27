@@ -5,20 +5,33 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  # resources :courses, only: [:index, :show]
+
   resources :courses, only: [:index, :show] do
-    resources :enrollments, only: [:new, :create]
-    resources :reviews, only: [:new, :create]
+    resources :classes, only: [:new, :create]
+    #list meilleur prof
+    # collection do
+    # end
   end
+
+  resources :classes, only: [:show, :index] do
+    resources :enrollments, only: [:new, :create]
+  end
+
   resources :enrollments, only: [:index, :update, :destroy] do
+    resources :reviews, only: [:new, :create]
     member do
       patch :validate
       patch :reject
     end
   end
+
   namespace :teacher do
-    resources :courses, only: [:index, :update, :edit, :destroy]
+    resources :courses, only: [:new, :create, :index, :update, :edit, :destroy]
     resources :enrollments, only: [:index, :update, :edit, :destroy]
-    resources :reviews, only: [:show]
+    resources :reviews, only: [:index, :show]
   end
-  resources :contact, only: :index
+
+  # resources :contact, only: :index
 end
