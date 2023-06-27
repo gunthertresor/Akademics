@@ -6,52 +6,29 @@
         <p>Notre plateforme met en relation les étudiants et les professeurs, offrant un accès à une variété de cours dans tous les domaines.<br> Que vous recherchiez des cours gratuits ou payants, Akademics a ce qu'il vous faut.</p>
     </div>
 
-
-    <% @courses.each do |course| %>
-        <h1><%= course.title %></h1>
-        <h2><%= course.name %></h2>
-    <% end %>
-
     <div class="featured-courses">
-    <h2>Cours en vedette</h2>
+  <h2>Cours en vedette</h2>
+  <% @courses.each do |course| %>
     <div class="course-card">
-        <img src="URL_DE_L'IMAGE" alt="Image du cours">
-        <h3>Titre du cours</h3>
-        <p>Description du cours</p>
+      <h3><%= course.title %></h3>
+      <p><%= course.description %></p>
     </div>
-        <div class="course-card">
-        <img src="URL_DE_L'IMAGE" alt="Image du cours">
-        <h3>Titre du cours</h3>
-        <p>Description du cours</p>
-    </div>
-        <div class="course-card">
-        <img src="URL_DE_L'IMAGE" alt="Image du cours">
-        <h3>Titre du cours</h3>
-        <p>Description du cours</p>
-    </div>
+  <% end %>
 </div>
 
 <div class="featured-teachers">
-    <h2>Professeurs en vedette</h2>
+  <h2>Professeurs en vedette</h2>
+  <% @teachers.each do |teacher| %>
     <div class="teacher-card">
-        <img src="URL_DE_L'IMAGE" alt="Image du professeur">
-        <h3>Nom du professeur</h3>
-        <p>Description du professeur</p>
+     <!--<img src="<%= teacher.url_avatar %>" alt="Image du professeur"> <!-->
+      <h3><%= teacher.first_name %> <%= teacher.last_name %></h3>
+      <p><%= teacher.profil %></p>
     </div>
-    <div class="teacher-card">
-        <img src="URL_DE_L'IMAGE" alt="Image du professeur">
-        <h3>Nom du professeur</h3>
-        <p>Description du professeur</p>
-      </div>
-    <div class="teacher-card">
-        <img src="URL_DE_L'IMAGE" alt="Image du professeur">
-        <h3>Nom du professeur</h3>
-        <p>Description du professeur</p>
-    </div>
+  <% end %>
 </div>
 
 <div class="how-it-works">
-    <h2>Comment ça marche</h2>
+    <h2>Comment ça marche ?</h2>
     <div class="step">
         <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
         <h3>Étape 1</h3>
