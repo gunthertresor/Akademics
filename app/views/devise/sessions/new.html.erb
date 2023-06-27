@@ -4,6 +4,7 @@
       <h2><span class="login100-form-title p-b-43">Login to continue</span></h2>
 
         <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
+
           <div class= "login100-form validate-form">
             <%= f.input :email,
                 required: false,
