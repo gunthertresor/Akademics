@@ -1,20 +1,30 @@
-<div class="forgot-password-card">
-    <h2>Forgot your password?</h2>
-    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-      <%= f.error_notification %>
+<div class ="container">
+  <div class="card text-center rounded password_reset_form shadow mb-5 bg-body-tertiary" style="width: 300px;">
+    <div class="card-header h5 text-white password_reset_header border border-0">Password Reset</div>
+      <div class="card-body px-5">
+        <p class="card-text py-2">
+            Enter your email address and we'll send you an email with instructions to reset your password.
+        </p>
+        <div class="form-outline">
+            <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= f.error_notification %>
 
-      <div class="form-inputs">
-        <%= f.input :email,
+
+          <%= f.input :email, label: false,
                     required: true,
-                    autofocus: true,
-                    input_html: { autocomplete: "email", placeholder: "Your email", class: "form-input" } %>
-      </div>
+                    # autofocus: true,
+                    input_html: { autocomplete: "email", placeholder: "Email input", class: "form-control my-3" },
+                    label_html: { class: "form-label"} %>
+        </div>
 
-      <div class="form-actions">
-        <%= f.button :submit, "Send recovery link", class: "form-submit" %>
+        <div class="form-actions">
+          <%= f.button :submit, "RESET PASSWORD", class: "btn w-100 password_reset_button" %>
+        </div>
+        <% end %>
+        <div class="d-flex justify-content-between mt-4">
+         <%= render "devise/shared/links" %>
+        </div>
       </div>
-    <% end %>
-    <div class="forgot-password">
-        <%= render "devise/shared/links" %>
     </div>
+  </div>
 </div>
