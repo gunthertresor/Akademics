@@ -8,6 +8,18 @@ class CoursesController < ApplicationController
     def show
     end
 
+    def featured
+        # @reviews = Review.find(params[:review_id])
+        @courses = Course.where(rating: 5)
+        # @courses = Course.where(rating: 5).joins(:classe)
+        # @courses = Course.where(rating: 5).includes(:classe)
+    end
+
+    def best
+        # @teachers = User.where(["status = ? and rating = ?", "teacher", 5])
+        # @teachers = User.where(rating: 5)
+    end
+
     private
 
     def set_courses
