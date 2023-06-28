@@ -2,40 +2,37 @@
 	<div class="container-login100">
 		<div class="wrap-login100">
           <div class="login100-form validate-form">
-						<h2><span class = "login100-form-title p-b-43">Login to continue</span></h2>
+						<h2><span class = "login100-form-title p-b-43  mb-2">Login to continue</span></h2>
 						<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
             <div class="wrap-input100 validate-input w-100" data-validate = "Valid email is required: ex@abc.xyz">
-              <%= f.input :email,
-							wrapper_html: { class: 'email-wrapper' },
+             <%= f.input :email,
+							# wrapper_html: { class: 'email-wrapper' },
                 required: false,
                 # autofocus: true,
                 input_html: { autocomplete: "email", class: "input100" },
 								label_html: { class: "label-input100" }%>
             </div>
             <div class="wrap-input100 validate-input" data-validate="Password is required">
-              <%= f.input :password, class: "label-input100",
+              <%= f.input :password,
                 	required: false,
                   input_html: { autocomplete: "current-password", class: "input100" },
 									label_html: { class: "label-input100" }%>
             </div>
             <div class="flex-sb-m w-full p-t-3 p-b-32">
 						  	<div class="contact100-form-checkbox">
-                	<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                	<%= f.input :remember_me, as: :boolean if devise_mapping.rememberable?%>
               	</div>
-
-
-        			<div class="txt1">
-          		<%= render "devise/shared/links" %>
-        			</div>
         		</div>
 							<div class="container-login100-form-btn">
               	<%= f.button :submit, "Log in", class: "login100-form-btn" %>
             	</div>
+              <% end %>
+              <div class="txt1 justify-content-between">
+          		<%= render "devise/shared/links" %>
+        			</div>
       		</div>
-      			<%# <div class="login100-more"> %>
+
 						<%= image_tag("bg-01.jpg", class: "login100-more")%>
-						<%# </div> %>
     </div>
   </div>
 </div>
-<% end %>
