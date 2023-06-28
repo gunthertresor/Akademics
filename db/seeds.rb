@@ -25,10 +25,10 @@ mona = User.create(first_name: 'mona', last_name: "simpson", email: "mona.simpso
 clancy = User.create(first_name: 'clancy', last_name: "simpson", email: "clancy.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
 
 puts "-------------- create Courses --------------"
-coursabraham1 = Course.create(user_id: abraham.id, title: "square goemetry", name: "goemetry course", category: "mathematiques", description: "study of square goemetry", content: "square goemetry is about angle...", price: 50, grade: 1)
-coursabraham2 = Course.create(user_id: abraham.id, title: "triangle goemetry", name: "triangle course", category: "mathematiques", description: "study of triangle goemetry", content: "triangle goemetry is about angle...", price: 40, grade: 2)
-coursmona1 = Course.create(user_id: mona.id, title: "gravity", name: "gravity physics", category: "physics", description: "study of gravity geometry", content: "gravity physics is about...", price: 100, grade: 5)
-coursclancy1 = Course.create(user_id: clancy.id, title: "english first level", name: "english verb", category: "lang", description: "english courses about verb", content: "english is about...", price: 200, grade: 4)
+coursabraham1 = Course.create(user_id: abraham.id, title: "square goemetry", name: "goemetry course", category: "mathematiques", description: "study of square goemetry", content: "square goemetry is about angle...", price: 50, grade: 1, rating: 1, url_course:"https://www.youtube.com/watch?v=lUUte2o2Sn8&t=3668s&ab_channel=MITOpenCourseWare")
+coursabraham2 = Course.create(user_id: abraham.id, title: "triangle goemetry", name: "triangle course", category: "mathematiques", description: "study of triangle goemetry", content: "triangle goemetry is about angle...", price: 40, grade: 2, rating: 5, url_course:"https://www.youtube.com/watch?v=lUUte2o2Sn8&t=3668s&ab_channel=MITOpenCourseWare")
+coursmona1 = Course.create(user_id: mona.id, title: "gravity", name: "gravity physics", category: "physics", description: "study of gravity geometry", content: "gravity physics is about...", price: 100, grade: 5, rating: 4, url_course:"https://www.youtube.com/watch?v=lUUte2o2Sn8&t=3668s&ab_channel=MITOpenCourseWare")
+coursclancy1 = Course.create(user_id: clancy.id, title: "english first level", name: "english verb", category: "lang", description: "english courses about verb", content: "english is about...", price: 200, grade: 4, rating: 5, url_course:"https://www.youtube.com/watch?v=lUUte2o2Sn8&t=3668s&ab_channel=MITOpenCourseWare")
 
 puts "-------------- create Classe --------------"
 class1 = Classe.create(course_id: coursabraham1.id, name: "square goemetry class", max_people: 20)

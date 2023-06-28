@@ -9,6 +9,7 @@
     <p>Notre plateforme met en relation les étudiants et les professeurs, offrant un accès à une variété de cours dans tous les domaines.<br> Que vous recherchiez des cours gratuits ou payants, Akademics a ce qu'il vous faut.</p>
 </div>
 
+
 <div class="card featured-courses">
   <div class="card-body">
     <%= link_to courses_path, class: 'course-vedette-title' do %>
@@ -25,7 +26,9 @@
 </div>
 
 <div class="featured-teachers">
-    <h2>Bestselling Teachers</h2>
+    <%= link_to "courses/best", class: 'course-best-title' do %>
+        <h2>Bestselling Teachers</h2>
+    <% end %>
     <% @teachers.each do |teacher| %>
         <div class="card teacher-card" style="width: 18rem;">
         <img src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="card-img-top" alt="...">
