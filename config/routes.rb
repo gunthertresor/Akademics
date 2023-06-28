@@ -30,7 +30,11 @@ Rails.application.routes.draw do
   namespace :teacher do
     resources :courses, only: [:new, :create, :index, :update, :edit, :destroy]
     resources :enrollments, only: [:index, :update, :edit, :destroy]
-    resources :reviews, only: [:index, :show]
+    resources :reviews, only: [:index, :show] do
+      collection do
+        get :top
+      end
+    end
   end
 
   resources :profil
