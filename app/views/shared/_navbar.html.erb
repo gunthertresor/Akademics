@@ -25,7 +25,7 @@
                         <%= text_field_tag :query,
                             params[:query],
                             class: "form-control",
-                            placeholder: "Find a Place"
+                            placeholder: "Find a Cours"
                         %>
                         <%= submit_tag "Search", class: "btn btn-primary" %>
                     <% end %>
@@ -36,19 +36,25 @@
 
         <%# --------------------- navbar right ---------------------%>
         <ul class="navbar-right">
+            <li class="nav-item">
+                <%= link_to "/", class: 'c' do %>
+                    <i class="fa-solid fa-cart-shopping nav-link"></i>
+                <% end %>
+            </li>
 
             <% if user_signed_in? %>
 
                 <li class="nav-item">
                     <%= link_to "Messages", "#", class: "nav-link" %>
                 </li>
+
                 <li class="nav-item dropdown" data-controller="menutoggle">
                     <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown">
                         <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
                         <%= image_tag("user_profile_image.jpg", class: "avatar", data: { action: "click->menutoggle#toggle" }) %>
                     </a>
                     <div data-menutoggle-target="menu" class="d-none menu-profil">
-                        <%= link_to "Profil", "#", class: "dropdown-item" %>
+                        <%= link_to "Profil", "teacher/courses", class: "dropdown-item" %>
                         <%= link_to "Another action", "#", class: "dropdown-item" %>
                         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
                     </div>

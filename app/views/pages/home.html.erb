@@ -1,17 +1,18 @@
  <div class="introduction">
     <div class="introduction banner">
-        <p>Bienvenue chez Akademics, votre passerelle vers une connaissance illimitée.</p>
+        <h1>Learning that gets you</h1>
+        <p>Skills for your present (and your future). Get started with us.</p>
     </div>
 </div>
 
 <div class="about">
-    <h2>Qu'est-ce qu'est Akademics ?</h2>
-    <p>Notre plateforme met en relation les étudiants et les professeurs, offrant un accès à une variété de cours dans tous les domaines.<br> Que vous recherchiez des cours gratuits ou payants, Akademics a ce qu'il vous faut.</p>
+    <h2>A broad selection of courses</h2>
+    <p>Choose from over 210,000 online video courses with new additions published every month</p>
 </div>
 
 <div class="featured-courses">
     <%= link_to "courses/featured", class: 'course-featured-title' do %>
-        <h2>Cours en vedette</h2>
+        <h2>Expand your career opportunities</h2>
     <% end %>
     <% @courses.each do |course| %>
         <%= link_to course_path(course), class: 'course-card' do %>
@@ -23,37 +24,51 @@
 
 <div class="featured-teachers">
     <%= link_to "courses/best", class: 'course-best-title' do %>
-        <h2>Professeurs en vedette</h2>
+        <h2>Best Teacher</h2>
     <% end %>
     <% @teachers.each do |teacher| %>
         <div class="teacher-card">
         <!--<img src="<%= teacher.url_avatar %>" alt="Image du professeur"> <!-->
             <h3><%= teacher.first_name %> <%= teacher.last_name %></h3>
             <p><%= teacher.profil %></p>
+
+            <%# <p><%= teacher.courses[0].reviews[0].id %></p> %>
+
+            <% teacher.courses[0].reviews.each do |review| %>
+                <p><%= review.id %></p>
+            <% end %>
+
+            <% if (teacher.courses[0] != nil)  %>
+              <div class="stars">
+                  <% teacher.courses[0].id.times do %>
+                      <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                  <% end %>
+              </div>
+          <% end %>
         </div>
     <% end %>
 </div>
 
 <div class="how-it-works">
-    <h2>Comment ça marche ?</h2>
+    <h2>How learners like you are achieving their goals</h2>
     <div class="step">
-        <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
+        <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
         <h3>Étape 1</h3>
-        <p>Explication de l'étape 1</p>
+        <p>Explication de l'étape 1</p> %>
     </div>
     <div class="step">
-        <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
+        <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
         <h3>Étape 1</h3>
-        <p>Explication de l'étape 1</p>
+        <p>Explication de l'étape 1</p> %>
     </div>
     <div class="step">
-        <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
+        <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
         <h3>Étape 1</h3>
-        <p>Explication de l'étape 1</p>
+        <p>Explication de l'étape 1</p> %>
     </div>
     <div class="step">
-        <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
+        <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
         <h3>Étape 1</h3>
-        <p>Explication de l'étape 1</p>
+        <p>Explication de l'étape 1</p> %>
     </div>
 </div>

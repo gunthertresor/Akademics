@@ -1,4 +1,5 @@
 
+
 .background-container {
   margin: 0px;
   padding: 0px;
@@ -43,6 +44,7 @@
   height: 400px;
 //   color: white;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: 32px;
@@ -90,7 +92,7 @@
   margin: 20px;
   padding: 20px;
   border: 2px solid #70578C;
-  border-radius: 10px;
+  border-radius: 5px;
 
   img {
     width: 100%;

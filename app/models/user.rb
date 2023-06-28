@@ -5,7 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :courses, through: :classes
-  has_many :reviews, through: :enrollments
+  has_many :courses
+  has_many :reviews, through: :courses
+  has_many :reviews
   has_many :enrollments
 
   # validates :first_name, presence: true
