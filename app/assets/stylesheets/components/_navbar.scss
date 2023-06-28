@@ -1,63 +1,93 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  // background: rgb(255, 255, 255);
+.navbarr {
   color: rgb(251, 248, 245);
-  background: rgb(112,87,140);
   background: linear-gradient(90deg, rgba(112,87,140,1) 0%, rgba(140,92,185,0.9724483543417367) 100%);
+  a {
+      font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
 }
-
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
-}
-
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
-}
-
-// ---------------------------------------------
 .nav-link {
-  color: $light-gray;
+    color: rgb(198, 198, 198);
+    cursor: pointer;
+    padding: 10px;
+    &:hover {
+        color: white;
+    }
 }
+.navbar-container {
+    display: flex;
+    // flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-between;
 
-.navbar-brand {
-    width: 220px;
-    height: 55px;
+    .navbar-left {
+        width: 200px;
+        height: 50px;
+        // background-color: brown;
+        flex-shrink: 0;
 
-    .logo-letter {
-        position: relative;
-        div {
+        .logo-letter {
+            div {
+                position: absolute;
+                top: 5px;
+                left: 10px;
+                width: 38px;
+                height: 38px;
+                border-radius: 5px;
+                border: 1px solid $light-gray;
+                text-align: center;
+                justify-content: center;
+                transition: all 200ms ease-in-out;
+            }
+            h1 {
+                position: absolute;
+                left: 18px;
+                top: 5px;
+                color: $light-gray;
+                font-size: 30px;
+            }
+        }
+        .logo-letter-rest {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 42px;
-            height: 42px;
-            border-radius: 5px;
-            border: 1px solid $light-gray;
-            text-align: center;
-            justify-content: center;
+            left: 52px;
+            top: 5px;
+            color: $light-gray;
+            font-size: 30px;
             transition: all 200ms ease-in-out;
         }
-        h1 {
-            position: absolute;
-            left: 8px;
-            top: -0px;
-            color: $light-gray;
-            font-size: 34px;
+        &:hover {
+            .logo-letter > div {
+                transform: rotate(45deg);
+                scale: 0.9;
+            }
+            .logo-letter-rest {
+                transform: translateX(2px);
+            }
         }
     }
-    .logo-letter-rest {
-        position: absolute;
-        left: 50px;
-        color: $light-gray;
-        transform: translate(10px, -0px);
-        font-size: 34px;
-    }
-    &:hover {
-        .logo-letter > div {
-            transform: rotate(45deg);
-            scale: 0.95;
+
+    .navbar-middle {
+        width: 100%;
+        height: 30px;
+        // background-color: rgb(23, 73, 101);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .search-container {
+
+        }
+        .search-bar {
+            display: flex;
         }
     }
+
+    .navbar-right {
+        display: flex;
+        align-items: center;
+        // background-color: chartreuse;
+    }
+
 }
 
 .login-link {
@@ -70,4 +100,9 @@
         border: 1px solid white;
         color: white;
     }
+}
+
+.menuprofil {
+    position: absolute;
+    left: 0;
 }

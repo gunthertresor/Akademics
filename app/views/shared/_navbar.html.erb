@@ -1,43 +1,69 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon shadow bg-body-tertiary">
-  <div class="container-fluid">
-    <%= link_to root_path, class: "navbar-brand d-flex" do %>
-    <div class="logo-letter">
-      <div></div>
-      <h1>A</h1>
-    </div>
-    <h1 class="logo-letter-rest">kademics</h1>
-    <% end %>
-    <%# <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-      </button> %>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item active">
-          <%= link_to "Courses", courses_path, class: "nav-link" %>
-        </li>
-        <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Home", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item">
-          <%= link_to "Messages", "#", class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
-          </a>
-          <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-          </div>
-        </li>
-        <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link login-link" %>
-        </li>
+
+
+<div class="navbarr">
+    <div class="navbar-container">
+        <%# --------------------- navbar left ---------------------%>
+        <%= link_to root_path, class: "navbar-left" do %>
+            <div class="logo-letter">
+                <div></div>
+                <h1>A</h1>
+            </div>
+            <h1 class="logo-letter-rest">kademics</h1>
+
+
         <% end %>
-      </ul>
-    </div>
+
+        <%# --------------------- navbar middle ---------------------%>
+        <ul class="navbar-middle">
+            <li class="nav-item active">
+                <%= link_to "Courses", courses_path, class: "nav-link" %>
+            </li>
+
+            <li class="search-bar" data-controller="searchtoggle">
+                <div class="search-container d-none" data-searchtoggle-target="searchtoggle">
+                    <%= form_with url: root_path, method: :get, class: "d-flex" do %>
+                        <%= text_field_tag :query,
+                            params[:query],
+                            class: "form-control",
+                            placeholder: "Find a Place"
+                        %>
+                        <%= submit_tag "Search", class: "btn btn-primary" %>
+                    <% end %>
+                </div>
+                <i class="fa-solid fa-magnifying-glass nav-link" data-action="click->searchtoggle#toggle"></i>
+            </li>
+        </ul>
+
+        <%# --------------------- navbar right ---------------------%>
+        <ul class="navbar-right">
+
+            <% if user_signed_in? %>
+                <li class="nav-item active">
+                    <%= link_to "Home", "#", class: "nav-link" %>
+                </li>
+                <li class="nav-item">
+                    <%= link_to "Messages", "#", class: "nav-link" %>
+                </li>
+                <li class="nav-item dropdown" data-controller="menutoggle">
+                    <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <%# <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar", alt: "dropdown menu" %>
+                        <%= image_tag("user_profile_image.jpg", class: "avatar", data: { action: "click->menutoggle#toggle" }) %>
+                    </a>
+                    <div data-menutoggle-target="menu" class="d-none menuprofil">
+                        <%= link_to "Action", "#", class: "dropdown-item" %>
+                        <%= link_to "Another action", "#", class: "dropdown-item" %>
+                        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+                    </div>
+                </li>
+
+            <% else %>
+
+                <li class="nav-item">
+                    <%= link_to "Login", new_user_session_path, class: "nav-link login-link" %>
+                </li>
+
+            <% end %>
+         </ul>
+
   </div>
 </div>
