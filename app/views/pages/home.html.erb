@@ -10,12 +10,14 @@
 </div>
 
 <div class="featured-courses">
-    <h2>Cours en vedette</h2>
+    <%= link_to courses_path, class: 'course-vedette-title' do %>
+        <h2>Cours en vedette</h2>
+    <% end %>
     <% @courses.each do |course| %>
-        <div class="course-card">
-        <h3><%= course.title %></h3>
-        <p><%= course.description %></p>
-        </div>
+        <%= link_to course_path(course), class: 'course-card' do %>
+            <h3><%= course.title %></h3>
+            <p><%= course.description %></p>
+        <% end %>
     <% end %>
 </div>
 
@@ -24,8 +26,8 @@
     <% @teachers.each do |teacher| %>
         <div class="teacher-card">
         <!--<img src="<%= teacher.url_avatar %>" alt="Image du professeur"> <!-->
-        <h3><%= teacher.first_name %> <%= teacher.last_name %></h3>
-        <p><%= teacher.profil %></p>
+            <h3><%= teacher.first_name %> <%= teacher.last_name %></h3>
+            <p><%= teacher.profil %></p>
         </div>
     <% end %>
 </div>
