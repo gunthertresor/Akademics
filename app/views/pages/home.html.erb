@@ -10,7 +10,7 @@
 </div>
 
 <div class="featured-courses">
-    <%= link_to courses_path, class: 'course-vedette-title' do %>
+    <%= link_to "courses/featured", class: 'course-featured-title' do %>
         <h2>Cours en vedette</h2>
     <% end %>
     <% @courses.each do |course| %>
@@ -22,7 +22,9 @@
 </div>
 
 <div class="featured-teachers">
-    <h2>Professeurs en vedette</h2>
+    <%= link_to "courses/best", class: 'course-best-title' do %>
+        <h2>Professeurs en vedette</h2>
+    <% end %>
     <% @teachers.each do |teacher| %>
         <div class="teacher-card">
         <!--<img src="<%= teacher.url_avatar %>" alt="Image du professeur"> <!-->

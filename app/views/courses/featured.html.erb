@@ -1,0 +1,11 @@
+<h1>cours en vedette</h1>
+
+<% @courses.each do |course| %>
+
+    <% course.course_classes.each do |classe| %>
+        <p><%= classe.name %></p>
+    <% end %>
+
+    <h1><%= course.title %></h1>
+    <h2><%= course.name %></h2>
+<% end %>
