@@ -19,15 +19,15 @@
                 <%= link_to "Courses", courses_path, class: "nav-link" %>
             </li>
 
-            <li class="search-bar mysearch-bar" data-controller="searchtoggle">
-                <div class="search-container d-none" data-searchtoggle-target="searchtoggle">
+            <li class="search-bar mysearch-bar " data-controller="searchtoggle">
+                <div class="search-container d-none " data-searchtoggle-target="searchtoggle">
                     <%= form_with url: root_path, method: :get, class: "d-flex" do %>
                         <%= text_field_tag :query,
                             params[:query],
                             class: "form-control",
                             placeholder: "Find a Place"
                         %>
-                        <%= submit_tag "Search", class: "btn btn-primary search_bar_button"%>
+                        <%= submit_tag "Search", class: "btn btn-primary search_bar_button "%>
                     <% end %>
                 </div>
                 <i class="fa-solid fa-magnifying-glass nav-link" data-action="click->searchtoggle#toggle"></i>
