@@ -31,10 +31,6 @@ Rails.application.routes.draw do
     end
   end
 
-#   namespace :users do
-
-#   end
-
   namespace :teacher do
     resources :courses, only: [:show, :new, :create, :index, :update, :edit, :destroy]
     resources :enrollments, only: [:index, :update, :edit, :destroy]
@@ -45,5 +41,14 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :profil
+    # namespace :users do
+
+    # end
+    # resources :users, only: [:index, :show]
+  get :teachers, to: 'users#index'
+  get 'teachers/:id', to: 'users#show', as: :teacher
+  get :my_profil, to: 'users#my_profil'
+
 end
+
+# rails generate devise:controllers users
