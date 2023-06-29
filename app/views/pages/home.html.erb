@@ -6,8 +6,8 @@
 </div>
 
 <div class="about">
-    <h2>A broad selection of courses</h2>
-    <p>Choose from over 210,000 online video courses with new additions published every month</p>
+    <h2><span  data-controller="typed" data-typed-sentences-value= "<%= ['A broad selection of courses'].to_json %>"></span></h2>
+    <p><span  data-controller="typed" data-typed-sentences-value= "<%=['Choose from over 210,000 online video courses with new additions published every month'].to_json %>"></span></p>
 </div>
 
 <div class="card featured-courses">
@@ -17,7 +17,7 @@
     <% end %>
     <% @courses.each do |course| %>
         <%= link_to course_path(course), class: 'course-card' do %>
-            <h3 class="card-title"><%= course.title %></h3>
+         <h3 class="card-title"><%= course.title %></h3>
             <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
             <p class="card-text"><%= course.description %></p>
         <% end %>
@@ -26,20 +26,24 @@
 </div>
 
 <div class="featured-teachers">
-    <%= link_to "courses/best", class: 'course-best-title' do %>
+    <%= link_to teachers_path, class: 'course-best-title' do %>
 
         <h2>Bestselling Teachers</h2>
     <% end %>
     <% @teachers.each do |teacher| %>
-        <div class="card teacher-card" style="width: 18rem;">
-        <img src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="card-img-top" alt="...">
-        <!--<img src="<%= teacher.url_avatar %>" alt="Image du professeur"> <!-->
-          <div class="card-body">
-            <h3><%= teacher.first_name %> <%= teacher.last_name %></h3>
 
-            <p class="card-text"><%= teacher.profil %></p>
-          </div>
-        </div>
+        <%= link_to teacher_path(teacher), class: 'course-best-title' do %>
+
+            <div class="card teacher-card" style="width: 18rem;">
+            <img src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="card-img-top" alt="...">
+            <!--<img src="<%= teacher.url_avatar %>" alt="Image du professeur"> <!-->
+                <div class="card-body">
+                    <h3><%= teacher.first_name %> <%= teacher.last_name %></h3>
+                    <p class="card-text"><%= teacher.profil %></p>
+                </div>
+            </div>
+        <% end %>
+
     <% end %>
 </div>
 

@@ -1,6 +1,7 @@
-<div>
-    <h2 class = "text-center">Add a course</h2>
-    <%= simple_form_for @course do |f| %>
+ <div class="container pt-3">
+
+    <%= simple_form_for @course, html: {class: "w-50 shadow p-3"} do |f| %>
+        <h2 class = "text-center">Add a course</h2>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
         <%= f.input :name %>
@@ -9,8 +10,8 @@
         <%= f.input :price %>
         <%= f.input :content %>
         <%= f.input :grade %>
-        <div class="form btn btn-primary rounded-pill">
-          <%= f.button :submit %>
+        <div class="button-new-course ">
+          <%= f.button :submit%>
         </div>
     <% end %>
 </div>

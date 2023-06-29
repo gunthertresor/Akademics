@@ -92,17 +92,23 @@
             object-fit: cover;
         }
         .menu-profil {
+            z-index: 10;
             position: absolute;
-            right: 0;
+            right: -10px;
+            top: 45px;
             background-color: rgba(140,92,185,1);
-            border-radius: 5px;
+            border-bottom-radius: 5px;
 
             .dropdown-item {
-                padding: 10px;
+                border-bottom: 1px solid white;
+                padding: 10px 30px;
                 color: rgb(223, 220, 220);
                 &:hover {
                     color: white;
                 }
+            }
+            .dropdown-item:last-child {
+                border-bottom: none;
             }
         }
     }
