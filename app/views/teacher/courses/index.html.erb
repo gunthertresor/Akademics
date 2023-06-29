@@ -1,16 +1,16 @@
 <div class="container mt-2">
-  <div class="user-info">
-    <h3>User Information</h3>
-    <img src= "https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class=" rounded float-start img-thumbnail mb-3" alt="...">
-    <div class = "container m-3 mp-3">
-      <div class="text-start">
-        <p><strong><i class="fa-solid fa-id-card"></i></strong> <%= current_user.first_name %> <%= current_user.last_name %></p>
-        <%# <p><strong><i class="fa-solid fa-id-card"></i></strong> <%= current_user.last_name %>
-        <p><strong><i class="fa-solid fa-envelope"></i></strong> <%= current_user.email %></p>
-        <p><strong><i class="fa-solid fa-user-tie"></i></strong> <%= current_user.status %></p>
-      </div>
+    <div class="user-info">
+        <h3>User Information</h3>
+        <img src= "https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class=" rounded float-start img-thumbnail mb-3" alt="...">
+        <div class = "container m-3 mp-3">
+            <div class="text-start">
+                <p><strong><i class="fa-solid fa-id-card"></i></strong> <%= current_user.first_name %> <%= current_user.last_name %></p>
+                <%# <p><strong><i class="fa-solid fa-id-card"></i></strong> <%= current_user.last_name %>
+                <p><strong><i class="fa-solid fa-envelope"></i></strong> <%= current_user.email %></p>
+                <p><strong><i class="fa-solid fa-user-tie"></i></strong> <%= current_user.status %></p>
+            </div>
+        </div>
     </div>
-</div>
     <div class="course-list">
         <% @courses.each do |course| %>
 
@@ -18,9 +18,10 @@
                 <%# <div class="course-box"> %>
                     <h3><%= course.title %></h3>
                     <h2><%= course.name %></h2>
+
                     <object>
-                        <%= link_to "reviews", teacher_reviews_path, class: "button-new-course" %>
-                        <%= link_to "enrollments", teacher_enrollments_path, class: "button-new-course" %>
+                        <%# <%= link_to "reviews", teacher_reviews_path, class: "button-new-course" %> %>
+                        <%# <%= link_to "enrollments", teacher_enrollments_path, class: "button-new-course" %> %>
                     </object>
                 <%# </div> %>
             <% end %>
@@ -30,5 +31,5 @@
     </div>
 
     <%= link_to "Create a new course", "courses/new", class: "button-new-course" %>
-  </div>
+    <%# </div> %>
 </div>

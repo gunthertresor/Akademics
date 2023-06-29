@@ -12,7 +12,7 @@ class EnrollmentsController < ApplicationController
         @enrollment = Enrollment.new
         @enrollment.user = current_user
         @enrollment.classe = Classe.find(params[:class_id])
-        @enrollment.save!
+        @enrollment.save
         redirect_to courses_path
     end
 

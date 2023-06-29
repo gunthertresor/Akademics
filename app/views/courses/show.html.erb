@@ -3,17 +3,20 @@
     <h1><%= @course.title %></h1>
     <h2><%= @course.name%></h2>
 
-
-    <div class = "pt-2">
-        <%= button_to "Enrollment", enrollment_path(@course), method: :update, class: 'form btn rounded-pill btn-light', data: {turbo_confirm: 'are you sure ?'}  %>
-    </div>
 </div>
 
 <div class = "col">
     <% @classes.each do |classe| %>
 
         <%= link_to class_enrollments_path(classe), method: :post, data: {turbo_method: :post},  class: 'course-best-title' do %>
-            <h1><%= classe.name %></h1>
+            <div>
+                <p><%= classe.name %></p>
+                <p><%= classe.class_date %></p>
+                <div class="d-flex card">
+                    <p><%= classe.start_date %>h00</p>
+                    <p><%= classe.end_date.hour %>h00</p>
+                </div>
+            </div>
         <% end %>
 
     <% end %>

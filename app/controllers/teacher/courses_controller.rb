@@ -13,6 +13,7 @@ class Teacher::CoursesController < ApplicationController
         # end
         # @courses = Course.all
         @courses = Course.where(user_id: current_user)
+        # @classes = @course.course_classes
     end
 
     def new
@@ -20,6 +21,7 @@ class Teacher::CoursesController < ApplicationController
     end
 
     def show
+        @classes = @course.course_classes
         # @course = Course.new
     end
 
@@ -47,6 +49,7 @@ class Teacher::CoursesController < ApplicationController
 
     def set_course
         @course = Course.find(params[:id])
+        # @classes = @course.course_classes
     end
 
     def course_params
