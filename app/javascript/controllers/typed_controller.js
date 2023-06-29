@@ -7,7 +7,7 @@ export default class extends Controller {
     sentences: Array
   }
   connect() {
-    const options = {strings: this.sentencesValue, typeSpeed: 40};
+    const options = {strings: this.sentencesValue, typeSpeed: 90 };
     new Typed(this.element, options)
   }
 }
