@@ -16,11 +16,18 @@
     <%= link_to courses_path, class: 'course-vedette-title' do %>
         <h2>Bestseller</h2>
     <% end %>
-    <% @courses.each do |course| %>
-        <%= link_to course_path(course), class: 'course-card' do %>
-         <h3 class="card-title"><%= course.title %></h3>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-            <p class="card-text"><%= course.description %></p>
+    <% @reviews.each do |review| %>
+        <%= link_to course_path(review.course), class: 'course-card' do %>
+            <div class="rr">
+                <%= image_tag("#{review.course.category}.jpg", class: "img-course") %>
+
+                <div>
+                    <h3 class="card-title"><%= review.rating %></h3>
+                    <h3 class="card-title"><%= review.course.name %></h3>
+                    <p class="card-text"><%= review.course.category %></p>
+                    <p class="card-text"><%= review.course.description %></p>
+                </div>
+            </div>
         <% end %>
     <% end %>
   </div>
@@ -30,27 +37,27 @@
 <!-------------->
 
 <div class="d-inline-flex">
-
-  <% @teachers.each do |teacher| %>
+    <% @teachers.each_with_index do |teacher, i| %>
 
         <%= link_to teacher_path(teacher), class: 'container my-container ' do %>
 
-    <div class="card-wrapper">
+            <div class="card-wrapper">
+                <div class="card">
 
-      <div class="card">
+                    <div class="card-image">
+                        <%# <img src="https://image.ibb.co/dUTfmJ/profile_img.jpg" alt="profile one"> %>
+                        <%= image_tag("teacher#{i}.jpg", class: "image-teacher") %>
+                    </div>
+                    <div class="details">
+                        <h2><%= teacher.first_name %> <%= teacher.last_name %>
+                            <br>
+                            <span class="job-title"><%= teacher.profil %></span>
+                        </h2>
+                    </div>
 
-        <div class="card-image">
-          <img src="https://image.ibb.co/dUTfmJ/profile_img.jpg" alt="profile one">
-        </div>
-      <div class="details">
-        <h2><%= teacher.first_name %> <%= teacher.last_name %>
-          <br>
-          <span class="job-title"><%= teacher.profil %></span>
-        </h2>
-      </div>
-    </div>
-  </div><!-- end box wrapper -->
-  <% end %>
+                </div>
+            </div><!-- end box wrapper -->
+        <% end %>
 
     <% end %>
   </div>
