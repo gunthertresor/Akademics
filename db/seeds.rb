@@ -14,14 +14,14 @@ Course.destroy_all
 User.destroy_all
 
 puts "-------------- create Users --------------"
-john = User.create(first_name: 'John', last_name: "Doe", email: "john.doe@example.com", password: "password1", phone_number: "123 456 7890", address: "123 Elm Street", status: "student")
-susan = User.create(first_name: 'Susan', last_name: "Smith", email: "susan.smith@example.com", password: "password2", phone_number: "234 567 8901", address: "456 Oak Avenue", status: "student")
-bob = User.create(first_name: 'Bob', last_name: "Johnson", email: "bob.johnson@example.com", password: "password3", phone_number: "345 678 9012", address: "789 Pine Lane", status: "student")
-linda = User.create(first_name: 'Linda', last_name: "Williams", email: "linda.williams@example.com", password: "password4", phone_number: "456 789 0123", address: "012 Maple Drive", status: "student")
-amy = User.create(first_name: 'Amy', last_name: "Brown", email: "amy.brown@example.com", password: "password5", phone_number: "567 890 1234", address: "345 Birch Boulevard", status: "student")
-george = User.create(first_name: 'George', last_name: "Davis", email: "george.davis@example.com", password: "password6", phone_number: "678 901 2345", address: "678 Cedar Court", status: "teacher")
-megan = User.create(first_name: 'Megan', last_name: "Miller", email: "megan.miller@example.com", password: "password7", phone_number: "789 012 3456", address: "901 Spruce Street", status: "teacher")
-steve = User.create(first_name: 'Steve', last_name: "Wilson", email: "steve.wilson@example.com", password: "password8", phone_number: "890 123 4567", address: "234 Aspen Avenue", status: "teacher")
+john = User.create(first_name: 'John', last_name: "Doe", email: "john.doe@example.com", password: "rerere", phone_number: "123 456 7890", address: "123 Elm Street", status: "student")
+susan = User.create(first_name: 'Susan', last_name: "Smith", email: "susan.smith@example.com", password: "rerere", phone_number: "234 567 8901", address: "456 Oak Avenue", status: "student")
+bob = User.create(first_name: 'Bob', last_name: "Johnson", email: "bob.johnson@example.com", password: "rerere", phone_number: "345 678 9012", address: "789 Pine Lane", status: "student")
+linda = User.create(first_name: 'Linda', last_name: "Williams", email: "linda.williams@example.com", password: "rerere", phone_number: "456 789 0123", address: "012 Maple Drive", status: "student")
+amy = User.create(first_name: 'Amy', last_name: "Brown", email: "amy.brown@example.com", password: "rerere", phone_number: "567 890 1234", address: "345 Birch Boulevard", status: "student")
+george = User.create(first_name: 'George', last_name: "Davis", email: "george.davis@example.com", password: "rerere", phone_number: "678 901 2345", address: "678 Cedar Court", status: "teacher")
+megan = User.create(first_name: 'Megan', last_name: "Miller", email: "megan.miller@example.com", password: "rerere", phone_number: "789 012 3456", address: "901 Spruce Street", status: "teacher")
+steve = User.create(first_name: 'Steve', last_name: "Wilson", email: "steve.wilson@example.com", password: "rerere", phone_number: "890 123 4567", address: "234 Aspen Avenue", status: "teacher")
 
 puts "-------------- create Courses --------------"
 course_george1 = Course.create(user_id: george.id, title: "Shakespearean literature", name: "Shakespeare's plays and sonnets", category: "literature", description: "A comprehensive study of Shakespeare's work.", content: "Shakespeare's literature is about drama, conflict...", price: 50, grade: 1, rating: 1, url_course:"https://www.youtube.com/watch?v=your_url")
