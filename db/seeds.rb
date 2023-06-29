@@ -20,7 +20,7 @@ bob = User.create(first_name: 'Bob', last_name: "Johnson", email: "bob.johnson@e
 linda = User.create(first_name: 'Linda', last_name: "Williams", email: "linda.williams@example.com", password: "rerere", phone_number: "456 789 0123", address: "012 Maple Drive", status: "student")
 amy = User.create(first_name: 'Amy', last_name: "Brown", email: "amy.brown@example.com", password: "rerere", phone_number: "567 890 1234", address: "345 Birch Boulevard", status: "student")
 george = User.create(first_name: 'George', last_name: "Davis", email: "george.davis@example.com", password: "rerere", phone_number: "678 901 2345", address: "678 Cedar Court", status: "teacher")
-megan = User.create(first_name: 'Megan', last_name: "Miller", email: "megan.miller@example.com", password: "rerere", phone_number: "789 012 3456", address: "901 Spruce Street", status: "teacher")
+megan = User.create(first_name: 'Megan', last_name: "Miller", email: "megan.miller@example.com", password: "rer ere", phone_number: "789 012 3456", address: "901 Spruce Street", status: "teacher")
 steve = User.create(first_name: 'Steve', last_name: "Wilson", email: "steve.wilson@example.com", password: "rerere", phone_number: "890 123 4567", address: "234 Aspen Avenue", status: "teacher")
 
 puts "-------------- create Courses --------------"
@@ -30,8 +30,10 @@ course_megan1 = Course.create(user_id: megan.id, title: "Calculus 101", name: "I
 course_steve1 = Course.create(user_id: steve.id, title: "Creative writing", name: "Writing creative fiction", category: "literature", description: "A course on writing creative fiction.", content: "Creative writing is about imagination, expression...", price: 200, grade: 4, rating: 5, url_course:"https://www.youtube.com/watch?v=your_url")
 
 puts "-------------- create Classe --------------"
-class1 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20)
-class2 = Classe.create(course_id: course_george2.id, name: "Modernist literature class", max_people: 20)
+class1 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20, class_date: Time.now + 3.days, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
+class3 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20, class_date: Time.now + 4.days, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
+class3 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20, class_date: Time.now + 5.days, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
+class2 = Classe.create(course_id: course_george2.id, name: "Modernist literature class", max_people: 20, class_date: Time.now + 10.days, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
 
 puts "-------------- create Enrollment --------------"
 enrollment1 = Enrollment.create(user_id: john.id, classe_id: class1.id, cancelled: false)
