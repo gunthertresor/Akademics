@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
 puts "-------------- delete all --------------"
 Review.destroy_all
 Enrollment.destroy_all
@@ -15,37 +14,37 @@ Course.destroy_all
 User.destroy_all
 
 puts "-------------- create Users --------------"
-bart = User.create(first_name: 'bart', last_name: "simpson", email: "bart.simpson@gmail.fr", password: "rerere", phone_number: "343 123 4321", address: "stringfield", status: "student")
-lisa = User.create(first_name: 'lisa', last_name: "simpson", email: "lisa.simpson@gmail.fr", password: "rerere", phone_number: "923 245 3531", address: "stringfield", status: "student")
-homer = User.create(first_name: 'homer', last_name: "simpson", email: "homer.simpson@gmail.fr", password: "rerere", phone_number: "923 245 3531", address: "stringfield", status: "student")
-marge = User.create(first_name: 'marge', last_name: "simpson", email: "marge.simpson@gmail.com", password: "rerere", phone_number: "453 165 4311", address: "stringfield", status: "student")
-maggy = User.create(first_name: 'maggy', last_name: "simpson", email: "maggy.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "student")
-abraham = User.create(first_name: 'abraham', last_name: "simpson", email: "abraham.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher", profil:"teacher since 1904")
-mona = User.create(first_name: 'mona', last_name: "simpson", email: "mona.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
-clancy = User.create(first_name: 'clancy', last_name: "simpson", email: "clancy.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
+john = User.create(first_name: 'John', last_name: "Doe", email: "john.doe@example.com", password: "password1", phone_number: "123 456 7890", address: "123 Elm Street", status: "student")
+susan = User.create(first_name: 'Susan', last_name: "Smith", email: "susan.smith@example.com", password: "password2", phone_number: "234 567 8901", address: "456 Oak Avenue", status: "student")
+bob = User.create(first_name: 'Bob', last_name: "Johnson", email: "bob.johnson@example.com", password: "password3", phone_number: "345 678 9012", address: "789 Pine Lane", status: "student")
+linda = User.create(first_name: 'Linda', last_name: "Williams", email: "linda.williams@example.com", password: "password4", phone_number: "456 789 0123", address: "012 Maple Drive", status: "student")
+amy = User.create(first_name: 'Amy', last_name: "Brown", email: "amy.brown@example.com", password: "password5", phone_number: "567 890 1234", address: "345 Birch Boulevard", status: "student")
+george = User.create(first_name: 'George', last_name: "Davis", email: "george.davis@example.com", password: "password6", phone_number: "678 901 2345", address: "678 Cedar Court", status: "teacher")
+megan = User.create(first_name: 'Megan', last_name: "Miller", email: "megan.miller@example.com", password: "password7", phone_number: "789 012 3456", address: "901 Spruce Street", status: "teacher")
+steve = User.create(first_name: 'Steve', last_name: "Wilson", email: "steve.wilson@example.com", password: "password8", phone_number: "890 123 4567", address: "234 Aspen Avenue", status: "teacher")
 
 puts "-------------- create Courses --------------"
-coursabraham1 = Course.create(user_id: abraham.id, title: "square goemetry", name: "goemetry course", category: "mathematiques", description: "study of square goemetry", content: "square goemetry is about angle...", price: 50, grade: 1, rating: 1, url_course:"https://www.youtube.com/watch?v=lUUte2o2Sn8&t=3668s&ab_channel=MITOpenCourseWare")
-coursabraham2 = Course.create(user_id: abraham.id, title: "triangle goemetry", name: "triangle course", category: "mathematiques", description: "study of triangle goemetry", content: "triangle goemetry is about angle...", price: 40, grade: 2, rating: 5, url_course:"https://www.youtube.com/watch?v=lUUte2o2Sn8&t=3668s&ab_channel=MITOpenCourseWare")
-coursmona1 = Course.create(user_id: mona.id, title: "gravity", name: "gravity physics", category: "physics", description: "study of gravity geometry", content: "gravity physics is about...", price: 100, grade: 5, rating: 4, url_course:"https://www.youtube.com/watch?v=lUUte2o2Sn8&t=3668s&ab_channel=MITOpenCourseWare")
-coursclancy1 = Course.create(user_id: clancy.id, title: "english first level", name: "english verb", category: "lang", description: "english courses about verb", content: "english is about...", price: 200, grade: 4, rating: 5, url_course:"https://www.youtube.com/watch?v=lUUte2o2Sn8&t=3668s&ab_channel=MITOpenCourseWare")
+course_george1 = Course.create(user_id: george.id, title: "Shakespearean literature", name: "Shakespeare's plays and sonnets", category: "literature", description: "A comprehensive study of Shakespeare's work.", content: "Shakespeare's literature is about drama, conflict...", price: 50, grade: 1, rating: 1, url_course:"https://www.youtube.com/watch?v=your_url")
+course_george2 = Course.create(user_id: george.id, title: "Modernist literature", name: "Exploring the modernists", category: "literature", description: "An exploration of modernist literature.", content: "Modernist literature is about the self, perception...", price: 40, grade: 2, rating: 5, url_course:"https://www.youtube.com/watch?v=your_url")
+course_megan1 = Course.create(user_id: megan.id, title: "Calculus 101", name: "Introduction to calculus", category: "mathematics", description: "An introductory course in calculus.", content: "Calculus is about change, rates...", price: 100, grade: 5, rating: 4, url_course:"https://www.youtube.com/watch?v=your_url")
+course_steve1 = Course.create(user_id: steve.id, title: "Creative writing", name: "Writing creative fiction", category: "literature", description: "A course on writing creative fiction.", content: "Creative writing is about imagination, expression...", price: 200, grade: 4, rating: 5, url_course:"https://www.youtube.com/watch?v=your_url")
 
 puts "-------------- create Classe --------------"
-class1 = Classe.create(course_id: coursabraham1.id, name: "square goemetry class", max_people: 20)
-class2 = Classe.create(course_id: coursabraham2.id, name: "triangle goemetry class", max_people: 20)
+class1 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20)
+class2 = Classe.create(course_id: course_george2.id, name: "Modernist literature class", max_people: 20)
 
 puts "-------------- create Enrollment --------------"
-enrollment1 = Enrollment.create(user_id: bart.id, classe_id: class1.id, cancelled: false)
-enrollment2 = Enrollment.create(user_id: lisa.id, classe_id: class1.id, cancelled: false)
-enrollment3 = Enrollment.create(user_id: bart.id, classe_id: class2.id, cancelled: false)
-enrollment3 = Enrollment.create(user_id: bart.id, classe_id: class2.id, cancelled: false)
+enrollment1 = Enrollment.create(user_id: john.id, classe_id: class1.id, cancelled: false)
+enrollment2 = Enrollment.create(user_id: susan.id, classe_id: class1.id, cancelled: false)
+enrollment3 = Enrollment.create(user_id: john.id, classe_id: class2.id, cancelled: false)
+enrollment4 = Enrollment.create(user_id: bob.id, classe_id: class2.id, cancelled: false)
 
 puts "-------------- create Review --------------"
-Review.create(user_id: bart.id, course_id: coursabraham1.id, rating: 5)
-Review.create(user_id: lisa.id, course_id: coursabraham1.id, rating: 4)
-Review.create(user_id: marge.id, course_id: coursabraham1.id, rating: 5)
-Review.create(user_id: homer.id, course_id: coursabraham2.id, rating: 3)
-Review.create(user_id: lisa.id, course_id: coursabraham2.id, rating: 1)
-Review.create(user_id: maggy.id, course_id: coursmona1.id, rating: 3)
+Review.create(user_id: john.id, course_id: course_george1.id, rating: 5)
+Review.create(user_id: susan.id, course_id: course_george1.id, rating: 4)
+Review.create(user_id: linda.id, course_id: course_george1.id, rating: 5)
+Review.create(user_id: bob.id, course_id: course_george2.id, rating: 3)
+Review.create(user_id: susan.id, course_id: course_george2.id, rating: 1)
+Review.create(user_id: amy.id, course_id: course_megan1.id, rating: 3)
 
 puts "-------------- create all ok --------------"
