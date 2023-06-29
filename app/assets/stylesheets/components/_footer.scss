@@ -3,46 +3,51 @@ footer {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  background: rgb(112,87,140);
-  background: linear-gradient(90deg, rgba(112,87,140,1) 0%, rgba(140,92,185,0.9724483543417367) 100%);
+  background: rgb(112, 87, 140);
+  background: linear-gradient(
+    90deg,
+    rgba(112, 87, 140, 1) 0%,
+    rgba(140, 92, 185, 0.9724483543417367) 100%
+  );
   padding: 20px;
   width: 100%;
   margin-top: 40px;
+  color: white !important;
 }
 
-.flistes {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.footer-left,
-.footer-right {
-  flex: 1;
+.footer-akademics,
+.careers,
+.terms {
+  flex-basis: calc(33.33% - 20px);
   margin-bottom: 20px;
 }
 
 .faka {
-  width: 100%;
+  flex-basis: 100%;
   text-align: center;
+  color: white;
 }
 
 h3 {
   margin-bottom: 10px;
+  color: white;
 }
 
 ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  color: white;
 }
 
 li {
   margin-bottom: 5px;
+  color: white;
 }
 
 a {
   text-decoration: none;
-  color: #333;
+  color: white !important;
 }
 
 a:hover {
