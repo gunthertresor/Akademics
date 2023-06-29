@@ -1,2 +1,13 @@
-<h1>Teacher</h1>
-<h3><%= @teacher.first_name %> <%= @teacher.last_name %></h3>
+<div class="container mt-2">
+  <div class="user-info">
+    <h3>Teacher's profil</h3>
+    <img src= "https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class=" rounded float-start img-thumbnail mb-3" alt="...">
+    <div class = "container m-3 mp-3">
+      <div class="text-start">
+        <p><strong><i class="fa-solid fa-id-card"></i></strong> <%= @teacher.first_name %> <%= @teacher.last_name %></p>
+        <%# <p><strong><i class="fa-solid fa-id-card"></i></strong> <%= current_user.last_name %>
+      </div>
+      <%# <%= link_to "edit", edit_user_registration_path, class: "button-new-course" %>
+    </div>
+</div>
+</div>
