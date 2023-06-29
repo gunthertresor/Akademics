@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :courses, only: [:index, :show] do
+    resources :reviews, only: [:new, :create]
     resources :classes, only: [:new, :create]
     #list meilleur prof
     collection do
@@ -23,7 +24,7 @@ Rails.application.routes.draw do
   end
 
   resources :enrollments, only: [:index, :update, :destroy] do
-    resources :reviews, only: [:new, :create]
+    # resources :reviews, only: [:new, :create]
     member do
       patch :validate
       patch :reject
@@ -35,12 +36,10 @@ Rails.application.routes.draw do
 #   end
 
   namespace :teacher do
-    resources :courses, only: [:new, :create, :index, :update, :edit, :destroy]
+    resources :courses, only: [:show, :new, :create, :index, :update, :edit, :destroy]
     resources :enrollments, only: [:index, :update, :edit, :destroy]
     resources :reviews, only: [:index, :show]
   end
 
   resources :profil
 end
-
-# rails generate devise:controllers users
