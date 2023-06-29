@@ -1,5 +1,9 @@
 class EnrollmentsController < ApplicationController
 
+    def index
+        @enrollment = Enrollment.all
+    end
+
     def create
         # @enrollment = Pool.new(pool_params)
         # @pool.user = current_user

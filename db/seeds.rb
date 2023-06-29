@@ -20,7 +20,7 @@ lisa = User.create(first_name: 'lisa', last_name: "simpson", email: "lisa.simpso
 homer = User.create(first_name: 'homer', last_name: "simpson", email: "homer.simpson@gmail.fr", password: "rerere", phone_number: "923 245 3531", address: "stringfield", status: "student")
 marge = User.create(first_name: 'marge', last_name: "simpson", email: "marge.simpson@gmail.com", password: "rerere", phone_number: "453 165 4311", address: "stringfield", status: "student")
 maggy = User.create(first_name: 'maggy', last_name: "simpson", email: "maggy.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "student")
-abraham = User.create(first_name: 'abraham', last_name: "simpson", email: "abraham.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
+abraham = User.create(first_name: 'abraham', last_name: "simpson", email: "abraham.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher", profil:"teacher since 1904")
 mona = User.create(first_name: 'mona', last_name: "simpson", email: "mona.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
 clancy = User.create(first_name: 'clancy', last_name: "simpson", email: "clancy.simpson@gmail.com", password: "rerere", phone_number: "313 543 1345", address: "stringfield", status: "teacher")
 
@@ -38,9 +38,14 @@ puts "-------------- create Enrollment --------------"
 enrollment1 = Enrollment.create(user_id: bart.id, classe_id: class1.id, cancelled: false)
 enrollment2 = Enrollment.create(user_id: lisa.id, classe_id: class1.id, cancelled: false)
 enrollment3 = Enrollment.create(user_id: bart.id, classe_id: class2.id, cancelled: false)
+enrollment3 = Enrollment.create(user_id: bart.id, classe_id: class2.id, cancelled: false)
 
 puts "-------------- create Review --------------"
-Review.create(user_id: bart.id, enrollment_id: enrollment1.id, rating: 5)
-Review.create(user_id: lisa.id, enrollment_id: enrollment2.id, rating: 4)
+Review.create(user_id: bart.id, course_id: coursabraham1.id, rating: 5)
+Review.create(user_id: lisa.id, course_id: coursabraham1.id, rating: 4)
+Review.create(user_id: marge.id, course_id: coursabraham1.id, rating: 5)
+Review.create(user_id: homer.id, course_id: coursabraham2.id, rating: 3)
+Review.create(user_id: lisa.id, course_id: coursabraham2.id, rating: 1)
+Review.create(user_id: maggy.id, course_id: coursmona1.id, rating: 3)
 
 puts "-------------- create all ok --------------"

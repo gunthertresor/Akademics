@@ -1,7 +1,7 @@
 class Teacher::CoursesController < ApplicationController
 
     # skip_before_action :authenticate_user!, only: [:index, :show]
-    # before_action :set_course, only: %i[ show ]
+    before_action :set_course, only: %i[ show ]
 
     def index
         # @pools = Pool.where('address ILIKE ?', "%#{params[:query]}%")
@@ -20,7 +20,7 @@ class Teacher::CoursesController < ApplicationController
     end
 
     def show
-        @course = Course.new
+        # @course = Course.new
     end
 
     def edit
@@ -45,9 +45,9 @@ class Teacher::CoursesController < ApplicationController
 
     private
 
-    # def set_course
-    #   @pool = Pool.find(params[:id])
-    # end
+    def set_course
+        @course = Course.find(params[:id])
+    end
 
     def course_params
         params.require(:course).permit(:name, :title, :description, :price, :content, :grade)

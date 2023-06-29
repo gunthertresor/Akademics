@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+    skip_before_action :authenticate_user!, only: [:index, :show]
     before_action :set_courses, only: [:show, :edit, :update, :destroy]
 
     def index
@@ -17,7 +18,7 @@ class CoursesController < ApplicationController
 
     def best
         # @teachers = User.where(["status = ? and rating = ?", "teacher", 5])
-        # @teachers = User.where(rating: 5)
+        @teachers = User.where(status: 'teacher')
     end
 
     private
