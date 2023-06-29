@@ -10,41 +10,35 @@
     <p>Choose from over 210,000 online video courses with new additions published every month</p>
 </div>
 
-<div class="featured-courses">
-    <%= link_to "courses/featured", class: 'course-featured-title' do %>
-        <h2>Expand your career opportunities</h2>
+<div class="card featured-courses">
+  <div class="card-body">
+    <%= link_to courses_path, class: 'course-vedette-title' do %>
+        <h2>Bestseller</h2>
     <% end %>
     <% @courses.each do |course| %>
         <%= link_to course_path(course), class: 'course-card' do %>
-            <h3><%= course.title %></h3>
-            <p><%= course.description %></p>
+            <h3 class="card-title"><%= course.title %></h3>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+            <p class="card-text"><%= course.description %></p>
         <% end %>
     <% end %>
+  </div>
 </div>
 
 <div class="featured-teachers">
     <%= link_to "courses/best", class: 'course-best-title' do %>
-        <h2>Best Teacher</h2>
+
+        <h2>Bestselling Teachers</h2>
     <% end %>
     <% @teachers.each do |teacher| %>
-        <div class="teacher-card">
+        <div class="card teacher-card" style="width: 18rem;">
+        <img src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="card-img-top" alt="...">
         <!--<img src="<%= teacher.url_avatar %>" alt="Image du professeur"> <!-->
+          <div class="card-body">
             <h3><%= teacher.first_name %> <%= teacher.last_name %></h3>
-            <p><%= teacher.profil %></p>
 
-            <%# <p><%= teacher.courses[0].reviews[0].id %></p> %>
-
-            <% teacher.courses[0].reviews.each do |review| %>
-                <p><%= review.id %></p>
-            <% end %>
-
-            <% if (teacher.courses[0] != nil)  %>
-              <div class="stars">
-                  <% teacher.courses[0].id.times do %>
-                      <i class="fa-solid fa-star" style="color: #e5c006;"></i>
-                  <% end %>
-              </div>
-          <% end %>
+            <p class="card-text"><%= teacher.profil %></p>
+          </div>
         </div>
     <% end %>
 </div>

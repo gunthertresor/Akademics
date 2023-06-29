@@ -1,6 +1,6 @@
 
 
-<div class="navbarr">
+<div class="navbarr shadow-lg bg-body-tertiary">
     <div class="navbar-container">
         <%# --------------------- navbar left ---------------------%>
         <%= link_to root_path, class: "navbar-left" do %>
@@ -19,7 +19,7 @@
                 <%= link_to "Courses", courses_path, class: "nav-link" %>
             </li>
 
-            <li class="search-bar" data-controller="searchtoggle">
+            <li class="search-bar mysearch-bar" data-controller="searchtoggle">
                 <div class="search-container d-none" data-searchtoggle-target="searchtoggle">
                     <%= form_with url: root_path, method: :get, class: "d-flex" do %>
                         <%= text_field_tag :query,
@@ -27,7 +27,7 @@
                             class: "form-control",
                             placeholder: "Find a Cours"
                         %>
-                        <%= submit_tag "Search", class: "btn btn-primary" %>
+                        <%= submit_tag "Search", class: "btn btn-primary search_bar_button"%>
                     <% end %>
                 </div>
                 <i class="fa-solid fa-magnifying-glass nav-link" data-action="click->searchtoggle#toggle"></i>
