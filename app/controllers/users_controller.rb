@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-    before_action :set_my_profil, only: %i[ my_profil ]
+    before_action :set_my_profil, only: %i[ my_profil dashboard ]
 
     def index
         @teachers = User.where(status: 'teacher')
@@ -12,9 +12,17 @@ class UsersController < ApplicationController
     def my_profil
     end
 
+    def dashboard
+
+    end
+
     private
 
     def set_my_profil
         @user = current_user
     end
+
+    # def set_courses
+    #     @course = Course.find(params[:id])
+    # end
 end

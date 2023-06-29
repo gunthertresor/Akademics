@@ -45,5 +45,7 @@ Rails.application.routes.draw do
 
   get :teachers, to: 'users#index'
   get 'teachers/:id', to: 'users#show', as: :teacher
+
   get :my_profil, to: 'users#my_profil'
+  get :dashboard, to: 'users#dashboard'
 end

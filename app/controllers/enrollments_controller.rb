@@ -35,7 +35,7 @@ class EnrollmentsController < ApplicationController
 
     def destroy
         Enrollment.find(params[:id]).destroy
-        redirect_to enrollments_path
+        redirect_to dashboard_path
         # respond_to do |format|
         #   format.html { redirect_to booking_url, notice: "Booking was successfully destroyed." }
         #   format.json { head :no_content }
