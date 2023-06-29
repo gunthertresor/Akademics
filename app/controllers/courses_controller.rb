@@ -7,6 +7,10 @@ class CoursesController < ApplicationController
     end
 
     def show
+        @enrollment = Enrollment.new
+        @classes = @course.course_classes
+        # @course.classe = Classe.
+        # @course_classes = Course.Classe.new
     end
 
     def featured

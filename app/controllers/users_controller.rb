@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        # @teacher = User.find(params[:teacher_id])
         @teacher = User.find(params[:id])
     end
 
