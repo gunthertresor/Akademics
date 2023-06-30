@@ -10,23 +10,35 @@
 
     <p><span  data-controller="typed" data-typed-sentences-value= "<%=['Choose from over 210,000 online video courses with new additions published every month'].to_json %>"></span></p>
 </div>
-
+<!-------------->
 <div class="card featured-courses">
   <div class="card-body">
-    <%= link_to courses_path, class: 'course-vedette-title' do %>
-        <h2>Bestseller</h2>
+<div class="container my-bestseller-container">
+  <%= link_to courses_path do %>
+  <h2>Bestseller</h2>
+  <% end %>
+  <ul class="cards">
+  <% @courses.each do |course| %>
+    <%= link_to course_path(course) do %>
+    <li class="card">
+      <div>
+        <h3 class="card-title"><%= course.title %></h3>
+        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
+        <div class="card-content">
+          <p><%= course.description %></p>
+          <%# <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae magnam harum natus fuga et repellat in maiores.</p> %>
+        </div>
+      </div>
+      <%# <div class="card-link-wrapper">
+        <a href="" class="card-link">Learn More</a>
+      </div> %>
+    </li>
     <% end %>
-    <% @courses.each do |course| %>
-        <%= link_to course_path(course), class: 'course-card' do %>
-         <h3 class="card-title"><%= course.title %></h3>
-            <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-            <p class="card-text"><%= course.description %></p>
-        <% end %>
     <% end %>
-  </div>
+  </ul>
 </div>
-<!-------------->
-
+</div>
+</div>
 <!-------------->
 
 <div class="d-inline-flex">
