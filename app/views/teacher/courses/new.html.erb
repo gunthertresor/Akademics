@@ -1,6 +1,6 @@
  <div class="container pt-3">
 
-    <%= simple_form_for @course, html: {class: "w-50 shadow p-3"} do |f| %>
+    <%= simple_form_for @course, url: teacher_courses_path(@course),  html: {class: "w-50 shadow p-3"} do |f| %>
         <h2 class = "text-center">Add a course</h2>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
