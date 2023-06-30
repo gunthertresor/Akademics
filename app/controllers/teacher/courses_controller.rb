@@ -16,10 +16,6 @@ class Teacher::CoursesController < ApplicationController
         # @classes = @course.course_classes
     end
 
-    def new
-        @course = Course.new
-    end
-
     def show
         @classes = @course.course_classes
         # @course = Course.new
@@ -32,13 +28,30 @@ class Teacher::CoursesController < ApplicationController
 
     end
 
+    def new
+        @course = Course.new
+    end
+
     def create
         @course = Course.new(course_params)
         @course.user = current_user
-        @course.save
+        @course.save!
         redirect_to teacher_courses_path
     end
+    # def new
+    #     @classe = Classe.new
+    #     @course = Course.find(params[:course_id])
+    # end
 
+    # def create
+    #     @classe = Classe.new(classe_params)
+    #     # @classe.user = current_user
+    #     # @course = Course.find(params[:course_id])
+    #     @classe.course = Course.find(params[:course_id])
+    #     # @classes = @course.course_classes
+    #     @classe.save!
+    #     redirect_to teacher_courses_path
+    # end
     def destroy
         @course = Course.find(params[:id])
         @course.destroy
