@@ -122,25 +122,8 @@
         font-size: 16px;
     }
 }
-// .image-teacher {
-//     object-fit: contain;
-// }
-// -----------------------------------------
+
 .my-container{
-  /**** Sass Variables ****/
-    // $bodyFont: 'Open Sans', sans-serif;
-
-
-    // * {
-    //     padding: 0;
-    //     margin: 0;
-    //     box-sizing: border-box;
-    // }
-
-    // body {
-    //     font-family: $bodyFont;
-    //     background: #333;
-    // }
 
     .container {
         max-width: 900px;
@@ -169,7 +152,7 @@
         transition: 0.5s;
 
         .card-image {
-            position: absolute;
+            position: cover;
             top: 0px;
             left: 0px;
             width: 100%;
@@ -457,29 +440,6 @@ h2 {
     .container .card {
         position: relative;
         border-radius: 10px;
-    }
-
-    .container .card .icon {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #f00;
-        transition: 0.7s;
-        z-index: 1;
-    }
-
-    .container .card:nth-child(1) .icon {
-        background: #e07768;
-    }
-
-    .container .card:nth-child(2) .icon {
-        background: #6eadd4;
-    }
-
-    .container .card:nth-child(3) .icon {
-        background: #4aada9;
     }
 
 
