@@ -13,7 +13,7 @@ class EnrollmentsController < ApplicationController
         @enrollment.user = current_user
         @enrollment.classe = Classe.find(params[:class_id])
         @enrollment.save
-        redirect_to courses_path
+        redirect_to dashboard_path
     end
 
     def update

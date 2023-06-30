@@ -6,10 +6,11 @@
 <div class = "pt-2">
     <%= button_to "Delete", teacher_course_path(@course), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
 </div>
-<%# <%= link_to "delete", "courses/new", class: "form btn rounded-pill btn-light text-danger" %> %>
 <% @classes.each do |classe| %>
     <p><%= classe.name %></p>
     <p><%= classe.start_date %></p>
     <p><%= classe.end_date %></p>
-    <%= link_to "cancel", "courses/new", class: "btn-aka" %>
+    <%= link_to "Edit class", teacher_course_path(classe), class: "btn-aka" %>
+    <%= button_to "Delete", teacher_class_path(classe), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
 <% end %>
+<%= link_to "Create a new class", new_teacher_course_class_path(@course), class: "btn-aka" %>

@@ -1,0 +1,25 @@
+<div class="container pt-3">
+
+    <%= simple_form_for @classe, url: teacher_course_classes_path(@course), html: {class: "w-50 shadow p-3"} do |f| %>
+        <h2 class = "text-center">Create a new class</h2>
+        <%= f.error_notification %>
+        <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
+        <%= f.input :name %>
+        <%= f.input :max_people %>
+
+        <div data-controller="datepickr" data-datepickr-target="date">
+            <%= f.input :class_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
+        </div>
+
+        <div data-controller="datepickr" data-datepickr-target="date">
+            <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
+        </div>
+        <div data-controller="datepickr" data-datepickr-target="date">
+            <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
+        </div>
+
+        <div class="button-new-course ">
+          <%= f.button :submit%>
+        </div>
+    <% end %>
+</div>
