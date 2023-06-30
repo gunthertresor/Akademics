@@ -18,7 +18,7 @@
         <%= link_to courses_path do %>
             <h2>Bestseller</h2>
         <% end %>
-        <ul class="cards w-50 grid gap-3">
+        <ul class="cards w-75 gap-5">
             <% @reviews.each do |review| %>
             <%= link_to course_path(review.course) do %>
                 <li class="card">
