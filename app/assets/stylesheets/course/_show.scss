@@ -8,7 +8,7 @@ $background-color_1: #f5f5f5;
 	padding-top: 4rem;
 }
 .img-fluid {
-	width: 100%;
+	width: 60%;
 	height: auto;
 	border: 5px solid #70578c;
 	margin-bottom: 2rem;
@@ -28,17 +28,40 @@ $background-color_1: #f5f5f5;
 }
 .col {
 	display: flex;
+	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	margin-left: 4rem;
 	margin-right: 4rem;
 }
-.card {
-	background-color: $background-color_1;
-	padding: 1rem;
-	margin-bottom: 1rem;
-	border-radius: 0.25rem;
-	width: 100%;
+.course-card {
+  background-color: #f5f5f5;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  width: 100%;
   border: 2px solid #70578c;
+  min-height: 200px;
+  white-space: nowrap;
+  overflow: auto;
 }
+
+}
+
+.upcoming-sessions {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1e1e1e;
+  padding: 1rem;
+  margin: 1rem 0;
+  text-align: start;
+  border-radius: 0.25rem;
+}
+
+.row {
+  padding-bottom: 10rem;
+}
+
+.button-new-course {
+  margin-bottom: 30rem;
 }
