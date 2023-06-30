@@ -25,7 +25,13 @@
                 <%= image_tag("#{review.course.category}.jpg", class: "w-100") %>
                 <div>
                     <h3 class="card-title"><%= review.course.name %></h3>
-                    <h6 class="card-subtitle mb-2 text-body-secondary"><%= review.rating %></h6>
+                    <% if (review.rating != nil)  %>
+                        <div class="stars">
+                            <% review.rating.times do %>
+                                <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                            <% end %>
+                        </div>
+                    <% end %>
                 </div>
                 </li>
             <% end %>
