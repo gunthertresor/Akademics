@@ -11,27 +11,22 @@
     <p><span  data-controller="typed" data-typed-sentences-value= "<%=['Choose from over 210,000 online video courses with new additions published every month'].to_json %>"></span></p>
 </div>
 <!-------------->
+<!-------------->
 <div class="card featured-courses">
   <div class="card-body">
 <div class="container my-bestseller-container">
   <%= link_to courses_path do %>
   <h2>Bestseller</h2>
   <% end %>
-  <ul class="cards">
-  <% @courses.each do |course| %>
-    <%= link_to course_path(course) do %>
+  <ul class="cards w-50 grid gap-3">
+  <% @reviews.each do |review| %>
+   <%= link_to course_path(review.course) do %>
     <li class="card">
+    <%= image_tag("#{review.course.category}.jpg", class: "w-100") %>
       <div>
-        <h3 class="card-title"><%= course.title %></h3>
-        <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-        <div class="card-content">
-          <p><%= course.description %></p>
-          <%# <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repudiandae magnam harum natus fuga et repellat in maiores.</p> %>
-        </div>
+        <h3 class="card-title"><%= review.course.name %></h3>
+        <h6 class="card-subtitle mb-2 text-body-secondary"><%= review.rating %></h6>
       </div>
-      <%# <div class="card-link-wrapper">
-        <a href="" class="card-link">Learn More</a>
-      </div> %>
     </li>
     <% end %>
     <% end %>
@@ -41,28 +36,30 @@
 </div>
 <!-------------->
 
-<div class="d-inline-flex">
+<!-------------->
 
-  <% @teachers.each do |teacher| %>
+<div class="d-inline-flex">
+    <% @teachers.each_with_index do |teacher, i| %>
 
         <%= link_to teacher_path(teacher), class: 'container my-container ' do %>
 
-    <div class="card-wrapper">
+            <div class="card-wrapper">
+                <div class="card">
 
-      <div class="card">
+                    <div class="card-image">
+                        <%# <img src="https://image.ibb.co/dUTfmJ/profile_img.jpg" alt="profile one"> %>
+                        <%= image_tag("teacher#{i}.jpg", class: "image-teacher") %>
+                    </div>
+                    <div class="details">
+                        <h2><%= teacher.first_name %> <%= teacher.last_name %>
+                            <br>
+                            <span class="job-title"><%= teacher.profil %></span>
+                        </h2>
+                    </div>
 
-        <div class="card-image">
-          <img src="https://image.ibb.co/dUTfmJ/profile_img.jpg" alt="profile one">
-        </div>
-      <div class="details">
-        <h2><%= teacher.first_name %> <%= teacher.last_name %>
-          <br>
-          <span class="job-title"><%= teacher.profil %></span>
-        </h2>
-      </div>
-    </div>
-  </div><!-- end box wrapper -->
-  <% end %>
+                </div>
+            </div><!-- end box wrapper -->
+        <% end %>
 
     <% end %>
   </div>

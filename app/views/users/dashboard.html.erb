@@ -1,0 +1,11 @@
+
+<div class="s">
+    <% @user.enrollments.each do |enrollment| %>
+        <h2><%= enrollment.classe.name %></h2>
+        <p><%= enrollment.classe.start_date.hour %>h00</p>
+        <p><%= enrollment.classe.end_date.hour %>h00</p>
+        <div class = "pt-2">
+            <%= button_to "Cancel", enrollment_path(enrollment), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+        </div>
+    <% end %>
+</div>

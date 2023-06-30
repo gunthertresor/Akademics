@@ -36,13 +36,13 @@ class Teacher::CoursesController < ApplicationController
         @course = Course.new(course_params)
         @course.user = current_user
         @course.save
-        redirect_to owner_courses_path
+        redirect_to teacher_courses_path
     end
 
     def destroy
         @course = Course.find(params[:id])
         @course.destroy
-        redirect_to owner_courses_path
+        redirect_to teacher_courses_path
     end
 
     private
