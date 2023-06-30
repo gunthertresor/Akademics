@@ -1,11 +1,13 @@
 .container {
-  width: 50%;
+  width: 40%;
   margin: auto;
   padding-top: 4rem;
 }
 .img-fluid {
   width: 100%;
   height: auto;
+  border: 9px solid #70578c;
+  margin-bottom: 2rem;
 }
 .course-title, .course-name {
   color: #333;
@@ -23,8 +25,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-left: 1rem;
-  margin-right: 1rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 .card {
   background-color: #f5f5f5;
@@ -32,4 +34,8 @@
   margin-bottom: 1rem;
   border-radius: 0.25rem;
   width: 100%;
+  border: 5px solid #70578c;
+}
+.course-name {
+  text-decoration: underline;
 }

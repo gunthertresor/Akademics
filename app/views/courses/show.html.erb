@@ -1,18 +1,18 @@
  <div class="container pt-3">
         <%= image_tag("#{@course.category}.jpg", class: "img-fluid") %>
-        <h1 class="course-title"><%= @course.title %></h1>
+        <h1 class="course-title"><%= @course.title %> by <%= @course.user.first_name%> <%= @course.user.last_name%> </h1>
         <h2 class="course-name"><%= @course.name%></h2>
     </div>
-
 
     <div class="col">
         <% @classes.each do |classe| %>
             <%= link_to class_enrollments_path(classe), method: :post, data: {turbo_method: :post}, class: 'course-best-title' do %>
                 <div class="card">
-                    <h3><%= classe.name %></h3>
-                    <p>Date de la classe: <%= classe.class_date %></p>
-                    <p>Heure de début: <%= classe.start_date %>h00</p>
-                    <p>Heure de fin: <%= classe.end_date.hour %>h00</p>
+                     <h3><%= classe.name %></h3>
+                     <h3></h3>
+                    <p>Class Date : <%= classe.class_date %></p>
+                    <p>Start time : <%= classe.start_date.hour %>h00</p>
+                    <p>End time : <%= classe.end_date.hour %>h00</p>
                 </div>
             <% end %>
         <% end %>
