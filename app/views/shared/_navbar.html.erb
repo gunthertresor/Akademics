@@ -19,6 +19,12 @@
                 <%= link_to "Courses", courses_path, class: "nav-link" %>
             </li>
 
+            <li class="d">
+                <%= link_to "/", class: 'd-flex align-middle ' do %>
+                    <i class="fa-solid fa-person-chalkboard nav-item text-white">  Become teacher</i>
+                <% end %>
+            </li>
+
             <li class="search-bar mysearch-bar " data-controller="searchtoggle">
                 <div class="search-container d-none " data-searchtoggle-target="searchtoggle">
                     <%= form_with url: root_path, method: :get, class: "d-flex" do %>
