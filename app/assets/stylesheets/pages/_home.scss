@@ -139,7 +139,7 @@
     }
 
     .card {
-        position: absolute;
+        position: center;
         top: 50%;
         left: 50%;
         width: 350px;
@@ -152,12 +152,12 @@
         transition: 0.5s;
 
         .card-image {
-            position: cover;
+            // position: center;
             top: 0px;
             left: 0px;
             width: 100%;
             height: 100%;
-            z-index: 2;
+            // z-index: 2;
             background-color: #000;
             transition: .5s;
         }
