@@ -20,7 +20,7 @@ bob = User.create(first_name: 'Bob', last_name: "Johnson", email: "bob.johnson@e
 linda = User.create(first_name: 'Linda', last_name: "Williams", email: "linda.williams@example.com", password: "rerere", phone_number: "456 789 0123", address: "012 Maple Drive", status: "student")
 amy = User.create(first_name: 'Amy', last_name: "Brown", email: "amy.brown@example.com", password: "rerere", phone_number: "567 890 1234", address: "345 Birch Boulevard", status: "student")
 george = User.create(first_name: 'George', last_name: "Davis", email: "george.davis@example.com", password: "rerere", phone_number: "678 901 2345", address: "678 Cedar Court", status: "teacher")
-megan = User.create(first_name: 'Megan', last_name: "Miller", email: "megan.miller@example.com", password: "rer ere", phone_number: "789 012 3456", address: "901 Spruce Street", status: "teacher")
+megan = User.create(first_name: 'Megan', last_name: "Miller", email: "megan.miller@example.com", password: "rerere", phone_number: "789 012 3456", address: "901 Spruce Street", status: "teacher")
 steve = User.create(first_name: 'Steve', last_name: "Wilson", email: "steve.wilson@example.com", password: "rerere", phone_number: "890 123 4567", address: "234 Aspen Avenue", status: "teacher")
 
 puts "-------------- create Courses --------------"
