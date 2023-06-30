@@ -1,24 +1,19 @@
-<div class = "container pt-3">
-    <%= image_tag("#{@course.category}.jpg", class: "img-fluid") %>
-    <h1><%= @course.title %></h1>
-    <h2><%= @course.name%></h2>
+ <div class="container pt-3">
+        <%= image_tag("#{@course.category}.jpg", class: "img-fluid") %>
+        <h1 class="course-title"><%= @course.title %></h1>
+        <h2 class="course-name"><%= @course.name%></h2>
+    </div>
 
-</div>
 
-
-<div class = "col">
-    <% @classes.each do |classe| %>
-
-        <%= link_to class_enrollments_path(classe), method: :post, data: {turbo_method: :post},  class: 'course-best-title' do %>
-            <div>
-                <p><%= classe.name %></p>
-                <p><%= classe.class_date %></p>
-                <div class="d-flex card">
-                    <p><%= classe.start_date %>h00</p>
-                    <p><%= classe.end_date.hour %>h00</p>
+    <div class="col">
+        <% @classes.each do |classe| %>
+            <%= link_to class_enrollments_path(classe), method: :post, data: {turbo_method: :post}, class: 'course-best-title' do %>
+                <div class="card">
+                    <h3><%= classe.name %></h3>
+                    <p>Date de la classe: <%= classe.class_date %></p>
+                    <p>Heure de début: <%= classe.start_date %>h00</p>
+                    <p>Heure de fin: <%= classe.end_date.hour %>h00</p>
                 </div>
-            </div>
+            <% end %>
         <% end %>
-
-    <% end %>
-</div>
+    </div>
