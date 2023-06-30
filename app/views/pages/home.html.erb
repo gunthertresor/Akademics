@@ -13,26 +13,26 @@
 <!-------------->
 <!-------------->
 <div class="card featured-courses">
-  <div class="card-body">
-    <div class="my-bestseller-container container">
-      <%= link_to courses_path do %>
-        <h2>Bestseller</h2>
-      <% end %>
-      <ul class="cards w-50 grid gap-3">
-        <% @reviews.each do |review| %>
-          <%= link_to course_path(review.course) do %>
-            <li class="card">
-              <%= image_tag("#{review.course.category}.jpg", class: "w-100") %>
-              <div>
-                <h3 class="card-title"><%= review.course.name %></h3>
-                <h6 class="card-subtitle mb-2 text-body-secondary"><%= review.rating %></h6>
-              </div>
-            </li>
-          <% end %>
+    <div class="card-body">
+        <div class="my-bestseller-container container">
+        <%= link_to courses_path do %>
+            <h2>Bestseller</h2>
         <% end %>
-      </ul>
+        <ul class="cards w-50 grid gap-3">
+            <% @reviews.each do |review| %>
+            <%= link_to course_path(review.course) do %>
+                <li class="card">
+                <%= image_tag("#{review.course.category}.jpg", class: "w-100") %>
+                <div>
+                    <h3 class="card-title"><%= review.course.name %></h3>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"><%= review.rating %></h6>
+                </div>
+                </li>
+            <% end %>
+            <% end %>
+        </ul>
+        </div>
     </div>
-  </div>
 </div>
 <!-------------->
 

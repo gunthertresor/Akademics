@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   resources :courses, only: [:index, :show] do
     resources :reviews, only: [:new, :create]
-    resources :classes, only: [:new, :create]
+    # resources :classes, only: [:new, :create]
     #list meilleur prof
     collection do
         get :best
@@ -31,7 +31,11 @@ Rails.application.routes.draw do
   end
 
   namespace :teacher do
-    resources :courses, only: [:show, :new, :create, :index, :update, :edit, :destroy]
+    resources :courses, only: [:show, :new, :create, :index, :update, :edit, :destroy] do
+        resources :classes, only: [:new, :create]
+    end
+    resources :classes, only: [:show, :index, :update, :edit, :destroy]
+
     resources :enrollments, only: [:index, :update, :edit, :destroy]
     resources :reviews, only: [:index, :show] do
       collection do
