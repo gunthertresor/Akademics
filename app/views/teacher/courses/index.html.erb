@@ -1,5 +1,6 @@
-<div class="container mt-2">
-    <div class="course-list">
+<div class="container">
+  <div class = "row">
+    <div class = "col-12 col-lg">
         <% @courses.each do |course| %>
           <%= link_to teacher_course_path(course), class: 'course-box' do %>
                 <%# <div class="course-box"> %>
@@ -12,11 +13,8 @@
                     </object>
                 <%# </div> %>
             <% end %>
-
-
         <% end %>
+      <%= link_to "Create a new course", "courses/new", class: "button-new-course" %>
     </div>
-
-    <%= link_to "Create a new course", "courses/new", class: "button-new-course" %>
-    <%# </div> %>
+  </div>
 </div>
