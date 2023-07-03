@@ -1,40 +1,5 @@
 
-.background-container {
-    margin: 0px;
-    padding: 0px;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
-    position: absolute;
 
-    .background-rouded-div1 {
-        border-radius: 50%;
-        position: fixed;
-        top: -100vh;
-        left: -100vw;
-        width: 400vh;
-        height: 400vh;
-        background: linear-gradient(90deg, rgba(239,237,241,1) 0%, rgba(207,207,207,0.9724483543417367) 100%);
-        transform: rotate(90deg);
-    }
-    .background-rouded-div2 {
-        border-radius: 50%;
-        position: fixed;
-        bottom: -100vh;
-        right: -100vw;
-        width: 200vh;
-        height: 200vh;
-        transform: rotate(-45deg);
-        background: linear-gradient(90deg, rgba(239,237,241,1) 0%, rgba(207,207,207,0.9724483543417367) 100%);
-    }
-}
-
-// body {
-//   font-family: Arial, sans-serif;
-// }
 .search_bar_button{
 //   background: #6675df;
   // border-radius: 50%;
