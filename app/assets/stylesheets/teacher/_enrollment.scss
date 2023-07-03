@@ -1,0 +1,16 @@
+.s {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 4rem;
+  padding: 4rem;
+}
+
+.enrollment-card {
+  width: 20rem;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  padding: 20px;
+}

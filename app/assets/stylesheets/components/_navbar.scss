@@ -99,6 +99,9 @@
         .search-bar {
             display: flex;
         }
+        .burger-menu {
+            // display: none;
+        }
     }
 
     .navbar-right {
@@ -139,24 +142,13 @@
 
 }
 
-// .login-link {
-//     border: 1px solid rgba(128, 128, 128, 0.01);
-//     border-radius: 5px;
-//     padding: 5px 10px;
-//     color: rgb(197, 197, 197);
-
-//     &:hover {
-//         border: 1px solid white;
-//         color: white;
-//     }
-// }
-
-@media (min-width: 1100px) {
-    // .card {
-    //   flex-basis: calc(25% - 30px);
-    // }
-
-    // .card:not(:last-child) {
-    //   margin-right: 40px;
-    // }
-  }
+@media (max-width: 850px) {
+    .navbar-middle {
+        li {
+            display: none;
+        }
+        .burger-menu {
+            display: block;
+        }
+    }
+}
