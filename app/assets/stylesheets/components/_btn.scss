@@ -3,11 +3,46 @@
     border: 1px solid white;
     border-radius: 5px;
 }
+.square {
 
-
+}
 .btn-aka {
-    padding: 10px 20px;
-    border: 1px solid white;
+    padding: 10px 30px;
     border-radius: 5px;
-    background-color: white;
+    font-weight: bold;
+    background-color: $aka-primary-color;
+    border: none;
+    color: white;
+    &:hover {
+        background-color: $aka-secondary-color;
+    }
+}
+
+.btn-aka-light {
+    padding: 5px 15px;
+    border: 1px solid $aka-primary-color;
+    border-radius: 5px;
+    font-weight: bold;
+    color: $aka-primary-color;
+    &:hover {
+        background-color: $aka-secondary-color;
+        color: $aka-primary-color;
+    }
+}
+
+.btn-aka-light-login {
+    padding: 5px 15px;
+    border: 1px solid $aka-primary-color;
+    border-radius: 5px;
+    font-weight: bold;
+    color: $aka-primary-color;
+    &:hover {
+        background-color: $aka-text-color;
+        // border: 1px solid $aka-text-color;
+        color: $aka-primary-color;
+    }
+}
+
+.square {
+    padding: .8em 1em;
 }
