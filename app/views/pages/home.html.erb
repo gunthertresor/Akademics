@@ -1,100 +1,112 @@
- <div class="introduction">
-    <div class="introduction banner">
-        <h1>Learning that gets you</h1>
-        <p>Skills for your present (and your future). Get started with us.</p>
-    </div>
-</div>
-
-<div class="about">
-    <h2><span  data-controller="typed" data-typed-sentences-value= "<%= ['A broad selection of courses'].to_json %>"></span></h2>
-
-    <p><span  data-controller="typed" data-typed-sentences-value= "<%=['Choose from over 210,000 online video courses with new additions published every month'].to_json %>"></span></p>
-</div>
-<!-------------->
-<!-------------->
-<div class="card featured-courses">
-    <div class="card-body">
-        <div class="my-bestseller-container container">
-          <%= link_to courses_path do %>
-            <h2>Bestseller</h2>
-          <% end %>
-          <ul class="cards w-75 gap-5">
-            <% @reviews.each do |review| %>
-            <%= link_to course_path(review.course) do %>
-                <li class="card">
-                  <%= image_tag("#{review.course.category}.jpg", class: "w-100") %>
-                  <div>
-                    <h3 class="card-title"><%= review.course.name %></h3>
-                    <% if (review.rating != nil)  %>
-                        <div class="stars">
-                            <% review.rating.times do %>
-                                <i class="fa-solid fa-star" style="color: #e5c006;"></i>
-                            <% end %>
-                        </div>
-                    <% end %>
-                  </div>
-                </li>
-            <% end %>
-            <% end %>
-          </ul>
+<div class="home-container">
+    <div class="banner">
+        <div class="gradiant">
+            <h1>Learning that gets you</h1>
+            <p>Skills for your present (and your future). Get started with us.</p>
         </div>
     </div>
 </div>
+
+<div class="home-container">
+    <div class="about">
+        <h2><span  data-controller="typed" data-typed-sentences-value= "<%= ['A broad selection of courses'].to_json %>"></span></h2>
+        <p><span  data-controller="typed" data-typed-sentences-value= "<%=['Choose from over 210,000 online video courses with new additions published every month'].to_json %>"></span></p>
+    </div>
+</div>
 <!-------------->
-
 <!-------------->
+<div class="home-container">
 
-<div class="d-inline-flex">
-    <% @teachers.each_with_index do |teacher, i| %>
+</div>
 
-        <%= link_to teacher_path(teacher), class: 'my-container container  ' do %>
-
-            <div class="card-wrapper">
-                <div class="card">
-
-                    <div class="card-image">
-                        <%# <img src="https://image.ibb.co/dUTfmJ/profile_img.jpg" alt="profile one"> %>
-                        <%= image_tag("teacher#{i}.png", class: "h-100 w-auto") %>
-                    </div>
-                    <div class="details">
-                        <h2><%= teacher.first_name %> <%= teacher.last_name %>
-                            <br>
-                            <span class="job-title"><%= teacher.profil %></span>
-                        </h2>
-                    </div>
-
-                </div>
-            </div><!-- end box wrapper -->
+<div class="home-container">
+        <%= link_to courses_path do %>
+            <h2>Bestseller</h2>
         <% end %>
+        <div class="course-card-container">
+            <%# <ul class="coudeqwd"> %>
+                <% @reviews.each do |review| %>
+                    <%= link_to course_path(review.course), class: 'course-card' do %>
+                        <li class="courwqdqqse-cwdqdward">
+                            <%= image_tag("#{review.course.category}.jpg", class: "course-card-img") %>
+                            <div>
+                                <h3 class="card-title"><%= review.course.name %></h3>
+                                <p class="card-title"><%= review.course.price %>$</p>
+                                <% if (review.rating != nil)  %>
+                                    <div class="stars">
+                                        <% review.rating.times do %>
+                                            <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                                        <% end %>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </li>
+                    <% end %>
+                <% end %>
+            <%# </ul> %>
+    </div>
+</div>
+<!-------------->
 
-    <% end %>
-  </div>
+<!-------------->
+
+<div class="home-container">
+
+    <div class="d-inline-flex">
+        <% @teachers.each_with_index do |teacher, i| %>
+
+            <%= link_to teacher_path(teacher), class: 'my-container container  ' do %>
+
+                <div class="card-wrapper">
+                    <div class="card">
+
+                        <div class="card-image">
+                            <%# <img src="https://image.ibb.co/dUTfmJ/profile_img.jpg" alt="profile one"> %>
+                            <%= image_tag("teacher#{i}.png", class: "h-100 w-auto") %>
+                        </div>
+                        <div class="details">
+                            <h2><%= teacher.first_name %> <%= teacher.last_name %>
+                                <br>
+                                <span class="job-title"><%= teacher.profil %></span>
+                            </h2>
+                        </div>
+
+                    </div>
+                </div><!-- end box wrapper -->
+            <% end %>
+
+        <% end %>
+    </div>
+</div>
 
 
 
 
 
 <!-------------->
-<div class="how-it-works">
-    <h2>How learners like you are achieving their goals</h2>
-    <div class="step">
-        <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
-        <h3>Étape 1</h3>
-        <p>Explication de l'étape 1</p> %>
-    </div>
-    <div class="step">
-        <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
-        <h3>Étape 1</h3>
-        <p>Explication de l'étape 1</p> %>
-    </div>
-    <div class="step">
-        <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
-        <h3>Étape 1</h3>
-        <p>Explication de l'étape 1</p> %>
-    </div>
-    <div class="step">
-        <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
-        <h3>Étape 1</h3>
-        <p>Explication de l'étape 1</p> %>
+<div class="home-container">
+
+    <div class="how-it-works">
+        <h2>How learners like you are achieving their goals</h2>
+        <div class="step">
+            <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
+            <h3>Étape 1</h3>
+            <p>Explication de l'étape 1</p> %>
+        </div>
+        <div class="step">
+            <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
+            <h3>Étape 1</h3>
+            <p>Explication de l'étape 1</p> %>
+        </div>
+        <div class="step">
+            <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
+            <h3>Étape 1</h3>
+            <p>Explication de l'étape 1</p> %>
+        </div>
+        <div class="step">
+            <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
+            <h3>Étape 1</h3>
+            <p>Explication de l'étape 1</p> %>
+        </div>
     </div>
 </div>
