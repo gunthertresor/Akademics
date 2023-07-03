@@ -20,39 +20,47 @@
 </div>
 
 <div class="home-container">
-        <%= link_to courses_path do %>
-            <h2>Bestseller</h2>
-        <% end %>
+    <%= link_to courses_path do %>
+        <h2>Bestseller</h2>
+    <% end %>
+    <div class="home-courses">
         <div class="course-card-container">
-            <%# <ul class="coudeqwd"> %>
-                <% @reviews.each do |review| %>
-                    <%= link_to course_path(review.course), class: 'course-card' do %>
-                        <li class="courwqdqqse-cwdqdward">
-                            <%= image_tag("#{review.course.category}.jpg", class: "course-card-img") %>
-                            <div>
-                                <h3 class="card-title"><%= review.course.name %></h3>
-                                <p class="card-title"><%= review.course.price %>$</p>
+            <% @reviews.each_with_index do |review, i| %>
+                <div class='course-card'>
+                <%= link_to course_path(review.course) do %>
+                <div class= "course-card-sub">
+                        <%= image_tag("#{review.course.category}.jpg", class: "course-card-img") %>
+                        <div class="courses-card-info">
+                            <i class="fa-regular fa-heart courses-card-heart"></i>
+                            <h3 class="card-title  <%= review.course.category%>"><%= review.course.name %></h3>
+                            <p class="card-price"><%= review.course.price %> $</p>
+                            <p class="card-time">1h30</p>
+                            <p class="card-name"> <%= review.course.user.first_name %> <%= review.course.user.last_name %></p>
+                            <div class="card-stars">
                                 <% if (review.rating != nil)  %>
-                                    <div class="stars">
-                                        <% review.rating.times do %>
-                                            <i class="fa-solid fa-star" style="color: #e5c006;"></i>
-                                        <% end %>
-                                    </div>
+                                    <% review.rating.times do %>
+                                        <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                                    <% end %>
                                 <% end %>
                             </div>
-                        </li>
-                    <% end %>
+                        </div>
+                </div>
                 <% end %>
-            <%# </ul> %>
+                </div>
+            <% end %>
+        </div>
     </div>
 </div>
+
+
+
 <!-------------->
 
 <!-------------->
 
 <div class="home-container">
 
-    <div class="d-inline-flex">
+    <div class="teacher-card-container">
         <% @teachers.each_with_index do |teacher, i| %>
 
             <%= link_to teacher_path(teacher), class: 'my-container container  ' do %>
@@ -61,13 +69,14 @@
                     <div class="card">
 
                         <div class="card-image">
-                            <%# <img src="https://image.ibb.co/dUTfmJ/profile_img.jpg" alt="profile one"> %>
-                            <%= image_tag("teacher#{i}.png", class: "h-100 w-auto") %>
+                        <% if teacher.url_avatar %>
+                            <img src="<%= teacher.url_avatar %>" alt="profile one">
+                        <% end %>
+                            <%# <%= image_tag("teacher#{i}.png", class: "h-100 w-auto") %> %>
                         </div>
                         <div class="details">
-                            <h2><%= teacher.first_name %> <%= teacher.last_name %>
-                                <br>
-                                <span class="job-title"><%= teacher.profil %></span>
+                            <h2>
+                                <%= teacher.first_name %> <%= teacher.last_name %>
                             </h2>
                         </div>
 

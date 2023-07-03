@@ -20,13 +20,13 @@
         height: 1px;
         // width: 5px;
         // border-radius: 50%;
-        background-color: $aka-white-color;
+        background-color: $aka-over-color;
         position: absolute;
         top: 35px;
         visibility: hidden;
         pointer-events: none;
         // left: 180px;
-        background-color: $aka-text-color;
+        // background-color: $aka-text-color;
     }
 
     .nav-item {
@@ -36,11 +36,11 @@
         padding: 5px 15px;
         // background-color: aqua;
         &:hover{
-            color: $aka-text-color;
+            color: $aka-over-color;
         }
     }
     .active {
-        color: $aka-text-color;
+        color: $aka-over-color;
     }
 
     .navbar-left {
@@ -63,18 +63,18 @@
             }
             h1 {
                 position: absolute;
-                left: 18px;
-                top: 5px;
-                color: $aka-text-color;
-                font-size: 30px;
+                left: 19px;
+                top: 6px;
+                color: $aka-white-color;
+                font-size: 28px;
             }
         }
         .logo-letter-rest {
             position: absolute;
             left: 52px;
-            top: 5px;
-            color: $aka-text-color;
-            font-size: 30px;
+            top: 6px;
+            color: $aka-white-color;
+            font-size: 28px;
             transition: all 200ms ease-in-out;
         }
         &:hover {
@@ -92,6 +92,7 @@
         width: 100%;
         height: 30px;
         display: flex;
+        font-size: 14px;
 
         align-items: center;
         justify-content: space-between;

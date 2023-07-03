@@ -24,6 +24,7 @@
     border-radius: 5px;
     font-weight: bold;
     color: $aka-primary-color;
+    background-color: $aka-black-color;
     &:hover {
         background-color: $aka-secondary-color;
         color: $aka-primary-color;
@@ -31,15 +32,17 @@
 }
 
 .btn-aka-light-login {
-    padding: 5px 15px;
-    border: 1px solid $aka-primary-color;
+    padding: 4px 13px;
+    border: 1px solid $aka-text-color;
     border-radius: 5px;
     font-weight: bold;
-    color: $aka-primary-color;
+    color: $aka-white-color;
+    font-size: 15px;
+
     &:hover {
-        background-color: $aka-text-color;
-        // border: 1px solid $aka-text-color;
-        color: $aka-primary-color;
+        background-color: $aka-primary-color;
+        // border: 1px solid $aka-primary-color;
+        color: $aka-white-color;
     }
 }
 

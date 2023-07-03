@@ -1,4 +1,12 @@
+body {
+    // background: linear-gradient(90deg, rgba(80,58,180,1) 0%, rgba(42,47,79,1) 66%, rgba(42,47,79,1) 100%);
+    // background: linear-gradient(90deg, rgb(43, 31, 97) 0%, rgba(42,47,79,1) 66%, rgba(42,47,79,1) 100%);
+    background: linear-gradient(90deg, rgba(169,161,203,1) 0%, rgba(80,86,126,1) 78%, rgba(42,47,79,1) 100%);
+}
+
 .background-container {
+    position: fixed;
+
     margin: 0px;
     padding: 0px;
     z-index: -1;
@@ -8,25 +16,30 @@
     width: 100vw;
     overflow: hidden;
     position: absolute;
+    // background: linear-gradient(45deg, rgba(80,58,180,1) 0%, rgba(42,47,79,1) 66%, rgba(42,47,79,1) 100%);
 
     .background-rouded-div1 {
         border-radius: 50%;
         position: fixed;
-        top: -100vh;
-        left: -100vw;
-        width: 400vh;
-        height: 400vh;
-        background: linear-gradient(90deg, rgba(239,237,241,1) 0%, rgba(207,207,207,0.9724483543417367) 100%);
-        transform: rotate(90deg);
+        // top: -200vh;
+        // left: -200vw;
+        width: 300vw;
+        height: 300vh;
+        // background: linear-gradient(90deg, rgba(239,237,241,1) 0%, rgba(207,207,207,0.9724483543417367) 100%);
+        // background: linear-gradient(90deg, rgba(80,58,180,1) 0%, rgba(42,47,79,1) 66%, rgba(42,47,79,1) 100%);
+        // background: linear-gradient(90deg, rgb(50, 36, 113) 0%, rgba(42,47,79,1) 66%, rgba(42,47,79,1) 100%);
+        // transform: rotate(90deg);
+        background: linear-gradient(90deg, rgba(169,161,203,1) 0%, rgba(80,86,126,1) 78%, rgba(42,47,79,1) 100%);
     }
     .background-rouded-div2 {
         border-radius: 50%;
         position: fixed;
-        bottom: -100vh;
-        right: -100vw;
-        width: 200vh;
-        height: 200vh;
+        bottom: -200vh;
+        right: -200vw;
+        width: 400%;
+        height: 400%;
         transform: rotate(-45deg);
-        background: linear-gradient(90deg, rgba(239,237,241,1) 0%, rgba(207,207,207,0.9724483543417367) 100%);
+        // background: linear-gradient(90deg, rgba(239,237,241,1) 0%, rgba(207,207,207,0.9724483543417367) 100%);
+        background: linear-gradient(90deg, rgba(80,58,180,1) 0%, rgba(42,47,79,1) 66%, rgba(42,47,79,1) 100%);
     }
 }
