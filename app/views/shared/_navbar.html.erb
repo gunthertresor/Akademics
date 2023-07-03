@@ -1,7 +1,7 @@
 
 
 <div class="navbarr shadow-lg bg-body-tertiary">
-    <div class="navbar-container">
+    <div class="navbar-container" data-dotaka-target="navbar">
         <%# --------------------- navbar left ---------------------%>
         <%= link_to root_path, class: "navbar-left" do %>
             <div class="logo-letter">
@@ -9,52 +9,63 @@
                 <h1>A</h1>
             </div>
             <h1 class="logo-letter-rest">kademics</h1>
-
-
+            <div class="dot-aka" data-dotaka-target="dotaka"></div>
         <% end %>
 
         <%# --------------------- navbar middle ---------------------%>
         <ul class="navbar-middle">
-            <li class="nav-item active">
-                <%= link_to "Courses", courses_path, class: "nav-link" %>
-            </li>
-
-            <li class="d">
-                <%= link_to "/", class: 'd-flex align-middle ' do %>
-                    <i class="fa-solid fa-person-chalkboard nav-item text-white">  Become teacher</i>
+            <div class="d-flex">
+                <%= link_to courses_path, class: 'v' do %>
+                    <li class="nav-item <%= active_class(courses_path) %>" data-dotaka-target="courses" data-action="mouseover->dotaka#mouseOver1 mouseout->dotaka#mouseOut1">
+                        Courses
+                    </li>
                 <% end %>
-            </li>
+
+                <%= link_to my_profil_path, class: 'v' do %>
+                    <li class="nav-item <%= active_class(my_profil_path) %>" data-dotaka-target="profil" data-action="mouseover->dotaka#mouseOver2 mouseout->dotaka#mouseOut2">
+                        Category
+                    </li>
+                <% end %>
+
+                <%= link_to dashboard_path, class: 'd-flex align-middle ' do %>
+                    <li class="nav-item <%= active_class(dashboard_path) %>" data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
+                        Become teacher
+                        <i class="fa-solid fa-person-chalkboard"></i>
+                    </li>
+                <% end %>
+            </div>
 
             <li class="search-bar mysearch-bar " data-controller="searchtoggle">
                 <div class="search-container d-none " data-searchtoggle-target="searchtoggle">
                     <%= form_with url: root_path, method: :get, class: "d-flex" do %>
                         <%= text_field_tag :query,
                             params[:query],
-                            class: "form-control",
+                            # class: "form-control",
                             placeholder: "Find a Cours"
                         %>
-                        <%= submit_tag "Search", class: "btn btn-primary search_bar_button "%>
+                        <%= submit_tag "Search", class: "btn-aka search_bar_button "%>
                     <% end %>
                 </div>
-                <i class="fa-solid fa-magnifying-glass nav-link" data-action="click->searchtoggle#toggle"></i>
+                <i class="fa-solid fa-magnifying-glass nav-item" data-action="click->searchtoggle#toggle"></i>
             </li>
         </ul>
 
         <%# --------------------- navbar right ---------------------%>
         <ul class="navbar-right">
-            <li class="nav-item">
-                <%= link_to "/", class: 'c' do %>
-                    <i class="fa-solid fa-cart-shopping nav-link"></i>
-                <% end %>
-            </li>
+            <%= link_to "/", class: 'c' do %>
+                <li class="nav-item">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </li>
+            <% end %>
 
             <% if user_signed_in? %>
 
-                <li class="nav-item">
-                    <%= link_to "Messages", "#", class: "nav-link" %>
-                </li>
+                <%= link_to "/", class: 'c' do %>
+                    <li class="nav-item">Messages</li>
+                <% end %>
 
-                <li class="nav-item dropdown" data-controller="menutoggle">
+
+                <li class="nnn" data-controller="menutoggle">
                     <a href="#" class="avatar" id="navbarDropdown" data-bs-toggle="dropdown">
                         <%= image_tag("user_profile_image.jpg", class: "avatar", data: { action: "click->menutoggle#toggle" }) %>
                     </a>
@@ -71,7 +82,7 @@
             <% else %>
 
                 <li class="nav-item">
-                    <%= link_to "Login", new_user_session_path, class: "nav-link login-link" %>
+                    <%= link_to "Login", new_user_session_path, class: "nav-link btn-aka-light-login" %>
                 </li>
 
             <% end %>

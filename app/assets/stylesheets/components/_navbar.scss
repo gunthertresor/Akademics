@@ -1,29 +1,51 @@
 .navbarr {
-  color: rgb(251, 248, 245);
-  background: linear-gradient(90deg, rgba(112,87,140,1) 0%, rgba(140,92,185,0.9724483543417367) 100%);
-  a {
-      font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  }
-}
-.nav-link {
-    color: rgb(223, 220, 220);
-    cursor: pointer;
-    padding: 10px;
-    &:hover {
-        color: white;
+    background: $aka-secondary-color;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    // height: 100px;
+    z-index: 100;
+    a {
+        font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 }
+
 .navbar-container {
     display: flex;
-    // flex-grow: 1;
     align-items: center;
     justify-content: center;
     justify-content: space-between;
 
+    .dot-aka {
+        height: 1px;
+        // width: 5px;
+        // border-radius: 50%;
+        background-color: $aka-white-color;
+        position: absolute;
+        top: 35px;
+        visibility: hidden;
+        pointer-events: none;
+        // left: 180px;
+        background-color: $aka-text-color;
+    }
+
+    .nav-item {
+        color: $aka-white-color;
+        cursor: pointer;
+        // padding: 11px 15px;
+        padding: 5px 15px;
+        // background-color: aqua;
+        &:hover{
+            color: $aka-text-color;
+        }
+    }
+    .active {
+        color: $aka-text-color;
+    }
+
     .navbar-left {
         width: 200px;
         height: 50px;
-        // background-color: brown;
         flex-shrink: 0;
 
         .logo-letter {
@@ -34,7 +56,7 @@
                 width: 38px;
                 height: 38px;
                 border-radius: 5px;
-                border: 1px solid $light-gray;
+                border: 1px solid $aka-primary-color;
                 text-align: center;
                 justify-content: center;
                 transition: all 200ms ease-in-out;
@@ -43,7 +65,7 @@
                 position: absolute;
                 left: 18px;
                 top: 5px;
-                color: $light-gray;
+                color: $aka-text-color;
                 font-size: 30px;
             }
         }
@@ -51,7 +73,7 @@
             position: absolute;
             left: 52px;
             top: 5px;
-            color: $light-gray;
+            color: $aka-text-color;
             font-size: 30px;
             transition: all 200ms ease-in-out;
         }
@@ -82,7 +104,6 @@
     .navbar-right {
         display: flex;
         align-items: center;
-        // background-color: chartreuse;
         margin-right: 10px;
         width: 300px;
         .avatar {
@@ -96,33 +117,46 @@
             position: absolute;
             right: -10px;
             top: 45px;
-            background-color: rgba(140,92,185,1);
-            border-bottom-radius: 5px;
-
+            background-color: $aka-secondary-color;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            text-align: center;
             .dropdown-item {
-                border-bottom: 1px solid white;
+                border-bottom: 1px solid $aka-primary-color;
                 padding: 10px 30px;
-                color: rgb(223, 220, 220);
+                color: $aka-white-color;
                 &:hover {
-                    color: white;
+                    color: $aka-primary-color;
                 }
             }
             .dropdown-item:last-child {
                 border-bottom: none;
+                color: red;
+
             }
         }
     }
 
 }
 
-.login-link {
-    border: 1px solid rgba(128, 128, 128, 0.01);
-    border-radius: 5px;
-    padding: 5px 10px;
-    color: rgb(197, 197, 197);
+// .login-link {
+//     border: 1px solid rgba(128, 128, 128, 0.01);
+//     border-radius: 5px;
+//     padding: 5px 10px;
+//     color: rgb(197, 197, 197);
 
-    &:hover {
-        border: 1px solid white;
-        color: white;
-    }
-}
+//     &:hover {
+//         border: 1px solid white;
+//         color: white;
+//     }
+// }
+
+@media (min-width: 1100px) {
+    // .card {
+    //   flex-basis: calc(25% - 30px);
+    // }
+
+    // .card:not(:last-child) {
+    //   margin-right: 40px;
+    // }
+  }

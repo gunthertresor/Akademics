@@ -15,15 +15,15 @@
 <div class="card featured-courses">
     <div class="card-body">
         <div class="my-bestseller-container container">
-        <%= link_to courses_path do %>
+          <%= link_to courses_path do %>
             <h2>Bestseller</h2>
-        <% end %>
-        <ul class="cards w-75 gap-5">
+          <% end %>
+          <ul class="cards w-75 gap-5">
             <% @reviews.each do |review| %>
             <%= link_to course_path(review.course) do %>
                 <li class="card">
-                <%= image_tag("#{review.course.category}.jpg", class: "w-100") %>
-                <div>
+                  <%= image_tag("#{review.course.category}.jpg", class: "w-100") %>
+                  <div>
                     <h3 class="card-title"><%= review.course.name %></h3>
                     <% if (review.rating != nil)  %>
                         <div class="stars">
@@ -32,11 +32,11 @@
                             <% end %>
                         </div>
                     <% end %>
-                </div>
+                  </div>
                 </li>
             <% end %>
             <% end %>
-        </ul>
+          </ul>
         </div>
     </div>
 </div>

@@ -23,6 +23,10 @@
     text-decoration: none;
     // font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 	font-family: Poppins-Regular, sans-serif;
+    transition: all 0.1s;
+    -webkit-transition: all 0.1s;
+    -o-transition: all 0.1s;
+    -moz-transition: all 0.1s;
 
     ul, li {
         margin: 0px;
@@ -31,14 +35,14 @@
     a {
         text-decoration: none;
         font-family: Poppins-Regular;
-        font-size: 14px;
-        line-height: 1.7;
-        color: #666666;
-        margin: 0px;
-        transition: all 0.4s;
-        -webkit-transition: all 0.4s;
-        -o-transition: all 0.4s;
-        -moz-transition: all 0.4s;
+        // font-size: 14px;
+        // line-height: 1.7;
+        // color: #666666;
+        // margin: 0px;
+        // transition: all 0.4s;
+        // -webkit-transition: all 0.4s;
+        // -o-transition: all 0.4s;
+        // -moz-transition: all 0.4s;
     }
 
     a:focus {
@@ -47,6 +51,6 @@
 
     a:hover {
         text-decoration: none;
-        color: #6675df;
+        // color: #6675df;
     }
 }
