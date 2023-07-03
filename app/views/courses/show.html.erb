@@ -1,20 +1,25 @@
-<div class="courses-show-container container pt-3">
-    <%= image_tag("#{@course.category}.jpg", class: "img-fluid") %>
+<div class = "container">
+  <div class="courses-show-container pt-3 shadow p-3">
+    <%= image_tag("#{@course.category}.jpg", class: "img-fluid mb-2") %>
     <h1 class="course-title"><%= @course.title %> by <%= @course.user.first_name%> <%= @course.user.last_name%> </h1>
     <h2 class="course-name"><%= @course.name%></h2>
-</div>
+  </div>
 
-<div class="upcoming-sessions"><p>Upcoming sessions</p></div>
+  <div class="upcoming-sessions text-center"><p>Upcoming sessions</p></div>
 
-<div class="col d-flex flex-wrap">
-    <% @classes.each do |classe| %>
-        <div class="course-card">
+    <div class = "container shadow p-3 rounded-3">
+      <div class="col d-flex flex-wrap justify-content-around">
+        <% @classes.each do |classe| %>
+          <div class="course-card p-2">
             <h3><%= classe.name %></h3>
             <h3></h3>
             <p>Class Date : <%= classe.class_date %></p>
             <p>Start time : <%= classe.start_date.hour %>h00</p>
             <p>End time : <%= classe.end_date.hour %>h00</p>
             <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
-        </div>
-    <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
