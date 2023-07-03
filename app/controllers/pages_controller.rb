@@ -3,8 +3,8 @@ class PagesController < ApplicationController
 
   def home
     # @courses = Course.all
-    # @reviews = Review.where(rating: 5) # filtrer si meme nom de cour
-    @reviews = Review.all # filtrer si meme nom de cour
+    @reviews = Review.where(rating: 5) # filtrer si meme nom de cour
+    # @reviews = Review.all # filtrer si meme nom de cour
     # @courses = Course.joins(:reviews) #.where(rating: 5)
     # .limit(10)
     # @teacher = User.find(1)
