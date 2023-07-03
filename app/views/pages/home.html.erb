@@ -31,7 +31,7 @@
                             <%= image_tag("#{review.course.category}.jpg", class: "course-card-img") %>
                             <div>
                                 <h3 class="card-title"><%= review.course.name %></h3>
-                                <p class="card-title"><%= review.course.price %>$</p>
+                                <p class="card-title"><strong><%= review.course.price %></strong>$</p>
                                 <% if (review.rating != nil)  %>
                                     <div class="stars">
                                         <% review.rating.times do %>
@@ -44,7 +44,7 @@
                     <% end %>
                 <% end %>
             <%# </ul> %>
-    </div>
+        </div>
 </div>
 <!-------------->
 
