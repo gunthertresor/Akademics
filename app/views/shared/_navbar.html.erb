@@ -15,6 +15,9 @@
         <%# --------------------- navbar middle ---------------------%>
         <ul class="navbar-middle">
             <div class="d-flex">
+                <div class="burger-menu nav-item">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
                 <%= link_to courses_path, class: 'v' do %>
                     <li class="nav-item <%= active_class(courses_path) %>" data-dotaka-target="courses" data-action="mouseover->dotaka#mouseOver1 mouseout->dotaka#mouseOut1">
                         Courses

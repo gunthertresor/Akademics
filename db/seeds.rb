@@ -47,8 +47,12 @@ enrollment4 = Enrollment.create(user_id: bob.id, classe_id: class2.id, cancelled
 
 puts "-------------- create Review --------------"
 Review.create(user_id: john.id, course_id: course_george1.id, rating: 5)
+Review.create(user_id: john.id, course_id: course_george2.id, rating: 5)
+Review.create(user_id: john.id, course_id: course_megan1.id, rating: 5)
 Review.create(user_id: susan.id, course_id: course_george1.id, rating: 4)
 Review.create(user_id: linda.id, course_id: course_george1.id, rating: 3)
+Review.create(user_id: bob.id, course_id: course_steve1.id, rating: 4)
+Review.create(user_id: linda.id, course_id: course_steve1.id, rating: 4)
 Review.create(user_id: bob.id, course_id: course_george2.id, rating: 5)
 Review.create(user_id: susan.id, course_id: course_george2.id, rating: 1)
 Review.create(user_id: amy.id, course_id: course_megan1.id, rating: 5)
