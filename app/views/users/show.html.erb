@@ -1,31 +1,33 @@
 <div class="container mt-2">
     <div class="user-info">
-        <h3><i class="fa-solid fa-id-card"></i></strong> <%= @teacher.first_name %> <%= @teacher.last_name %>         <div class="teacher-rating">
-            <% average_rating = @teacher.courses.average(:rating) %>
-            <% average_rating.to_i.times do %>
+        <h3>
+            <i class="fa-solid fa-id-card"></i></strong> <%= @teacher.first_name %> <%= @teacher.last_name %>
+            <div class="teacher-rating">
+                <% average_rating = @teacher.courses.average(:rating) %>
+                <% average_rating.to_i.times do %>
                 <i class="fa-solid fa-star" style="color: #d1c300;"></i>
-            <% end %>
-        </div>
-</h3>
+                <% end %>
+            </div>
+        </h3>
         <img src= "https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="rounded float-start img-thumbnail mb-3" alt="...">
-        <div class="teacher-courses">
-            <h4>Courses</h4>
-            <ul>
-                <% @teacher.courses.each do |course| %>
-                    <li><%= course.name %></li>
-                <% end %>
-            </ul>
-        </div>
-
-        <div class="teacher-comments">
-            <h4>Reviews</h4>
-            <ul>
-                <% @teacher.courses.each do |course| %>
-                    <% course.reviews.each do |review| %>
-                        <li><%= review.comment %></li>
+<div class="teacher-comments">
+    <% @teacher.courses.each do |course| %>
+        <h5><strong><%= course.title %></strong></h5>
+        <table class="table table-bordered">
+            <% course.reviews.each do |review| %>
+            <tr>
+                <td style="width: 15%;"><strong><%= review.user.first_name %> <%= review.user.last_name %></strong></td>
+                <td><%= review.comment %></td>
+                <td>
+                    <% review.rating.times do %>
+                    <i class="fa-solid fa-star" style="color: #d1c300;"></i>
                     <% end %>
-                <% end %>
-            </ul>
-        </div>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+    <% end %>
+</div>
+
     </div>
 </div>
