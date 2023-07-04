@@ -1,27 +1,23 @@
-$color_1: #333;
-$background-color_1: #f5f5f5;
-
 .courses-show-container{
+  padding: 4rem;
+  margin: 5rem;
+  background-color: #f5f5f5;
 .container {
 	width: 40%;
-	margin: auto;
-	padding-top: 4rem;
 }
 
 .img-fluid {
 	width: 100%;
-	height: auto;
+	height: 100vmax;
 	border: 5px solid #70578c;
   text-align: center
 }
 .course-title {
-	color: $color_1;
 	text-align: center;
 	font-size: 2rem;
 	margin-bottom: 1rem;
 }
 .course-name {
-	color: $color_1;
 	text-align: center;
 	font-size: 1.5rem;
 	margin-bottom: 2rem;
@@ -32,7 +28,7 @@ $background-color_1: #f5f5f5;
 .upcoming-sessions {
   font-size: 2rem;
   font-weight: bold;
-  color: #1e1e1e;
+  background-color: rgb(54, 54, 54);
   padding: 1rem;
   margin: 1rem 0;
   text-align: start;
@@ -41,4 +37,8 @@ $background-color_1: #f5f5f5;
 
 .row {
   padding-bottom: 10rem;
+}
+
+.course-card {
+  background-color: rgb(54, 54, 54);
 }

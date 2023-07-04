@@ -1,5 +1,5 @@
 <div class = "container">
-  <div class="courses-show-container pt-3 shadow p-3">
+  <div class="courses-show-container shadow">
     <%= image_tag("#{@course.category}.jpg", class: "img-fluid mb-2") %>
     <h1 class="course-title"><%= @course.title %> by <%= @course.user.first_name%> <%= @course.user.last_name%> </h1>
     <h2 class="course-name"><%= @course.name%></h2>
@@ -16,7 +16,7 @@
             <p>Class Date : <%= classe.class_date %></p>
             <p>Start time : <%= classe.start_date.hour %>h00</p>
             <p>End time : <%= classe.end_date.hour %>h00</p>
-            <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+            <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
           </div>
         <% end %>
       </div>
