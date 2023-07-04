@@ -9,7 +9,10 @@
                 <% end %>
             </div>
         </h3>
-        <img src= "https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="rounded float-start img-thumbnail mb-3" alt="...">
+        <% if @teacher.url_avatar %>
+            <img src="<%= @teacher.url_avatar %>" alt="profile one" class= "teacher-card-img-sub">
+        <% end %>
+
 <div class="teacher-comments">
     <% @teacher.courses.each do |course| %>
         <h5><strong><%= course.title %></strong></h5>
