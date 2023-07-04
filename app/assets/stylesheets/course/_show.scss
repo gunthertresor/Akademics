@@ -7,11 +7,12 @@ $background-color_1: #f5f5f5;
 	margin: auto;
 	padding-top: 4rem;
 }
+
 .img-fluid {
-	width: 60%;
+	width: 100%;
 	height: auto;
 	border: 5px solid #70578c;
-	margin-bottom: 2rem;
+  text-align: center
 }
 .course-title {
 	color: $color_1;
@@ -26,26 +27,6 @@ $background-color_1: #f5f5f5;
 	margin-bottom: 2rem;
 	text-decoration: underline;
 }
-.col {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	margin-left: 4rem;
-	margin-right: 4rem;
-}
-.course-card {
-  background-color: #f5f5f5;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 0.25rem;
-  width: 100%;
-  border: 2px solid #70578c;
-  min-height: 200px;
-  white-space: nowrap;
-  overflow: auto;
-}
-
 }
 
 .upcoming-sessions {
@@ -61,7 +42,3 @@ $background-color_1: #f5f5f5;
 .row {
   padding-bottom: 10rem;
 }
-
-// .button-new-course {
-//   margin-bottom: 30rem;
-// }

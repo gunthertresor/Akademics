@@ -55,6 +55,7 @@
                             <p class="card-time">1h30</p>
                             <p class="card-name"> <%= review.course.user.first_name %> <%= review.course.user.last_name %></p>
                             <div class="card-stars">
+
                                 <% if (review.rating != nil)  %>
                                     <% review.rating.times do %>
                                         <i class="fa-solid fa-star" style="color: #e5c006;"></i>

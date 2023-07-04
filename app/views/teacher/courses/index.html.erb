@@ -1,11 +1,12 @@
 <div class="teacher-container">
+  <div class = "container">
+    <div clas ="row">
     <div class="course-list">
         <% @courses.each do |course| %>
           <%= link_to teacher_course_path(course), class: 'course-box' do %>
                 <%# <div class="course-box"> %>
                     <h3><%= course.title %></h3>
                     <h2><%= course.name %></h2>
-
                     <object>
                         <%# <%= link_to "reviews", teacher_reviews_path, class: "button-new-course" %>
                         <%# <%= link_to "enrollments", teacher_enrollments_path, class: "button-new-course" %>
@@ -19,4 +20,6 @@
 
     <%= link_to "Create a new course", "courses/new", class: "button-new-course" %>
     <%# </div> %>
+
+  </div>
 </div>

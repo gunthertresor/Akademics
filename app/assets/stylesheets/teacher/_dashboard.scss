@@ -1,20 +1,3 @@
-.s {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-top: 4rem;
-  padding: 4rem;
-}
-
-.enrollment-card {
-  width: 20rem;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  padding: 20px;
-}
-
 .teacher-enrollment-card {
   background-color: #f8f9fa;
   border: 1px solid #e2e6ea;
@@ -45,4 +28,12 @@
   color: #343a40;
   font-size: 1em;
   padding: 5px 0;
+}
+
+.teacher-enrollment-dashboard h1{
+  font-size: 3em;
+  text-decoration: underline;
+  margin-bottom: 20px;
+  text-align: center;
+  padding: 4rem;
 }

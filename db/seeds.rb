@@ -52,19 +52,35 @@ enrollment3 = Enrollment.create(user_id: john.id, classe_id: class2.id, cancelle
 enrollment4 = Enrollment.create(user_id: bob.id, classe_id: class2.id, cancelled: false)
 
 puts "-------------- create Review --------------"
-Review.create(user_id: john.id, course_id: course_george1.id, rating: 5)
-Review.create(user_id: john.id, course_id: course_george2.id, rating: 5)
-Review.create(user_id: john.id, course_id: course_megan1.id, rating: 5)
-Review.create(user_id: susan.id, course_id: course_george1.id, rating: 4)
-Review.create(user_id: linda.id, course_id: course_george1.id, rating: 3)
-Review.create(user_id: bob.id, course_id: course_steve1.id, rating: 4)
-Review.create(user_id: linda.id, course_id: course_steve1.id, rating: 4)
-Review.create(user_id: bob.id, course_id: course_george2.id, rating: 5)
-Review.create(user_id: susan.id, course_id: course_george2.id, rating: 1)
-Review.create(user_id: amy.id, course_id: course_megan1.id, rating: 5)
-Review.create(user_id: amy.id, course_id: course_joseph1.id, rating: 5)
-Review.create(user_id: linda.id, course_id: course_joseph2.id, rating: 5)
-Review.create(user_id: amy.id, course_id: course_jim1.id, rating: 5)
-Review.create(user_id: amy.id, course_id: course_joseph3.id, rating: 5)
+
+# John's reviews
+Review.create(user_id: john.id, course_id: course_george1.id, rating: 5, comment: "A very enlightening course! I've learned so much.")
+Review.create(user_id: john.id, course_id: course_george2.id, rating: 4, comment: "I appreciated the deep dive into modern literature.")
+Review.create(user_id: john.id, course_id: course_megan1.id, rating: 5, comment: "Fantastic intro to calculus, really clarified a lot for me.")
+Review.create(user_id: john.id, course_id: course_steve1.id, rating: 5, comment: "A wonderful exploration of creative writing.")
+
+# Susan's reviews
+Review.create(user_id: susan.id, course_id: course_george1.id, rating: 4, comment: "A good overview of Shakespeare's work.")
+Review.create(user_id: susan.id, course_id: course_george2.id, rating: 3, comment: "I enjoyed the exploration of modernist literature.")
+Review.create(user_id: susan.id, course_id: course_megan1.id, rating: 5, comment: "This course really helped me get to grips with calculus.")
+Review.create(user_id: susan.id, course_id: course_steve1.id, rating: 5, comment: "I'm now a lot more confident in my creative writing.")
+
+# Bob's reviews
+Review.create(user_id: bob.id, course_id: course_george1.id, rating: 4, comment: "I enjoyed learning about Shakespeare's literature.")
+Review.create(user_id: bob.id, course_id: course_george2.id, rating: 4, comment: "Modernist literature is fascinating, great course.")
+Review.create(user_id: bob.id, course_id: course_megan1.id, rating: 4, comment: "Calculus made easy, great job!")
+Review.create(user_id: bob.id, course_id: course_steve1.id, rating: 5, comment: "I loved the creative writing course.")
+
+# Other users' reviews
+Review.create(user_id: linda.id, course_id: course_george1.id, rating: 5, comment: "Decent course, but could be more engaging.")
+Review.create(user_id: linda.id, course_id: course_joseph2.id, rating: 3, comment: "Decent course, but could be more engaging.")
+Review.create(user_id: linda.id, course_id: course_steve1.id, rating: 5, comment: "Decent course, but could be more engaging.")
+Review.create(user_id: amy.id, course_id: course_megan1.id, rating: 5, comment: "Great course. I really appreciate the teacher's approach.")
+Review.create(user_id: amy.id, course_id: course_joseph1.id, rating: 5, comment: "Great course. I really appreciate the teacher's approach.")
+Review.create(user_id: amy.id, course_id: course_jim1.id, rating: 5, comment: "Great course. I really appreciate the teacher's approach.")
+Review.create(user_id: amy.id, course_id: course_joseph3.id, rating: 5, comment: "Great course. I really appreciate the teacher's approach.")
+Review.create(user_id: george.id, course_id: course_george1.id, rating: 4, comment: "Enjoyed the course, very enlightening.")
+Review.create(user_id: megan.id, course_id: course_george2.id, rating: 5, comment: "Excellent course, really helped my understanding.")
+Review.create(user_id: steve.id, course_id: course_megan1.id, rating: 3, comment: "Good course, but some parts were a bit too complex.")
 
 puts "-------------- create all ok --------------"

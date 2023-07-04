@@ -1,12 +1,32 @@
-<div class="s">
-    <% @user.enrollments.each do |enrollment| %>
-        <div class="enrollment-card">
-            <h2><%= enrollment.classe.name %></h2>
-            <p><%= enrollment.classe.start_date.hour %>h00</p>
-            <p><%= enrollment.classe.end_date.hour %>h00</p>
-            <div class="pt-2">
-                <%= button_to "Cancel", enrollment_path(enrollment), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+    <% if @user.status == "teacher" %>
+        <% @courses.each do |course| %>
+        <div class="teacher-enrollment-dashboard text-center"><h1>Registered Students</h1>
+          <div class="s">
+            <div class="teacher-enrollment-card">
+                <h2><%= course.title %></h2>
+                <h3></h3>
+                <ul>
+                    <% course.course_classes.each do |classe| %>
+                      <% classe.enrollments.each do |enrollment| %>
+                        <li><%= enrollment.user.first_name %> <%= enrollment.user.last_name %> ( <%= enrollment.created_at.strftime("%d/%m/%Y at %H:%M") %>  <%= enrollment.created_at.strftime("%Z") %>)</li>
+                    <% end %>
+                  </ul>
+                <% end %>
             </div>
-        </div>
+          </div>
+        <% end %>
+    <% else %>
+    <div class="s">
+        <% @user.enrollments.each do |enrollment| %>
+            <div class="enrollment-card">
+                <h2><%= enrollment.classe.course.title %></h2>
+                <h3><%= enrollment.classe.name %></h3>
+                <p><%= enrollment.classe.start_date.hour %>h00</p>
+                <p><%= enrollment.classe.end_date.hour %>h00</p>
+                <div class="pt-2">
+                    <%= button_to "Cancel", enrollment_path(enrollment), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+                </div>
+            </div>
+        <% end %>
     <% end %>
 </div>
