@@ -68,9 +68,12 @@
         margin-top: 1rem;
         text-decoration: none;
         border-radius: 50px;
+        font-weight: bold;
+        font-family: Poppins-Regular, sans-serif;
+
 
         &:hover {
-            background-color: #ee0000;
+            background-color: #2A2F4F;
             color: #70578c;
             text-decoration: none;
         }
