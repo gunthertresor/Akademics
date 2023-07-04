@@ -1,21 +1,25 @@
-<div class ="container"></div>
-<div class ="row">
-<% @courses.each do |course| %>
 
-    <%= link_to course_path(course), class: 'card m-3 col p-0' do %>
+<!-------------->
 
-        <img src="https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class="img-fluid rounded-start" alt="...">
-        <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title"><%= course.title %></h5>
-                <h6 class="card-subtitle mb-2 text-body-secondary"><%= course.name %></h6>
-                <p class="card-text"><%= course.description %></p>
-                <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+<div class="course-card-container">
+<div class = "row">
+  <div class='course-card'>
+    <% @courses.each do |course| %>
+    <div class = "col">
+      <%= link_to course_path(course) do %>
+        <div class= "course-card-sub">
+         <%= image_tag("#{course.category}.jpg", class: "course-card-img") %>
+            <div class="courses-card-info">
+            <h5 class="card-title"><%= course.title %></h5>
+            <h6 class="card-name"><%= course.name %></h6>
+            <p class="card-text"><%= course.description %></p>
             </div>
         </div>
-
+      <% end %>
+    </div>
     <% end %>
+  </div>
+  </div>
+</div>
 
-<% end %>
-</div>
-</div>
+<!-------------->
