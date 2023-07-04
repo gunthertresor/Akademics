@@ -6,7 +6,9 @@
     // height: 100px;
     z-index: 100;
     a {
-        font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+        font-family: Arial, Helvetica, sans-serif;
+
+        // font-family: -apple-system, "system-ui", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     }
 }
 
@@ -32,8 +34,8 @@
     .nav-item {
         color: $aka-white-color;
         cursor: pointer;
-        // padding: 11px 15px;
-        padding: 5px 15px;
+        padding: 10px 15px;
+        // padding: 5px 15px;
         // background-color: aqua;
         &:hover{
             color: $aka-over-color;

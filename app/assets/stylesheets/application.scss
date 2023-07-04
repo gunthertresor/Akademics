@@ -10,10 +10,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
-// @import "teacher/index";
-// @import "devise/devises.scss";
-// @import "course/index";
-// @import "user/index";
+@import "teacher/index";
+@import "devise/devises.scss";
+@import "course/index";
+@import "user/index";
 
 
 * {
@@ -36,7 +36,8 @@
     }
     a {
         text-decoration: none;
-        font-family: Poppins-Regular;
+        // font-family: Poppins-Regular;
+        font-family: Arial, Helvetica, sans-serif;
         // font-size: 14px;
         // line-height: 1.7;
         // color: #666666;

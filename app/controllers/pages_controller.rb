@@ -8,6 +8,8 @@ class PagesController < ApplicationController
   def home
     # @reviews = Review.all
     @reviews = Review.where(rating: 5).uniq { |review| review[:course_id] }
+    @courses = Course.all.uniq { |course| course[:category] }
+    # @courses = Course.all
     # @counts = {}
     # puts @reviews_count = Review.where(rating: 5).each_with_object(Hash.new(0)) { |name, hash| hash[name] += 1 }
     # @reviews = Review.where(rating: 5)

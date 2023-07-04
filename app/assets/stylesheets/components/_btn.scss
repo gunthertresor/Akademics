@@ -33,11 +33,12 @@
 
 .btn-aka-light-login {
     padding: 4px 13px;
-    border: 1px solid $aka-text-color;
+    border: 1px solid $aka-primary-color;
     border-radius: 5px;
     font-weight: bold;
     color: $aka-white-color;
     font-size: 15px;
+    background-color: $aka-secondary-color;
 
     &:hover {
         background-color: $aka-primary-color;
@@ -48,4 +49,36 @@
 
 .square {
     padding: .8em 1em;
+}
+
+.aka-input {
+    outline-style: none;
+    border: 1px solid $aka-primary-color;
+    background-color: inherit;
+    border-radius: 5px;
+    width: 300px;
+    height: 40px;
+
+    &:focus {
+        border: 1px solid $aka-secondary-color;
+    }
+}
+
+.fa-angle-left, .fa-angle-right{
+    margin: 5px;
+    // background-color: $aka-secondary-color;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid $aka-primary-color;
+    // background-color: $aka-secondary-color;
+    color: $aka-primary-color;
+    font-size: 15px;
+    &:hover {
+        background-color: $aka-secondary-color;
+    }
 }
