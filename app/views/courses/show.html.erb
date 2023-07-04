@@ -16,7 +16,9 @@
             <p>Class Date : <%= classe.class_date %></p>
             <p>Start time : <%= classe.start_date.hour %>h00</p>
             <p>End time : <%= classe.end_date.hour %>h00</p>
-            <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
+            <%= classe.enrollments.each do |classe| %>
+                <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
+            <% end %>
           </div>
         <% end %>
       </div>

@@ -28,7 +28,16 @@
         color: #ced4da;
   }
 }
-
+.home-line-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .home-line {
+        width: 80%;
+        height: 1px;
+        background: $aka-primary-color;
+    }
+}
 .about {
     color: $aka-white-color;
     // padding: 50px;
@@ -65,7 +74,7 @@
             display: flex;
             h4 {
                 padding: 10px;
-                color:$aka-black-color;
+                color:$aka-white-color;
             }
             .home-courses-link-all {
                 color:$aka-primary-color;
@@ -225,7 +234,7 @@
         }
     }
 }
-// ----------------------------------------------------
+// ------------------------------- teacher card -------------------------------
 .teacher-card-container {
     display: flex;
     overflow: scroll;
@@ -263,7 +272,7 @@
                 opacity: 0;
             }
             .teacher-card-info {
-                transition: all 0.2s ease-in-out;
+                transition: all 0.3s ease-in-out;
                 opacity: 0;
                 text-align: center;
                 position: absolute;
@@ -278,23 +287,17 @@
                 // background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(255,255,255,0) 97%);
                 // transition: all 0.3s ease-in-out;
 
-                .teacher-card-heart {
-                    position: absolute;
-                    right: 10px;
-                    top: 10px;
-                    opacity: 0;
-                    width: 40px;
-                    height: 40px;
-                    cursor: pointer;
+                .teacher-card-social {
+                    padding: 5px;
                     transition: all 0.3s ease-in-out;
-                    background: radial-gradient(circle, rgba(0,0,0,0.29723991507431) 0%, rgba(0,0,0,0) 60%);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
+                    // background: radial-gradient(circle, rgba(0,0,0,0.29723991507431) 0%, rgba(0,0,0,0) 60%);
+                    // display: flex;
+                    // align-items: center;
+                    // justify-content: center;
                     &:hover {
-                        color: red;
+                        color: $aka-primary-color;
                     }
-                    font-size: 18px;
+                    // font-size: 18px;
                 }
 
             }
@@ -306,7 +309,7 @@
             }
             .teacher-card-img-sub {
                 height: 130%;
-                transition: all 0.2s ease-in-out;
+                transition: all 0.3s ease-in-out;
 
             }
             .card-title {
@@ -373,4 +376,38 @@
     height: 440px;
 
 
+}
+.home-upskill {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 30px;
+}
+.home-category-step-container {
+    padding: 20px;
+
+    .home-category-step {
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+
+        .step {
+            width: 200px;
+            height: 200px;
+            border: 1px solid $aka-primary-color;
+            border-radius: 15px;
+            // padding: 10px;
+            margin: 20px;
+            .home-category-step-img {
+                height: 100%;
+            }
+            h3 {
+                font-size: 15px;
+                padding: 10px;
+                transform: translateY(-30px);
+            }
+        }
+    }
 }
