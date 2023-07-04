@@ -95,7 +95,8 @@
                 .card-price {
                     font-style: italic;
                     font-size: 13px;
-                    color: $aka-text-color;
+                    // color: $aka-text-color;
+                    color: grey;
                 }
                 .card-time {
                     font-size: 13px;
@@ -105,6 +106,7 @@
                 }
                 .card-name {
                     font-size: 13px;
+                    color: $aka-text-color;
                 }
                 .card-stars {
                     font-size: 10px;
