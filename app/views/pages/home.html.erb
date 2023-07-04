@@ -72,6 +72,12 @@
 </div>
 
 
+<!-------------->
+<div class="home-container">
+    <div class="home-line-container">
+        <div class="home-line"></div>
+    </div>
+</div>
 
 <!-------------->
 <div class="home-container">
@@ -83,7 +89,7 @@
         <div>
             <p>Subcribe to our classes</p>
             <form method="post" action="subscriberform.php">
-                <input type="email" name="email" class="aka-input">
+                <input type="email" name="email" placeholder=' enter your email' class="aka-input">
                 <input type="submit" class="btn-aka-light-login">
             </form>
         </div>
@@ -116,7 +122,12 @@
                         </div>
                         <div class="teacher-card-info-gradiant"></div>
                         <div class="teacher-card-info">
-                            <i class="fa-regular fa-heart teacher-card-heart"></i>
+                            <object>
+                                <a href="#"><i class="fab fa-facebook teacher-card-social"></i></a>
+                                <a href="#"><i class="fab fa-twitter teacher-card-social"></i></a>
+                                <a href="#"><i class="fab fa-instagram teacher-card-social"></i></a>
+                                <a href="#"><i class="fab fa-linkedin teacher-card-social"></i></a>
+                            </object>
                             <div class="details">
                                 <h2><%= teacher.first_name %> <%= teacher.last_name %>
                             </div>
@@ -132,16 +143,27 @@
 
 <!-------------->
 <div class="home-container">
-    <div>
-        <h2>Try some of our classes</h2>
-        <p>Enter your email and we’ll send you some samples of our favorite classes.</p>
+    <div class="home-line-container">
+        <div class="home-line"></div>
     </div>
-    <div>
-        <form method="post" action="subscriberform.php">
-            <textarea name="message"></textarea>
-            <input type="submit" class="btn-aka-light-login">
+</div>
+<!-------------->
+<div class="home-container">
+    <div class="home-upskill">
 
-        </form>
+        <h2 class="logo-letter-rest">Akademics</h2>
+        <div class="dot-aka" data-dotaka-target="dotaka"></div>
+        <div>
+            <h3>Upskill your team with Udemy Business</h3>
+            <ul>
+                <li>. Unlimited access to 22,000+ top Udemy courses, anytime, anywhere</li>
+                <li>. International course collection in 14 languages</li>
+                <li>. Top certifications in tech and business</li>
+            </ul>
+        </div>
+        <div>
+            <button type="submit" class="btn-aka-light-login">Get Akademics business</button>
+        </div>
     </div>
 </div>
 
@@ -150,28 +172,37 @@
 
 <!-------------->
 <div class="home-container">
-
-    <div class="how-it-works">
-        <h2>How learners like you are achieving their goals</h2>
-        <div class="step">
-            <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
-            <h3>Étape 1</h3>
-            <p>Explication de l'étape 1</p>
-        </div>
-        <div class="step">
-            <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
-            <h3>Étape 1</h3>
-            <p>Explication de l'étape 1</p> %>
-        </div>
-        <div class="step">
-            <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
-            <h3>Étape 1</h3>
-            <p>Explication de l'étape 1</p> %>
-        </div>
-        <div class="step">
-            <%# <img src="URL_DE_L'IMAGE" alt="Image de l'étape 1">
-            <h3>Étape 1</h3>
-            <p>Explication de l'étape 1</p> %>
+    <div class="home-category-step-container">
+        <h3>How learners like you are achieving their goals</h3>
+        <div class="home-category-step">
+            <div class="step">
+                <%= image_tag("lohp-category-business-2x-v2.png", class: "home-category-step-img") %>
+                <h3>business</h3>
+            </div>
+            <div class="step">
+                <%= image_tag("lohp-category-design-2x-v2.png", class: "home-category-step-img") %>
+                <h3>design</h3>
+            </div>
+            <div class="step">
+                <%= image_tag("lohp-category-development-2x-v2.png", class: "home-category-step-img") %>
+                <h3>development</h3>
+            </div>
+            <div class="step">
+                <%= image_tag("lohp-category-it-and-software-2x-v2.png", class: "home-category-step-img") %>
+                <h3>software</h3>
+            </div>
+            <div class="step">
+                <%= image_tag("lohp-category-marketing-2x-v2.png", class: "home-category-step-img") %>
+                <h3>marketing</h3>
+            </div>
+            <div class="step">
+                <%= image_tag("lohp-category-personal-development-2x-v2.png", class: "home-category-step-img") %>
+                <h3>development</h3>
+            </div>
+            <div class="step">
+                <%= image_tag("lohp-category-photography-2x-v2.png", class: "home-category-step-img") %>
+                <h3>photography</h3>
+            </div>
         </div>
     </div>
 </div>
