@@ -34,9 +34,12 @@
             </div>
         </div>
         <div class="courses-category">
+            <%= link_to courses_path do %>
+                    <div class="btn-aka-light-login courses-category-link">All</div>
+                <% end %>
             <% @courses.each_with_index do |course, i| %>
                 <%= link_to courses_path do %>
-                    <div class="btn-aka-light-login courses-category-link"><%= course.category %></div>
+                    <div class="btn-aka-light courses-category-link"><%= course.category %></div>
                 <% end %>
             <% end %>
         </div>
@@ -130,6 +133,10 @@
                             </object>
                             <div class="details">
                                 <h2><%= teacher.first_name %> <%= teacher.last_name %>
+
+                                <%# <% @teacher.courses.each do |course| %>
+                                <%# <% end %>
+
                             </div>
                         </div>
                     </div>
@@ -154,9 +161,9 @@
         <h2 class="logo-letter-rest">Akademics</h2>
         <div class="dot-aka" data-dotaka-target="dotaka"></div>
         <div>
-            <h3>Upskill your team with Udemy Business</h3>
+            <h3>Upskill your team with Akademics Business</h3>
             <ul>
-                <li>. Unlimited access to 22,000+ top Udemy courses, anytime, anywhere</li>
+                <li>. Unlimited access to 22,000+ top Akademics courses, anytime, anywhere</li>
                 <li>. International course collection in 14 languages</li>
                 <li>. Top certifications in tech and business</li>
             </ul>

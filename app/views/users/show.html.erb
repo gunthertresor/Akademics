@@ -3,14 +3,13 @@
         <h3>
             <i class="fa-solid fa-id-card"></i></strong> <%= @teacher.first_name %> <%= @teacher.last_name %>
             <div class="teacher-rating">
-                <% average_rating = @teacher.courses.average(:rating) %>
-                <% average_rating.to_i.times do %>
+                <% @teacher.courses.average(:rating).to_i.times do %>
                 <i class="fa-solid fa-star" style="color: #d1c300;"></i>
                 <% end %>
             </div>
         </h3>
         <% if @teacher.url_avatar %>
-            <img src="<%= @teacher.url_avatar %>" alt="profile one" class= "teacher-card-img-sub">
+            <img src="<%= @teacher.url_avatar %>" alt="profile one" class= "w-10efew" style="width: 300px; height: 400px;">
         <% end %>
 
 <div class="teacher-comments">

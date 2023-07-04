@@ -19,9 +19,13 @@
                         <% end %>
 
                         <div class="courses-card-info">
+                            <h3 class="card-title  <%= course.category%>"><%= course.name %></h3>
                             <h5 class="card-title"><%= course.title %></h5>
+                            <p class="card-name"> <%= course.user.first_name %> <%= course.user.last_name %></p>
+                            <p class="card-price"><%= course.price %> $</p>
+                            <%# <p class="card-price">2h </p> %>
+
                             <h6 class="card-name"><%= course.name %></h6>
-                            <p class="card-text"><%= course.description %></p>
                         </div>
                     </div>
                 <% end %>

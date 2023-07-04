@@ -1,4 +1,4 @@
-    <% if @user.status == "teacher" %>
+    <%# <% if @user.status == "teacher" %> %>
         <% @courses.each do |course| %>
         <div class="teacher-enrollment-dashboard text-center"><h1>Registered Students</h1>
           <div class="s">
@@ -15,7 +15,13 @@
             </div>
           </div>
         <% end %>
-    <% else %>
+    <%# <% else %> %>
+    <!-------------->
+<div class="home-container">
+    <div class="home-line-container">
+        <div class="home-line"></div>
+    </div>
+</div>
     <div class="s">
         <% @user.enrollments.each do |enrollment| %>
             <div class="enrollment-card">
@@ -28,5 +34,5 @@
                 </div>
             </div>
         <% end %>
-    <% end %>
+    <%# <% end %> %>
 </div>

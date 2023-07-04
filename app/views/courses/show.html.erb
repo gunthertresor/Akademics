@@ -1,24 +1,32 @@
 <div class = "container">
-  <div class="courses-show-container d-flex flex-column align-items-center">
-    <%= image_tag("#{@course.category}.jpg", class: "mb-2 w-50", height: "400") %>
-    <h1 class="course-title"><%= @course.title %> by <%= @course.user.first_name%> <%= @course.user.last_name%> </h1>
-    <h2 class="course-name"><%= @course.name%></h2>
-  </div>
-
-  <div class="upcoming-sessions text-center"><p>Upcoming sessions</p></div>
+    <div class="courses-show-container d-flex flex-column align-items-center">
+    <p><%= @course.category %></p>
+    <p><%= @course.rating %></p>
+        <%= image_tag("#{@course.category}.jpg", class: "mb-2 w-50", height: "400") %>
+        <h1 class="course-title"><%= @course.title %> by <%= @course.user.first_name%> <%= @course.user.last_name%> </h1>
+        <h2 class="course-name"><%= @course.name%></h2>
+        <% if @course.user.url_avatar %>
+            <img src="<%= @course.user.url_avatar %>" alt="profile one" class= "teacher-card-img-sub">
+        <% end %>
+    </div>
+    <div><%= @course.content %></div>
+    <div class="upcoming-sessions text-center">
+        <p>Upcoming sessions</p>
+    </div>
+    <p><%= @scrap %></p>
 
     <div class = "container p-3 rounded-3">
-      <div class="row">
-        <% @classes.each do |classe| %>
-          <div class="course-card p-2 col-4">
-            <h3><%= classe.name %></h3>
-            <p><i class="fa-solid fa-school"></i> <%= classe.class_date %></p>
-            <p><i class="fa-solid fa-hourglass-start"></i> <%= classe.start_date.hour %>h00</p>
-            <p><i class="fa-solid fa-hourglass-end"></i> <%= classe.end_date.hour %>h00</p>
-            <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
-          </div>
-        <% end %>
-      </div>
+
+        <div class="row">
+            <% @classes.each do |classe| %>
+            <div class="course-card p-2 col-4">
+                <h3><%= classe.name %></h3>
+                <p><i class="fa-solid fa-school"></i> <%= classe.class_date %></p>
+                <p><i class="fa-solid fa-hourglass-start"></i> <%= classe.start_date.hour %>h00</p>
+                <p><i class="fa-solid fa-hourglass-end"></i> <%= classe.end_date.hour %>h00</p>
+                <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
+            </div>
+            <% end %>
+        </div>
     </div>
-  </div>
 </div>

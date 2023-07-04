@@ -26,13 +26,13 @@
                     </li>
                 <% end %>
 
-                <%= link_to my_profil_path, class: 'v' do %>
+                <%= link_to courses_path, class: 'v' do %>
                     <li class="nav-item <%= active_class(my_profil_path) %>" data-dotaka-target="profil" data-action="mouseover->dotaka#mouseOver2 mouseout->dotaka#mouseOut2">
                         Category
                     </li>
                 <% end %>
 
-                <%= link_to dashboard_path, class: 'd-flex align-middle ' do %>
+                <%= link_to edit_user_registration_path, class: 'd-flex align-middle ' do %>
                     <li class="nav-item <%= active_class(dashboard_path) %>" data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
                         Become teacher
                         <i class="fa-solid fa-person-chalkboard"></i>
