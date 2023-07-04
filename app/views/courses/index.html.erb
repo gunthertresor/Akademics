@@ -1,24 +1,25 @@
 
 <!-------------->
-
-<div class="course-card-container">
-<div class = "row">
-  <div class='course-card'>
-    <% @courses.each do |course| %>
-    <div class = "col">
-      <%= link_to course_path(course) do %>
-        <div class= "course-card-sub">
-         <%= image_tag("#{course.category}.jpg", class: "course-card-img") %>
-            <div class="courses-card-info">
-            <h5 class="card-title"><%= course.title %></h5>
-            <h6 class="card-name"><%= course.name %></h6>
-            <p class="card-text"><%= course.description %></p>
-            </div>
-        </div>
-      <% end %>
+<div class ="container">
+  <div class="course-card-container">
+    <div class = "row">
+      <div class='course-card'>
+        <% @courses.each do |course| %>
+          <div class = "col">
+            <%= link_to course_path(course) do %>
+              <div class= "course-card-sub">
+                <%= image_tag("#{course.category}.jpg", class: "course-card-img") %>
+                  <div class="courses-card-info">
+                    <h5 class="card-title"><%= course.title %></h5>
+                    <h6 class="card-name"><%= course.name %></h6>
+                    <p class="card-text"><%= course.description %></p>
+                  </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
-    <% end %>
-  </div>
   </div>
 </div>
 

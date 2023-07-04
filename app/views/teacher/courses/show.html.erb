@@ -1,7 +1,6 @@
 
 <div class ="container">
   <div>
-    <h1>show teacher course number ...</h1>
     <h1><%= @course.title %></h1>
     <h2><%= @course.name %></h2>
     <%= link_to "edit", "edit", class: "form btn rounded-pill btn-light text-danger" %>
@@ -13,9 +12,9 @@
       <p><%= classe.start_date %></p>
       <p><%= classe.end_date %></p>
       <%= link_to "Edit class", teacher_course_path(classe), class: "btn-aka" %>
-      <%= button_to "Delete", teacher_class_path(classe), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+      <%= button_to "Delete", teacher_class_path(classe), method: :delete, class: 'btn-aka mb-3', data: {turbo_confirm: 'are you sure ?'}  %>
     <% end %>
-    <%= link_to "Create a new class", new_teacher_course_class_path(@course), class: "btn-aka" %>
+    <%= link_to "Create a new class", new_teacher_course_class_path(@course), class: "btn-aka mt-2" %>
   </div>
 
 <div class="teacher-courses">
