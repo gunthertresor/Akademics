@@ -9,6 +9,7 @@
         <%= f.input :description %>
         <%= f.input :price %>
         <%= f.input :content %>
+        <%= f.input :category, :collection => [ "literature", "art", "mathematics", "physics", "robotic", "chemistry", "engineering"] %>
         <%= f.input :grade %>
         <div class="button-new-course ">
           <%= f.button :submit%>
