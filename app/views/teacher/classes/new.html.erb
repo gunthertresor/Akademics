@@ -1,6 +1,8 @@
 <div class="container pt-3">
 
-    <%= simple_form_for @classe, url: new_teacher_course_path(@course), html: {class: "w-50 shadow p-3"} do |f| %>
+    <%= simple_form_for @classe, url: teacher_course_classes_path(@course), html: {class: "w-50 shadow p-3"} do |f| %>
+    <%# <%= simple_form_for @classe, url: new_teacher_course_class_path(@course), html: {class: "w-50 shadow p-3"} do |f| %> %>
+
         <h2 class = "text-center">Create a new class</h2>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
