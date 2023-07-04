@@ -8,7 +8,10 @@
           <div class = "col">
             <%= link_to course_path(course) do %>
               <div class= "course-card-sub">
-                <%= image_tag("#{course.category}.jpg", class: "course-card-img") %>
+                <% if course.category %>
+                    <%= image_tag("#{course.category}.jpg", class: "course-card-img") %>
+                <% end %>
+
                   <div class="courses-card-info">
                     <h5 class="card-title"><%= course.title %></h5>
                     <h6 class="card-name"><%= course.name %></h6>
