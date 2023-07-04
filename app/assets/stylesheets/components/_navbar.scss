@@ -103,7 +103,7 @@
             display: flex;
         }
         .burger-menu {
-            // display: none;
+            display: none;
         }
     }
 
@@ -147,11 +147,11 @@
 
 @media (max-width: 850px) {
     .navbar-middle {
+        .burger-menu {
+            display: block !important;
+        }
         li {
             display: none;
-        }
-        .burger-menu {
-            display: block;
         }
     }
 }
