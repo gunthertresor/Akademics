@@ -1,29 +1,33 @@
 
 <!-------------->
-<div class ="container">
-  <div class="course-card-container">
-    <div class = "row">
-      <div class='course-card'>
-        <% @courses.each do |course| %>
-          <div class = "col">
-            <%= link_to course_path(course) do %>
-              <div class= "course-card-sub">
-                <% if course.category %>
-                    <%= image_tag("#{course.category}.jpg", class: "course-card-img") %>
-                <% end %>
-
-                  <div class="courses-card-info">
-                    <h5 class="card-title"><%= course.title %></h5>
-                    <h6 class="card-name"><%= course.name %></h6>
-                    <p class="card-text"><%= course.description %></p>
-                  </div>
-              </div>
+<div class ="course-index-container">
+    <div class="courses-index-category">
+        <% @courses.each_with_index do |course, i| %>
+            <%= link_to courses_path do %>
+                <div class="courses-index-category-link"><%= course.category %></div>
             <% end %>
-          </div>
         <% end %>
-      </div>
     </div>
-  </div>
+
+    <div class="course-index-card-container"">
+        <% @courses.each do |course| %>
+            <div class='course-index-card'>
+                <%= link_to course_path(course) do %>
+                    <div class= "course-card-sub">
+                        <% if course.category %>
+                            <%= image_tag("#{course.category}.jpg", class: "course-card-img") %>
+                        <% end %>
+
+                        <div class="courses-card-info">
+                            <h5 class="card-title"><%= course.title %></h5>
+                            <h6 class="card-name"><%= course.name %></h6>
+                            <p class="card-text"><%= course.description %></p>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        <% end %>
+    </div>
 </div>
 
 <!-------------->
