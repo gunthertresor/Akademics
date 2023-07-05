@@ -15,9 +15,13 @@ class UsersController < ApplicationController
     def dashboard
         @courses = current_user.courses
         @review = Review.new
-        @reviews = Review.where(user_id: current_user)
+        # @reviews = Review.where(user_id: current_user)
     end
 
+    # def destroy
+    #     Review.find(params[:id]).destroy
+    #     redirect_to dashboard_path
+    # end
 
     private
 

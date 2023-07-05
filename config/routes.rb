@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users, :controllers => { registrations: 'users/registrations' }
+#   , :controllers => { reviews: 'users/reviews' }
 
   root to: "pages#home"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
@@ -46,6 +47,7 @@ Rails.application.routes.draw do
   end
 
     # namespace :users do
+    #     resources :reviews, only: [:destroy]
     # end
 
   get :teachers, to: 'users#index'

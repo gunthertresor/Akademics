@@ -51,7 +51,7 @@ class3 = Classe.create(course_id: course_george2.id, name: "Modernist literature
 class2 = Classe.create(course_id: course_megan1.id, name: "Calculus 101 class", max_people: 20, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
 class4 = Classe.create(course_id: course_jim1.id, name: "learn chimie class", max_people: 20, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
 class5 = Classe.create(course_id: course_jim1.id, name: "learn chimie class", max_people: 20, start_date: Time.now - 2.days, end_date: Time.now - 2.days)
-class6 = Classe.create(course_id: course_joseph1.id, name: "space geomety class", max_people: 20, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
+class6 = Classe.create(course_id: course_joseph1.id, name: "space geomety class", max_people: 20, start_date: Time.now - 3.hours, end_date: Time.now - 4.hours)
 
 puts "-------------- create Enrollment --------------"
 enrollment1 = Enrollment.create(user_id: john.id, classe_id: class1.id, cancelled: false)
@@ -59,6 +59,8 @@ enrollment2 = Enrollment.create(user_id: susan.id, classe_id: class1.id, cancell
 enrollment3 = Enrollment.create(user_id: john.id, classe_id: class2.id, cancelled: false)
 enrollment4 = Enrollment.create(user_id: bob.id, classe_id: class2.id, cancelled: false)
 enrollment5 = Enrollment.create(user_id: george.id, classe_id: class4.id, cancelled: false)
+enrollment6 = Enrollment.create(user_id: george.id, classe_id: class5.id, cancelled: false)
+enrollment6 = Enrollment.create(user_id: george.id, classe_id: class6.id, cancelled: false)
 
 puts "-------------- create Review --------------"
 
@@ -84,10 +86,11 @@ Review.create(user_id: bob.id, course_id: course_steve1.id, rating: 3, comment: 
 Review.create(user_id: linda.id, course_id: course_george1.id, rating: 5, comment: "Decent course, but could be more engaging.")
 Review.create(user_id: linda.id, course_id: course_joseph2.id, rating: 3, comment: "Decent course, but could be more engaging.")
 Review.create(user_id: amy.id, course_id: course_megan1.id, rating: 5, comment: "Great course. I really appreciate the teacher's approach.")
-Review.create(user_id: amy.id, course_id: course_joseph1.id, rating: 5, comment: "Great course. I really appreciate the teacher's approach.")
-Review.create(user_id: amy.id, course_id: course_jim1.id, rating: 5, comment: "Great course. I really appreciate the teacher's approach.")
-Review.create(user_id: amy.id, course_id: course_joseph3.id, rating: 5, comment: "Great course. I really appreciate the teacher's approach.")
-Review.create(user_id: george.id, course_id: course_george1.id, rating: 4, comment: "Enjoyed the course, very enlightening.")
+Review.create(user_id: amy.id, course_id: course_joseph1.id, rating: 5, comment: "I'm Amy, Joseph course is great. I really appreciate the teacher's approach.")
+Review.create(user_id: megan.id, course_id: course_joseph1.id, rating: 5, comment: "I'm megan, Joseph course is great. I really appreciate the teacher's approach.")
+Review.create(user_id: amy.id, course_id: course_jim1.id, rating: 5, comment: "I'm Amy and Jim course I really appreciate the teacher's approach.")
+Review.create(user_id: amy.id, course_id: course_joseph3.id, rating: 5, comment: "I'm Amy and Joseph course 3 is great. I really appreciate the teacher's approach.")
+Review.create(user_id: george.id, course_id: course_joseph3.id, rating: 4, comment: "Enjoyed the course, very enlightening.")
 Review.create(user_id: megan.id, course_id: course_george2.id, rating: 5, comment: "Excellent course, really helped my understanding.")
 Review.create(user_id: steve.id, course_id: course_megan1.id, rating: 3, comment: "Good course, but some parts were a bit too complex.")
 Review.create(user_id: linda.id, course_id: course_steve1.id, rating: 5, comment: "Decent course, but could be more engaging.")
