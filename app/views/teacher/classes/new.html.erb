@@ -1,7 +1,7 @@
 <div class="container pt-3">
 
     <%= simple_form_for @classe, url: teacher_course_classes_path(@course), html: {class: "w-50 shadow p-3"} do |f| %>
-    <%# <%= simple_form_for @classe, url: new_teacher_course_class_path(@course), html: {class: "w-50 shadow p-3"} do |f| %> %>
+    <%# <%= simple_form_for @classe, url: new_teacher_course_class_path(@course), html: {class: "w-50 shadow p-3"} do |f| %>
 
         <h2 class = "text-center">Create a new class</h2>
         <%= f.error_notification %>
@@ -20,7 +20,7 @@
             <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
         </div>
 
-        <div class="button-new-course ">
+        <div class="btn-aka">
           <%= f.button :submit%>
         </div>
     <% end %>
