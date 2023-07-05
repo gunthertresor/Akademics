@@ -13,7 +13,9 @@ class UsersController < ApplicationController
     end
 
     def dashboard
-     @courses = current_user.courses
+        @courses = current_user.courses
+        @review = Review.new
+        @reviews = Review.where(user_id: current_user)
     end
 
 
