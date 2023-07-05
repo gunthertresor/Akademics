@@ -25,7 +25,7 @@
 
 <div class="s">
         <% @user.enrollments.each do |enrollment| %>
-            <% if (enrollment.classe.class_date > Time.now) %>
+            <% if (enrollment.classe.start_date < Time.now) %>
             <%# <%= Time.now %>
             <div class="enrollment-card">
                 <h2><%= enrollment.classe.course.title %></h2>
@@ -57,8 +57,9 @@
         <div></div>
         <% @reviews.each do |review| %>
             <div class="d-flex">
-                <p><%= review.rating %></p>
-                <p><%= review.comment %></p>
+                <p>course id : <%= review.course_id %></p>
+                <p> rating :<%= review.rating %></p>
+                <p> comment :<%= review.comment %></p>
                 <%= button_to "Delete", course_reviews_path(review), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
             </div>
         <% end %>

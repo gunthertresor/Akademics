@@ -17,7 +17,7 @@ class Teacher::ClassesController < ApplicationController
 
     def destroy
         Classe.find(params[:id]).destroy
-        redirect_to teacher_course_path(params[:course_id])
+        redirect_to teacher_course_path(params[:id])
         # respond_to do |format|
         #   format.html { redirect_to booking_url, notice: "Booking was successfully destroyed." }
         #   format.json { head :no_content }
@@ -27,6 +27,6 @@ class Teacher::ClassesController < ApplicationController
     private
 
     def classe_params
-        params.require(:classe).permit(:name, :class_date, :start_date, :end_date, :max_people)
+        params.require(:classe).permit(:name, :start_date, :end_date, :max_people)
     end
 end

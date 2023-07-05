@@ -21,12 +21,13 @@
                     <p><%= classe.name %></p>
                     <p><%= classe.start_date %></p>
                     <p><%= classe.end_date %></p>
+                    
+                    <% if classe.start_date > Time.now %>
+                        <p style="color:red">Enrollment Closed</p>
 
-                    <% if  classe.class_date < Time.now %>
-                        <p style="color:red">Class Closed</p>
                     <% end %>
 
-                    <%= link_to "Edit class", teacher_course_path(classe), class: "btn-aka mb-5" %>
+                    <%# <%= link_to "Edit class", teacher_course_path(classe), class: "btn-aka mb-5" %>
                     <%= button_to "Delete", teacher_class_path([classe, @course]), method: :delete, class: 'btn-aka mb-3 mt-3', data: {turbo_confirm: 'are you sure ?'}  %>
                   </div>
                 <% end %>
