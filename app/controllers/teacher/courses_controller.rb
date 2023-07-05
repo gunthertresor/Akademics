@@ -14,6 +14,8 @@ class Teacher::CoursesController < ApplicationController
         # @courses = Course.all
         @courses = Course.where(user_id: current_user)
         # @classes = @course.course_classes
+
+        # @classes = @course.course_classes
     end
 
     def show

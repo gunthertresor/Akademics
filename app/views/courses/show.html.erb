@@ -24,7 +24,14 @@
                 <%=  Time.now %>
                 <%=  classe.start_date %>
 
-                <p><i class="fa-solid fa-school"></i> <%= classe.class_date %></p>
+                <% if classe.start_date < Time.now %>
+                    <p style="color:green">free</p>
+                <% else %>
+                    <p style="color:red">past</p>
+                <% end %>
+
+                <p><i class="fa-solid fa-school"></i></p>
+
                 <p><i class="fa-solid fa-hourglass-start"></i> <%= classe.start_date.hour %>h00</p>
                 <p><i class="fa-solid fa-hourglass-end"></i> <%= classe.end_date.hour %>h00</p>
                 <% if classe.class_date < Time.now %>

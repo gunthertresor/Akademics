@@ -9,9 +9,7 @@
         <%= f.input :name %>
         <%= f.input :max_people %>
 
-        <div data-controller="datepickr" data-datepickr-target="date">
-            <%= f.input :class_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
-        </div>
+
 
         <div data-controller="datepickr" data-datepickr-target="date">
             <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
