@@ -25,7 +25,7 @@
 
 <div class="s">
         <% @user.enrollments.each do |enrollment| %>
-            <% if (enrollment.classe.start_date > Time.now) %>
+            <% if (enrollment.classe.start_date < Time.now) %>
             <%# <%= Time.now %>
             <div class="enrollment-card">
                 <h2><%= enrollment.classe.course.title %></h2>
