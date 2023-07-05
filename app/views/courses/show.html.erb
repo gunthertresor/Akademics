@@ -39,6 +39,10 @@
                     <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
                 <% else %>
                     <p style="color:red">Enrollment Closed</p>
+
+                    <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', style:"display: none;", data: {turbo_confirm: 'are you sure ?'}  %>
+
+
                 <% end %>
             </div>
             <% end %>

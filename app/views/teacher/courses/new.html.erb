@@ -1,18 +1,32 @@
- <div class="container pt-3 d-flex flex-column align-items-center">
+ <div class="container w-75 p-3 d-flex flex-column align-items-center">
 
     <%= simple_form_for @course, url: teacher_courses_path(@course),  html: {class: "w-50 p-3"} do |f| %>
         <h2 class = "text-center">Add a course</h2>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
-        <%= f.input :name %>
-        <%= f.input :title %>
-        <%= f.input :description %>
-        <%= f.input :price %>
-        <%= f.input :content %>
-        <%= f.input :category, :collection => [ "literature", "art", "mathematics", "physics", "robotic", "chemistry", "engineering"] %>
-        <%= f.input :grade %>
-        <div class="btn-aka">
-          <%= f.button :submit%>
+        <%= f.input :name,
+                    label: false,
+                    placeholder: "Name" %>
+        <%= f.input :title,
+                    label: false,
+                    placeholder: "Title" %>
+        <%= f.input :description,
+                    label: false,
+                    placeholder: "Description" %>
+        <%= f.input :price,
+                    label: false,
+                    placeholder: "Price" %>
+        <%= f.input :content,
+                    label: false,
+                    placeholder: "Content" %>
+        <%= f.input :category,
+                    label: false,
+                    :collection => [ "Category","literature", "art", "mathematics", "physics", "robotic", "chemistry", "engineering"], selected:  "Category"%>
+        <%= f.input :grade,
+                    label: false,
+                    placeholder: "Grade" %>
+        <div>
+          <%= f.button :submit, class: "btn-aka"%>
         </div>
     <% end %>
 </div>
