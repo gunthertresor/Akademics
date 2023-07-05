@@ -24,16 +24,16 @@
                 <%=  Time.now %>
                 <%=  classe.start_date %>
 
-                <% if classe.class_date < Time.now %>
-                    <p style="color:green">free</p>
-                <% else %>
-                    <p style="color:red">past</p>
-                <% end %>
-
                 <p><i class="fa-solid fa-school"></i> <%= classe.class_date %></p>
                 <p><i class="fa-solid fa-hourglass-start"></i> <%= classe.start_date.hour %>h00</p>
                 <p><i class="fa-solid fa-hourglass-end"></i> <%= classe.end_date.hour %>h00</p>
-                <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
+                <% if classe.class_date < Time.now %>
+                    <p style="color:green">Enrollment Open</p>
+                    <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
+                <% else %>
+                    <p style="color:red">Enrollment Closed</p>
+                    <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login',disabled: true, data: {turbo_confirm: 'are you sure ?'}  %>
+                <% end %>
             </div>
             <% end %>
         </div>
