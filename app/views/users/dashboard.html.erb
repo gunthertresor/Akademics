@@ -23,67 +23,68 @@
     </div>
 </div>
 
-<div class="container">
-        <% @user.enrollments.each do |enrollment| %>
-            <% if (enrollment.classe.start_date < Time.now) %>
-            <%# <%= Time.now %>
-            <div class="enrollment-card">
-            <h2><strong>Ongoing Class</strong></h2>
-                <h2><%= enrollment.classe.course.title %></h2>
-                <h3><%= enrollment.classe.name %></h3>
-                <p><i class="fa-solid fa-hourglass-start"></i> <%= enrollment.classe.start_date.hour %>h00</p>
-                <p><i class="fa-solid fa-hourglass-end"></i> <%= enrollment.classe.end_date.hour %>h00</p>
-                <div class="pt-2">
-                    <%= button_to "Cancel", enrollment_path(enrollment), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
-                </div>
-            </div>
-<div class="home-container">
-    <div class="home-line-container">
-        <div class="home-line"></div>
-    </div>
-</div>
+<div class="contaiyygygner">
+    <% @user.enrollments.each do |enrollment| %>
+        <div class="enrollment-card">
+            <% if (enrollment.classe.start_date > Time.now) %>
+
+                    <h2><strong>Ongoing Class</strong></h2>
+                    <h2><%= enrollment.classe.course.title %></h2>
+                    <h3><%= enrollment.classe.name %></h3>
+                    <p><%= enrollment.classe.start_date %></p>
+                    <p> duration : <%= enrollment.classe.end_date.hour - enrollment.classe.start_date.hour %>h00</p>
+                    <div class="pt-2">
+                        <%= button_to "Cancel", enrollment_path(enrollment), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+                    </div>
 
             <% else %>
-          <div class ="card bg-black">
-              <div class = "enrollment-card">
-                <h2><strong>Terminated Class</strong></h2>
-                <h2><%= enrollment.classe.course.title %></h2>
-              </div>
 
-              <div class = "card bg-black">
-              <h3>Student feedback</h3>
-                <% @reviews.each do |review| %>
-                <div class="d-flex">
-                  <div class = "p-2">
-                    <div>
-                      <p><i class="fa-solid fa-id-card"></i> <%= review.course_id %></p>
-                      <p> rating :<%= review.rating %></p>
-                      <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
+                <div class ="card bg-black">
+                    <div class = "enrollment-card">
+                        <h2><strong>Terminated Class</strong></h2>
+                        <h2><%= enrollment.classe.course.title %></h2>
                     </div>
-                      <%= button_to "Delete", course_reviews_path(review), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
-                  </div>
+
+                    <div class = "card bg-black">
+                        <h3>Student feedback</h3>
+                        <% reviews = enrollment.classe.course.reviews.where(user_id: current_user.id) %>
+                        <% if reviews.length > 0 %>
+
+                            <% reviews.each do |review| %>
+                                <div class="d-flex">
+                                    <div class = "p-2">
+                                        <div>
+                                        <p>my id :<%= current_user.id %></p>
+                                        <p>course id :<%= review.course_id %></p>
+                                        <p>review user_id :<%= review.user_id %></p>
+                                        <p> rating :<%= review.rating %></p>
+                                        <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
+                                        </div>
+                                        <%= button_to "Delete", course_reviews_path(review), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+                                    </div>
+                                </div>
+                            <% end %>
+
+                        <% else %>
+
+                            <%= simple_form_for @review, url: course_reviews_path(enrollment.classe.course),  html: {class: "w-75 p-3"} do |f| %>
+                                <h2 class = "text-center">Add a review</h2>
+                                <%= f.error_notification %>
+                                <%= f.input :comment,
+                                        label: false,
+                                        placeholder: "Add a comment" %>
+                                <%= f.input :rating,
+                                        label: false,
+                                        placeholder: "Add a rating" %>
+                                <%= f.button :submit, class: "btn-aka" %>
+                            <% end %>
+
+                        <% end %>
+
+                    </div>
                 </div>
-                      <% end %>
 
-            <div class = "d-flex justify-content-center">
-                 <%= simple_form_for @review, url: course_reviews_path(enrollment.classe.course),  html: {class: "w-75 p-3"} do |f| %>
-                    <h2 class = "text-center">Add a review</h2>
-                    <%= f.error_notification %>
-                    <%= f.input :comment,
-                                label: false,
-                                placeholder: "Add a comment" %>
-                    <%= f.input :rating,
-                                label: false,
-                                placeholder: "Add a rating" %>
-
-                        <%= f.button :submit, class: "btn-aka" %>
-                <% end %>
-            </div>
-              </div>
-          </div>
             <% end %>
-
-        <% end %>
-
-    <%# <% end %>
+        </div>
+    <% end %>
 </div>
