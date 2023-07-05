@@ -1,16 +1,17 @@
     <%# <% if @user.status == "teacher" %>
+    <div class="teacher-enrollment-dashboard text-center"><h1>Registered Students</h1>
         <% @courses.each do |course| %>
-        <div class="teacher-enrollment-dashboard text-center"><h1>Registered Students</h1>
-          <div class="s">
-            <div class="teacher-enrollment-card">
+          <div class="container">
+            <div class="enrollment-card">
                 <h2><%= course.title %></h2>
-                <h3></h3>
-                <ul>
+                <%# <ul class = "list-group list-group-flus"> %>
                     <% course.course_classes.each do |classe| %>
                       <% classe.enrollments.each do |enrollment| %>
-                        <li><%= enrollment.user.first_name %> <%= enrollment.user.last_name %> ( <%= enrollment.created_at.strftime("%d/%m/%Y at %H:%M") %>  <%= enrollment.created_at.strftime("%Z") %>)</li>
+                        <i class="fa-solid fa-id-card"></i> <%= enrollment.user.first_name %> <%= enrollment.user.last_name %>
+                          ( <%= enrollment.created_at.strftime("%d/%m/%Y at %H:%M") %>
+                          <%= enrollment.created_at.strftime("%Z") %>)
                     <% end %>
-                  </ul>
+                  <%# </ul> %>
                 <% end %>
             </div>
           </div>
