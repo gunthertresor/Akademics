@@ -23,10 +23,9 @@ class ReviewsController < ApplicationController
     end
 
     def destroy
-        Review.find(params[:id]).destroy
+        @review = Review.find(params[:id])
+        @review.destroy
         redirect_to dashboard
-        # redirect_to teacher_course_path(params[:course_id])
-
     end
 
     private
