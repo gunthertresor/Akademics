@@ -1,7 +1,7 @@
 
 .home-container {
     // width: 100vw;
-    padding: 40px 0px;
+    padding: 40px 20px;
     // display: flex;
     // overflow: scroll;
     // text-align: center;
@@ -26,8 +26,27 @@
         font-size: 32px;
         text-align: center;
         color: #ced4da;
+
+        h1 {
+            // font-size: 36px;
+        }
+        p {
+            font-size: 22px;
+            color: $aka-text-color;
+            font-family: Baskerville;
+
+        }
   }
 }
+.sign-up-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: center;
+}
+
 .home-line-container {
     display: flex;
     align-items: center;
@@ -40,13 +59,15 @@
     }
 }
 .about {
-    color: $aka-white-color;
+    // color: $aka-white-color;
     text-align: center;
     h2 {
         font-size: 36px;
     }
     p {
         font-size: 18px;
+        color: $aka-text-color;
+
     }
 }
 .home-courses {
@@ -234,6 +255,7 @@
     display: none;
 }
 .teacher-card-container {
+
     display: flex;
     // align-items: center;
     // justify-content: center;
@@ -351,18 +373,7 @@
 
 }
 // ---------------------------
-.teacher-card-container {
-    // display: inline-flex;
-    display: flex;
-    width: 100vw;
-    overflow: scroll;
-    // background-color: aquamarine;
-    // align-items: center;
-    // justify-content: center;
-    height: 440px;
 
-
-}
 .home-upskill {
     padding: 10px;
     display: flex;

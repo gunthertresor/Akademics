@@ -10,17 +10,14 @@ class Teacher::ClassesController < ApplicationController
 
     def create
         @classe = Classe.new(classe_params)
-        # @classe.user = current_user
-        # @course = Course.find(params[:course_id])
         @classe.course = Course.find(params[:course_id])
-        # @classes = @course.course_classes
         @classe.save!
-        redirect_to teacher_courses_path
+        redirect_to teacher_course_path(params[:course_id])
     end
 
     def destroy
         Classe.find(params[:id]).destroy
-        redirect_to teacher_courses_path
+        redirect_to teacher_course_path(params[:course_id])
         # respond_to do |format|
         #   format.html { redirect_to booking_url, notice: "Booking was successfully destroyed." }
         #   format.json { head :no_content }

@@ -31,12 +31,20 @@
                         Category
                     </li>
                 <% end %>
-
-                <%= link_to edit_user_registration_path, class: 'd-flex align-middle ' do %>
-                    <li class="nav-item <%= active_class(dashboard_path) %>" data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
-                        Become teacher
-                        <i class="fa-solid fa-person-chalkboard"></i>
-                    </li>
+                <% if !current_user %>
+                    <%= link_to edit_user_registration_path, class: 'd-flex align-middle ' do %>
+                        <li class="nav-item <%= active_class(dashboard_path) %>" data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
+                            Become teacher
+                            <i class="fa-solid fa-person-chalkboard"></i>
+                        </li>
+                    <% end %>
+                <% elsif (current_user.status == 'student')%>
+                    <%= link_to edit_user_registration_path, class: 'd-flex align-middle ' do %>
+                        <li class="nav-item <%= active_class(dashboard_path) %>" data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
+                            Become teacher
+                            <i class="fa-solid fa-person-chalkboard"></i>
+                        </li>
+                    <% end %>
                 <% end %>
             </div>
 

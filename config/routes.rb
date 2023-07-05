@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :courses, only: [:index, :show] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :destroy, :edit]
     # resources :classes, only: [:new, :create]
     #list meilleur prof
     collection do

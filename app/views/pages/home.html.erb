@@ -13,11 +13,8 @@
         <p><span  data-controller="typed" data-typed-sentences-value= "<%=['Choose from over 210,000 online video courses with new additions published every month'].to_json %>"></span></p>
     </div>
 </div>
-<!-------------->
-<!-------------->
-<div class="home-container">
 
-</div>
+<!-------------->
 
 <div class="home-container">
     <div class="home-courses">
@@ -76,6 +73,19 @@
 
 
 <!-------------->
+
+<% if !current_user %>
+<div class="home-container">
+    <div class="sign-up-container">
+        <h4>Start your journey today.</h4>
+        <p>Choose from 3 plans.Starting at $10/month, billed annually.</p>
+        <%= link_to new_user_registration_path do %>
+            <div class="btn-aka">Sign up</div>
+        <% end %>
+    </div>
+</div>
+<% end %>
+<!-------------->
 <div class="home-container">
     <div class="home-line-container">
         <div class="home-line"></div>
@@ -83,6 +93,7 @@
 </div>
 
 <!-------------->
+
 <div class="home-container">
     <div class="subscribe-container">
         <div>
@@ -98,7 +109,6 @@
         </div>
     </div>
 </div>
-
 <!-------------->
 <div class="home-container">
     <div class="home-courses">

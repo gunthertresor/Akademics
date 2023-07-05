@@ -1,24 +1,28 @@
 
 <div class ="container">
-  <div>
-    <h1><%= @course.title %></h1>
-    <h2><%= @course.name %></h2>
-    <%= link_to "edit", "edit", class: "form btn rounded-pill btn-light text-danger" %>
-    <div class = "pt-2">
-      <%= button_to "Delete", teacher_course_path(@course), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
-    </div>
-    <div class = "teacher-courses">
-      <div class="classes-container">
-        <% @classes.each do |classe| %>
-        <p><%= classe.name %></p>
-        <p><%= classe.start_date %></p>
-        <p><%= classe.end_date %></p>
+    <div>
+        <h1><%= @course.title %></h1>
+        <h2><%= @course.name %></h2>
+        <%= link_to "edit", "edit", class: "form btn rounded-pill btn-light text-danger" %>
+        <div class = "pt-2">
+        <%= button_to "Delete", teacher_course_path(@course), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+        </div>
+        <div class = "teacher-courses">
+            <div class="classes-container">
+                <% @classes.each do |classe| %>
+                    <p><%= classe.name %></p>
+                    <p><%= classe.start_date %></p>
+                    <p><%= classe.end_date %></p>
 
-        <%= link_to "Edit class", teacher_course_path(classe), class: "btn-aka mb-5" %>
-        <%= button_to "Delete", teacher_class_path(classe), method: :delete, class: 'btn-aka mb-3 mt-3', data: {turbo_confirm: 'are you sure ?'}  %>
-        <% end %>
-        <%= link_to "Create a new class", new_teacher_course_class_path(@course), class: "btn-aka mt-2" %>
-      </div>
+                    <% if  classe.class_date < Time.now %>
+                        <p style="color:red">past</p>
+                    <% end %>
+
+                    <%= link_to "Edit class", teacher_course_path(classe), class: "btn-aka mb-5" %>
+                    <%= button_to "Delete", teacher_class_path([classe, @course]), method: :delete, class: 'btn-aka mb-3 mt-3', data: {turbo_confirm: 'are you sure ?'}  %>
+                <% end %>
+                <%= link_to "Create a new class", new_teacher_course_class_path(@course), class: "btn-aka mt-2" %>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

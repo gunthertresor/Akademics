@@ -21,6 +21,15 @@
             <% @classes.each do |classe| %>
             <div class="course-card p-2 col-4">
                 <h3><%= classe.name %></h3>
+                <%=  Time.now %>
+                <%=  classe.start_date %>
+
+                <% if classe.class_date < Time.now %>
+                    <p style="color:green">free</p>
+                <% else %>
+                    <p style="color:red">past</p>
+                <% end %>
+
                 <p><i class="fa-solid fa-school"></i> <%= classe.class_date %></p>
                 <p><i class="fa-solid fa-hourglass-start"></i> <%= classe.start_date.hour %>h00</p>
                 <p><i class="fa-solid fa-hourglass-end"></i> <%= classe.end_date.hour %>h00</p>

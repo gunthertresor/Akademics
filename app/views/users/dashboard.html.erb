@@ -1,4 +1,4 @@
-    <%# <% if @user.status == "teacher" %> %>
+    <%# <% if @user.status == "teacher" %>
         <% @courses.each do |course| %>
         <div class="teacher-enrollment-dashboard text-center"><h1>Registered Students</h1>
           <div class="s">
@@ -15,15 +15,18 @@
             </div>
           </div>
         <% end %>
-    <%# <% else %> %>
+    <%# <% else %>
     <!-------------->
 <div class="home-container">
     <div class="home-line-container">
         <div class="home-line"></div>
     </div>
 </div>
-    <div class="s">
+
+<div class="s">
         <% @user.enrollments.each do |enrollment| %>
+            <% if (enrollment.classe.class_date > Time.now) %>
+            <%# <%= Time.now %>
             <div class="enrollment-card">
                 <h2><%= enrollment.classe.course.title %></h2>
                 <h3><%= enrollment.classe.name %></h3>
@@ -33,6 +36,32 @@
                     <%= button_to "Cancel", enrollment_path(enrollment), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
                 </div>
             </div>
+
+            <% else %>
+
+                <h2><%= enrollment.classe.course.title %></h2>
+
+                 <%= simple_form_for @review, url: course_reviews_path(enrollment.classe.course),  html: {class: "w-50 p-3"} do |f| %>
+                    <h2 class = "text-center">Add a review</h2>
+                    <%= f.error_notification %>
+                    <%= f.input :comment %>
+                    <%= f.input :rating %>
+
+                    <div class="btn-aka">
+                        <%= f.button :submit%>
+                    </div>
+                <% end %>
+            <% end %>
+
         <% end %>
-    <%# <% end %> %>
+        <div></div>
+        <% @reviews.each do |review| %>
+            <div class="d-flex">
+                <p><%= review.rating %></p>
+                <p><%= review.comment %></p>
+                <%= button_to "Delete", course_reviews_path(review), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+            </div>
+        <% end %>
+
+    <%# <% end %>
 </div>
