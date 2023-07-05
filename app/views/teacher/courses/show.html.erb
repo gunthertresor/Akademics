@@ -14,7 +14,7 @@
                     <p><%= classe.start_date %></p>
                     <p><%= classe.end_date %></p>
 
-                    <% if  classe.class_date < Time.now %>
+                    <% if  classe.start_date < Time.now %>
                         <p style="color:red">past</p>
                     <% end %>
 

@@ -27,6 +27,6 @@ class Teacher::ClassesController < ApplicationController
     private
 
     def classe_params
-        params.require(:classe).permit(:name, :class_date, :start_date, :end_date, :max_people)
+        params.require(:classe).permit(:name, :start_date, :end_date, :max_people)
     end
 end
