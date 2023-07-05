@@ -18,14 +18,14 @@ class ReviewsController < ApplicationController
         @review.user = current_user
         @review.course = Course.find(params[:course_id])
         @review.save!
-        redirect_to dashboard
+        redirect_to dashboard_path
         # redirect_to teacher_course_path(params[:course_id])
     end
 
     def destroy
         @review = Review.find(params[:id])
         @review.destroy
-        redirect_to dashboard
+        redirect_to dashboard_path
     end
 
     private
