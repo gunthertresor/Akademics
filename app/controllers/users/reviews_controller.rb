@@ -1,6 +1,5 @@
-class ReviewsController < ApplicationController
+class Users::ReviewsController < ApplicationController
     def index
-
     end
 
 
@@ -9,6 +8,4 @@ class ReviewsController < ApplicationController
         @review.destroy
         redirect_to dashboard_path
     end
-
-
 end
