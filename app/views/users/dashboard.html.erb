@@ -58,7 +58,7 @@
                                         <p> rating :<%= review.rating %></p>
                                         <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
                                         </div>
-                                        <%= button_to "Delete", course_reviews_path(review), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+                                        <%= button_to "Delete", review_path(review), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
                                     </div>
                                 </div>
                             <% end %>
