@@ -16,8 +16,8 @@ class Teacher::ClassesController < ApplicationController
     end
 
     def destroy
-        Classe.find(params[:id]).destroy
-        redirect_to teacher_course_path(params[:id])
+        @classe = Classe.find(params[:id]).destroy
+        redirect_to teacher_course_path(@classe.course)
         # respond_to do |format|
         #   format.html { redirect_to booking_url, notice: "Booking was successfully destroyed." }
         #   format.json { head :no_content }
