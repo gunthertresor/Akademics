@@ -77,9 +77,9 @@
 
                     <div class="session-info-container">
                         <h3 class="<%= @course.category%>" >  <%= classe.name %></h3>
-                        <p>  <%= classe.start_date %></p>
-                        <p> start at : <%= classe.start_date.hour %>h00</p>
-                        <p> duration : <%= classe.end_date.hour - classe.start_date.hour %>h00</p>
+                        <p> <i class="fa-solid fa-calendar-days"></i> <%= classe.start_date %></p>
+                        <p> <i class="fa-solid fa-hourglass-start"></i> <%= classe.start_date.hour %>h00</p>
+                        <p> <i class="fa-solid fa-hourglass-end"></i> <%= classe.end_date.hour - classe.start_date.hour %>h00</p>
                     </div>
 
                     <div class="session-enrollment-container">
@@ -90,9 +90,9 @@
                                     <p style="color:pink">Already enroll</p>
                                     <%= button_to "Cancel", enrollment_path(classe.enrollments.select {|k| current_user.id}), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
                                 <% else %>
-                                    <p style="color:green">start in : <%= (classe.start_date - Time.now).hour %></p>
+                                    <p style="color:green"><i class="fa-regular fa-clock"></i> <%= (classe.start_date - Time.now).hour %></p>
                                     <p style="color:green">Enrollment Open</p>
-                                    <p style="color:green"> still <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
+                                    <p style="color:green"> Available seats <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
                                     <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
                                 <% end %>
 
