@@ -1,0 +1,23 @@
+.aka-line-80-primary-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+    .aka-line-80-primary {
+        width: 80%;
+        height: 1px;
+        background: $aka-primary-color;
+    }
+}
+
+.aka-line-60-grey-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0px;
+    .aka-line-60-grey {
+        width: 60%;
+        height: 1px;
+        background: grey;
+    }
+}

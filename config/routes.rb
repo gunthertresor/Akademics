@@ -55,4 +55,5 @@ Rails.application.routes.draw do
 
   get :my_profil, to: 'users#my_profil'
   get :dashboard, to: 'users#dashboard'
+#   delete :dashboard, to: 'users#destroyreview'
 end
