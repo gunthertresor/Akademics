@@ -1,7 +1,12 @@
 <div class="profil-container mt-2">
   <div class="user-info">
-    <h3>My profile</h3>
-    <img src= "https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" class=" rounded float-start img-thumbnail mb-3" alt="...">
+    <div class= "user-card-img-container">
+        <% if current_user.url_avatar %>
+            <img src="<%= current_user.url_avatar %>" alt="profile one" class= "user-card-img">
+        <% else %>
+            <%= image_tag("avatar-neutre.jpg", class: "user-card-img") %>
+        <% end %>
+    </div>
     <div class = "container m-3 mp-3">
       <div class="text-start">
         <p><strong><i class="fa-solid fa-id-card"></i></strong> <%= current_user.first_name %> <%= current_user.last_name %></p>

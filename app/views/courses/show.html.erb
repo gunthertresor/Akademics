@@ -20,6 +20,8 @@
             <%= link_to teacher_path(@course.user) do %>
                 <% if @course.user.url_avatar %>
                     <img src="<%= @course.user.url_avatar %>" alt="profile one" class= "course-show-teacher-img">
+                <% else %>
+                    <%= image_tag("avatar-neutre.jpg", class: "teacher-card-img-sub") %>
                 <% end %>
             <% end %>
             </div>

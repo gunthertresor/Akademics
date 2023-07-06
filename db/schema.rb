@@ -76,7 +76,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_05_083212) do
     t.string "last_name"
     t.string "phone_number"
     t.string "address"
-    t.string "status"
+    t.string "status", default: "student"
     t.date "birth_date"
     t.string "url_avatar"
     t.text "profil"
