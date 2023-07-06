@@ -15,10 +15,17 @@ class UsersController < ApplicationController
     def dashboard
         @courses = current_user.courses
         @review = Review.new
+        # @enrollment = Enrollment.where(user_id: current_user)
         # @reviews = Review.where(user_id: current_user)
+
+
+        # @course = Course.find(params[:id])
+        # @classes = @course.course_classes
+        # @classes_uniq = @classes.group_by { |classe| classe.name }
+
     end
 
-    # def destroy
+    # def destroyreview
     #     Review.find(params[:id]).destroy
     #     redirect_to dashboard_path
     # end

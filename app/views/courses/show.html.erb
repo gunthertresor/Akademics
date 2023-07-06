@@ -1,45 +1,117 @@
-<div class = "container">
-    <div class="courses-show-container d-flex flex-column align-items-center">
-    <p><%= @course.category %></p>
-    <p><%= @course.rating %></p>
-        <%= image_tag("#{@course.category}.jpg", class: "mb-2 w-50", height: "400") %>
-        <h1 class="course-title"><%= @course.title %> by <%= @course.user.first_name%> <%= @course.user.last_name%> </h1>
-        <h2 class="course-name"><%= @course.name%></h2>
-        <% if @course.user.url_avatar %>
-            <img src="<%= @course.user.url_avatar %>" alt="profile one" class= "teacher-card-img-sub">
-        <% end %>
-    </div>
-    <div><%= @course.content %></div>
-    <div class="upcoming-sessions text-center">
-        <p>Upcoming sessions</p>
-    </div>
-    <p><%= @scrap %></p>
+<div class = "course-show-container">
 
-    <div class = "container p-3 rounded-3">
+    <!-------------->
 
-        <div class="row">
-            <% @classes.each do |classe| %>
-            <div class="course-card p-2 col-4">
-                <h3><%= classe.name %></h3>
-                <%  Time.now %>
+    <div class="courses-show-banner-container">
+        <h3 class="courses-show-category <%= @course.category%>"><%= @course.category.capitalize %></h3>
+        <div class="courses-show-banner-container-sub0">
+            <div class="courses-show-banner-container-sub">
+                <div class="courses-show-banner-gradient"></div>
+                <%= image_tag("#{@course.category}.jpg", class: "course-show-img") %>
 
-
-                <p><i class="fa-solid fa-school"></i>  <%=  classe.start_date %></p>
-
-                <p><i class="fa-solid fa-hourglass-start"></i> <%= classe.start_date.hour %>h00</p>
-                <p><i class="fa-solid fa-hourglass-end"></i> <%= classe.end_date.hour %>h00</p>
-                <% if classe.start_date < Time.now %>
-                    <p style="color:green">Enrollment Open</p>
-                    <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
-                <% else %>
-                    <p style="color:red">Enrollment Closed</p>
-
-                    <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', style:"display: none;", data: {turbo_confirm: 'are you sure ?'}  %>
-
-
-                <% end %>
+                <div class="courses-show-banner-info">
+                    <p class="courses-show-rating"><%= @course.rating %></p>
+                    <h2 class="courses-show-title <%= @course.category%>"><%= @course.title %> </h2>
+                    <h2 class="courses-show-name"><%= @course.name%></h2>
+                </div>
             </div>
+
+            <div class= "course-show-teacher-img-container">
+            <%= link_to teacher_path(@course.user) do %>
+                <% if @course.user.url_avatar %>
+                    <img src="<%= @course.user.url_avatar %>" alt="profile one" class= "course-show-teacher-img">
+                <% end %>
             <% end %>
+            </div>
+            <h2 class="courses-show-teacher"><%= @course.user.first_name%> <%= @course.user.last_name%></h2>
         </div>
+    </div>
+
+    <!-------------->
+    <div class="home-container">
+        <div class="aka-line-80-primary-container">
+            <div class="aka-line-80-primary"></div>
+        </div>
+    </div>
+    <!-------------->
+    <div class="course-content-container">
+            <h2 class="courses-content-Chapiter">Chapiter 1</h2>
+            <h2 class="courses-content-title <%= @course.category%>"><%= @course.title %> </h2>
+            <p><%= @course.content %>
+                <div class="course-content-container-gradient"></div>
+            </p>
+    </div>
+
+
+    <%# <p><%= @scrap %>
+    <%# <iframe src='https://www.youtube.com/watch?v=LRmhKf8-ZSk&ab_channel=Deep%26Elegant' frameborder='0' allowfullscreen></iframe> %>
+
+  <!-------------->
+    <div class="home-container">
+        <div class="aka-line-80-primary-container">
+            <div class="aka-line-80-primary"></div>
+        </div>
+    </div>
+    <!-------------->
+
+    <div class="upcoming-sessions">
+        <p>UPCOMING SESSIONS</p>
+    </div>
+    <!-------------->
+    <div class="home-container">
+        <div class="aka-line-60-grey-container">
+            <div class="aka-line-60-grey"></div>
+        </div>
+    </div>
+
+    <!-------------->
+    <div class = "session-container">
+            <% @classes.each do |classe| %>
+
+                <div class="session-container-sub">
+                    <div class="session-img-container">
+                        <%= image_tag("#{@course.category}.jpg", class: "session-img") %>
+                    </div>
+
+                    <div class="session-info-container">
+                        <h3 class="<%= @course.category%>" >  <%= classe.name %></h3>
+                        <p>  <%= classe.start_date %></p>
+                        <p> start at : <%= classe.start_date.hour %>h00</p>
+                        <p> duration : <%= classe.end_date.hour - classe.start_date.hour %>h00</p>
+                    </div>
+
+                    <div class="session-enrollment-container">
+                        <% if classe.start_date > Time.now + 12.hours%>
+                            <% if current_user %>
+
+                                <% if classe.enrollments.any? { |element| element.user_id == current_user.id  } %>
+                                    <p style="color:pink">Already enroll</p>
+                                    <%= button_to "Cancel", enrollment_path(classe.enrollments.select {|k| current_user.id}), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+                                <% else %>
+                                    <p style="color:green">start in : <%= (classe.start_date - Time.now).hour %></p>
+                                    <p style="color:green">Enrollment Open</p>
+                                    <p style="color:green"> still <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
+                                    <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
+                                <% end %>
+
+                            <% else %>
+
+                                <p style="color:green"> still <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
+                                <p>you have to login if you want enroll</p>
+                                <%= button_to "Login", new_user_session_path, class: "btn-aka-light-login" %>
+                            <% end %>
+                        <% else %>
+                            <p style="color:red">Enrollment Closed</p>
+                            <p>Enrollment close 12h before class date</p>
+                        <% end %>
+                    </div>
+                </div>
+                <%# <div class="home-container"> %>
+                        <%# <div class="aka-line-60-grey-container">
+                            <div class="aka-line-60-grey"></div>
+                        </div> %>
+                    <%# </div> %>
+            <% end %>
+        <%# </div> %>
     </div>
 </div>

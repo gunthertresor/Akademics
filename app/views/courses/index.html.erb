@@ -2,10 +2,11 @@
 <!-------------->
 <div class ="course-index-container">
     <div class="courses-index-category">
-        <% @courses.each_with_index do |course, i| %>
-            <%= link_to courses_path do %>
+
+        <% @courses_uniq.each_with_index do |course, i| %>
+            <%# <%= link_to courses_path do %>
                 <div class="courses-index-category-link"><%= course.category %></div>
-            <% end %>
+            <%# <% end %>
         <% end %>
     </div>
 

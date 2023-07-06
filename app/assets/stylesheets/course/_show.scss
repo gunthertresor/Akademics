@@ -1,46 +1,210 @@
-// .teacher-card-img-sub{
-//     height: 380px;
-//     width: 230px;
-//     border-radius: 15px;
+// .course-show-container {
+//     text-align: center;
 // }
+.courses-show-banner-container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
 
-.courses-show-container{
-  padding: 4rem;
-  margin: 5rem;
-  background-color: #f5f5f5;
-.container {
-	width: 40%;
-}
+    .courses-show-banner-container-sub0{
+        width: 80%;
+        // height: 40vh;
+        height: 380px;
+        border-radius: 15px;
+        // text-align: center;
+        margin: 30px;
+        background: $aka-primary-color;
+        position: relative;
 
-.img-fluid {
-	width: 100%;
-	height: 100vmax;
-	border: 5px solid #70578c;
-  text-align: center
-}
-.course-title {
-	text-align: center;
-	font-size: 2rem;
-	margin-bottom: 1rem;
-}
-.course-name {
-	text-align: center;
-	font-size: 1.5rem;
-	margin-bottom: 2rem;
-	text-decoration: underline;
-}
+        .courses-show-banner-container-sub{
+            width: 100%;
+            height: 100%;
+
+            border-radius: 15px;
+            overflow: hidden;
+            // margin: 30px;
+            position: relative;
+
+            .courses-show-banner-gradient {
+                background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.42348974164133735) 100%);
+                border-radius: 15px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 99%;
+                height: 99%;
+                z-index: 1;
+            }
+            .course-show-img {
+                width: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            .courses-show-banner-info {
+                z-index: 2;
+                width: 100%;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                .courses-show-category {
+                    padding: 10px;
+                    color: grey;
+                    font-size: 13px;
+                }
+                .courses-show-rating {
+                    color: $aka-white-color;
+                }
+                .courses-show-title {
+                    color: $aka-white-color;
+                    font-size: 53px;
+                }
+                .courses-show-name {
+                    color: $aka-white-color;
+                    font-size: 20px;
+                }
+            }
+        }
+        .courses-show-teacher {
+            color: $aka-white-color;
+            transform: translateY(70px);
+            font-size: 20px;
+            position: absolute;
+            bottom: -23%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .course-show-teacher-img-container {
+            // margin: 0 auto;
+            z-index: 3;
+            position: absolute;
+            top: 80%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 150px;
+            height: 230px;
+            border-radius: 15px;
+            overflow: hidden;
+
+            .course-show-teacher-img {
+                height: 100%;
+                &:hover {
+                    scale: 1.02;
+                }
+            }
+        }
+    }
 }
 
 .upcoming-sessions {
-  font-size: 2rem;
-  font-weight: bold;
-  background-color: rgb(54, 54, 54);
-  padding: 1rem;
-  margin: 1rem 0;
-  text-align: start;
-  border-radius: 0.25rem;
+//   font-size: 2rem;
+//   font-weight: bold;
+//   background-color: rgb(54, 54, 54);
+//   padding: 1rem;
+//   margin: 1rem 0;
+//   text-align: start;
+//   border-radius: 0.25rem;
+
+    border-radius: 15px;
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $aka-black-color;
+    margin-left: auto;
+    margin-right: auto;
+    p {
+        padding: 10px;
+        margin: auto;
+    }
 }
 
-.row {
-  padding-bottom: 10rem;
+
+.course-content-container {
+//   padding-bottom: 10rem;
+    // padding: 40px;
+    text-align: center;
+    height: 300px;
+    position: relative;
+    // padding: 40px;
+
+    p {
+        text-indent: 60px;
+        position: relative;
+        // padding: 40px;
+    }
+        .course-content-container-gradient {
+            z-index: 4;
+            // padding: 40px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            // height: 400px;
+            background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(255,255,255,0) 97%);
+            // background: red;
+            // display: flex;
+            width: 100vw;
+            height: 100%;
+        }
+
+    .courses-content-title {
+        margin-left: auto;
+        margin-right: auto;
+        padding: 20px;
+    }
+}
+.session-container {
+    width: 100vw;
+    // padding: 20px;
+
+
+    .session-container-sub {
+        display: flex;
+        justify-content: space-between;
+        // padding: 0px 20px;
+        // padding: 5px;
+        margin: 10px 20px;
+        background-color: $aka-black-color;
+        border-radius: 15px;
+
+        .session-img-container {
+            // padding: 20px;
+            width: 170px;
+            height: 170px;
+            border: 1px solid $aka-primary-color;
+            border-radius: 15px;
+            overflow: hidden;
+
+            .session-img {
+                width: 100%;
+                // transform: translateX(-20%);
+                // object-fit: contain;
+            }
+        }
+        .session-info-container {
+            flex-grow: 2;
+            padding: 20px;
+            color: $aka-white-color;
+            h3 {
+                font-style: italic;
+                font-size: 25px;
+                padding-bottom: 10px;
+            }
+            p {
+                line-height: 4px;
+                font-size: 15px;
+            }
+        }
+        .session-enrollment-container {
+            padding: 20px;
+        }
+    }
 }

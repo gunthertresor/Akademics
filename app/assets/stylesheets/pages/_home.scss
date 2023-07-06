@@ -48,17 +48,6 @@
     justify-content: center;
 }
 
-.home-line-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 0px;
-    .home-line {
-        width: 80%;
-        height: 1px;
-        background: $aka-primary-color;
-    }
-}
 .about {
     // color: $aka-white-color;
     text-align: center;
@@ -203,24 +192,6 @@
                 .card-stars {
                     font-size: 10px;
                     padding-bottom: 10px;
-                }
-                .art {
-                    font-family: fantasy;
-                }
-                .literature {
-                    font-family: Baskerville;
-                }
-                .engineering {
-                    font-family: Century Gothic;
-                }
-                .chemistry {
-                    font-family: Candara;
-                }
-                .mathematics {
-                    font-family: Consolas;
-                }
-                .physics {
-                    font-family: Copperplate Gothic;
                 }
             }
             .course-card-img {

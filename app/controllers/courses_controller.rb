@@ -18,14 +18,14 @@ class CoursesController < ApplicationController
 
     def index
         @courses = Course.all
+        @courses_uniq = Course.all.uniq { |course| course[:category] }
     end
 
     def show
         @enrollment = Enrollment.new
         @classes = @course.course_classes
-        @scrap = scrap()
-        # @course.classe = Classe.
-        # @course_classes = Course.Classe.new
+        # @scrap = scrap()
+        # @enrollment = Enrollment.where(user_id: current_user)
     end
 
     def featured

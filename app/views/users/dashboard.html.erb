@@ -19,12 +19,23 @@
     <%# <% else %>
     <!-------------->
 <div class="home-container">
-    <div class="home-line-container">
-        <div class="home-line"></div>
+    <div class="aka-line-80-primary-container">
+        <div class="aka-line-80-primary"></div>
     </div>
 </div>
 
 <div class="contaiyygygner">
+
+
+
+        <%# <% @classes_uniq.each do |classe| %> %>
+            <%# <% classe.each do |cla| %> %>
+                <%# <h3><%= cla %></h3> %>
+            <%# <% end %> %>
+        <%# <% end %> %>
+
+
+
     <% @user.enrollments.each do |enrollment| %>
         <div class="enrollment-card">
             <% if (enrollment.classe.start_date > Time.now) %>
