@@ -131,6 +131,8 @@
                         <div class= "teacher-card-img">
                             <% if teacher.url_avatar %>
                                 <img src="<%= teacher.url_avatar %>" alt="profile one" class= "teacher-card-img-sub">
+                            <% else %>
+                                <%= image_tag("avatar-neutre.jpg", class: "teacher-card-img-sub") %>
                             <% end %>
                         </div>
                         <div class="teacher-card-info-gradiant"></div>
