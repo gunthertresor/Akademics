@@ -50,7 +50,7 @@
                         <p style="color:green">Enrollment Open</p>
                         <p style="color:green"> Available seats <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
 
-                         <%= button_to "Delete", teacher_class_path([classe, @course]), method: :delete, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
+                         <%= button_to "Delete", teacher_class_path(classe), method: :delete, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
                     </div>
 
                 </div>
