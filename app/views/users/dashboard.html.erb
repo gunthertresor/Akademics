@@ -1,19 +1,5 @@
     <%# <% if @user.status == "teacher" %>
-<div class="teacher-enrollment-dashboard text-center"><h1>Registered Students</h1>
-        <% @courses.each do |course| %>
-          <div class="container">
-            <div class="enrollment-card">
-                <h2><%= course.title %></h2>
-                    <% course.course_classes.each do |classe| %>
-                      <% classe.enrollments.each do |enrollment| %>
-                        <i class="fa-solid fa-id-card"></i> <%= enrollment.user.first_name %> <%= enrollment.user.last_name %>
-                          ( <%= enrollment.created_at.strftime("%d/%m/%Y at %H:%M") %>
-                          <%= enrollment.created_at.strftime("%Z") %>)
-                      <% end %>
-                    <% end %>
-            </div>
-          </div>
-        <% end %>
+
     <!-------------->
   <div class="home-container">
     <div class="home-line-container">
@@ -59,7 +45,7 @@
                                         <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
                                         </div>
 
-                                     
+
 
                                         <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
 
