@@ -14,7 +14,7 @@ Course.destroy_all
 User.destroy_all
 
 puts "-------------- create Users --------------"
-john = User.create(first_name: 'John', last_name: "Doe", email: "john.doe@example.com", password: "rerere", phone_number: "123 456 7890", address: "123 Elm Street", status: "student")
+john = User.create(first_name: 'John', last_name: "Doe", email: "john.doe@example.com", password: "rerere", phone_number: "123 456 7890", address: "123 Elm Street", status: "student", url_avatar:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80")
 susan = User.create(first_name: 'Susan', last_name: "Smith", email: "susan.smith@example.com", password: "rerere", phone_number: "234 567 8901", address: "456 Oak Avenue", status: "student")
 bob = User.create(first_name: 'Bob', last_name: "Johnson", email: "bob.johnson@example.com", password: "rerere", phone_number: "345 678 9012", address: "789 Pine Lane", status: "student")
 linda = User.create(first_name: 'Linda', last_name: "Williams", email: "linda.williams@example.com", password: "rerere", phone_number: "456 789 0123", address: "012 Maple Drive", status: "student")
