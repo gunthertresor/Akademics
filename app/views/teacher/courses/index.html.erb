@@ -1,9 +1,8 @@
-
-  <div class = "container"></div>
-    <div class="row course-index-card-container">
+<div class ="course-index-container">
+    <div class="course-index-card-container">
         <% @courses.each do |course| %>
             <div class='course-index-card'>
-                <%= link_to teacher_course_path(course), class: 'course-box m-2' do %>
+                <%= link_to teacher_course_path(course) do %>
                     <div class= "course-card-sub">
                         <% if course.category %>
                             <%= image_tag("#{course.category}.jpg", class: "course-card-img") %>
@@ -22,7 +21,7 @@
             </div>
         <% end %>
     </div>
+</div>
   <div class = "container d-flex justify-content-center">
     <%= link_to "Create a new course", "courses/new", class: "btn-aka" %>
   </div>
-</div>
