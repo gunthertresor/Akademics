@@ -75,7 +75,6 @@
                 </div>
 
                 <div class="enrollment-container">
-                    <% @course.course_classes.each do |classe| %>
                         <% if classe.enrollments.any? %>
                             <h4>Registered Students</h4>
                         <% end %>
@@ -87,7 +86,6 @@
                                 <p><%= enrollment.created_at.strftime("%d/%m/%Y") %></p>
                             <% end %>
                         </div>
-                    <% end %>
                 </div>
 
             <% end %>
