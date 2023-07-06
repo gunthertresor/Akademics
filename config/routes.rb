@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   # root "articles#index"
 
   resources :courses, only: [:index, :show] do
-    resources :reviews, only: [:new, :create, :destroy, :edit]
+    resources :reviews, only: [:new, :create, :edit]
     # resources :classes, only: [:new, :create]
     #list meilleur prof
     collection do
@@ -55,5 +55,7 @@ Rails.application.routes.draw do
 
   get :my_profil, to: 'users#my_profil'
   get :dashboard, to: 'users#dashboard'
+  resources :reviews, only: [:destroy]
+
 #   delete :dashboard, to: 'users#destroyreview'
 end
