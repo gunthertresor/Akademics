@@ -87,6 +87,9 @@ enrollment5 = Enrollment.create(user_id: george.id, classe_id: class4.id, cancel
 enrollment6 = Enrollment.create(user_id: george.id, classe_id: class5.id, cancelled: false)
 enrollment6 = Enrollment.create(user_id: george.id, classe_id: class6.id, cancelled: false)
 
+Enrollment.create(user_id: john.id, classe_id: class4.id, cancelled: false)
+Enrollment.create(user_id: john.id, classe_id: class5.id, cancelled: false)
+Enrollment.create(user_id: john.id, classe_id: class6.id, cancelled: false)
 puts "-------------- create Review --------------"
 
 # John's reviews
