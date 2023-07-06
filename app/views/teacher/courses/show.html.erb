@@ -74,16 +74,19 @@
 
                 </div>
 
-                <div class="enrollment-container-sub">
-                    <h4>Registered Students</h4>
+                <div class="enrollment-container">
                     <% @course.course_classes.each do |classe| %>
-                        <% classe.enrollments.each do |enrollment| %>
-                            <%# <div> %>
-                            <i class="fa-solid fa-id-card"></i>
-                            <p><%= enrollment.user.first_name %> <%= enrollment.user.last_name %></p>
-                            <p><%= enrollment.created_at.strftime("%d/%m/%Y") %></p>
-                            <%# </div> %>
+                        <% if classe.enrollments.any? %>
+                            <h4>Registered Students</h4>
                         <% end %>
+
+                        <div class="enrollment-container-sub">
+                            <% classe.enrollments.each do |enrollment| %>
+                                <i class="fa-solid fa-id-card"></i>
+                                <p><%= enrollment.user.first_name %> <%= enrollment.user.last_name %></p>
+                                <p><%= enrollment.created_at.strftime("%d/%m/%Y") %></p>
+                            <% end %>
+                        </div>
                     <% end %>
                 </div>
 
