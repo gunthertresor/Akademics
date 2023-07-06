@@ -17,6 +17,17 @@
             border-bottom: 2px solid #ddd;
             padding-bottom: 10px;
         }
+
+        .user-card-img-container {
+            height: 300px;
+            width: 200px;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+        .user-card-img {
+            height: 130%;
+            transition: all 0.3s ease-in-out;
+        }
     }
 
     .course-list {
