@@ -1,35 +1,55 @@
 <div class="container mt-2">
-    <div class="user-info">
-        <h3>
-            <i class="fa-solid fa-id-card"></i></strong> <%= @teacher.first_name %> <%= @teacher.last_name %>
-            <div class="teacher-rating">
-                <% @teacher.courses.average(:rating).to_i.times do %>
-                <i class="fa-solid fa-star" style="color: #d1c300;"></i>
-                <% end %>
-            </div>
-        </h3>
-        <% if @teacher.url_avatar %>
-            <img src="<%= @teacher.url_avatar %>" alt="profile one" class= "w-10efew" style="width: 300px; height: 400px;">
-        <% end %>
-
-<div class="teacher-comments">
-    <% @teacher.courses.each do |course| %>
-        <h5><strong><%= course.title %></strong></h5>
-        <table class="table table-bordered">
-            <% course.reviews.each do |review| %>
-            <tr>
-                <td style="width: 15%;"><strong><%= review.user.first_name %> <%= review.user.last_name %></strong></td>
-                <td><%= review.comment %></td>
-                <td>
-                    <% review.rating.times do %>
-                    <i class="fa-solid fa-star" style="color: #d1c300;"></i>
-                    <% end %>
-                </td>
-            </tr>
-            <% end %>
-        </table>
+  <div class="teacher-card-info">
+    <h2><%= @teacher.first_name %> <%= @teacher.last_name %></h2>
+    <div class="teacher-rating">
+      <% average_rating = @teacher.courses.average(:rating) %>
+      <% average_rating.to_i.times do %>
+        <i class="fa-solid fa-star" style="color: #d1c300;"></i>
+      <% end %>
+    </div>
+    <div class="show-teacher-line-container">
+    <div class="aka-line-80-primary-container">
+        <div class="aka-line-80-primary"></div>
+    </div>
+</div>
+    <% if @teacher.url_avatar %>
+        <img src="<%= @teacher.url_avatar %>" alt="profile one">
     <% end %>
+
+  </div>
+</div>
+<% @teacher.courses.each do |course| %>
+  <% if course.reviews.any? %>
+
+  <div class="show-teacher-line-container">
+    <div class="aka-line-80-primary-container">
+        <div class="aka-line-80-primary"></div>
+    </div>
 </div>
 
+    <div class="teacher-card-show">
+    <h5><strong><%= course.name %></strong></h5>
+      <% course.reviews.each do |review| %>
+
+        <div class="teacher-card-container-sub">
+          <div class="teacher-img-container">
+            <strong><%= review.user.first_name %> <%= review.user.last_name %></strong>
+          </div>
+
+          <div class="teacher-info-container">
+            <%= review.comment %>
+          </div>
+
+          <div class="teacher-rating-container">
+            <% review.rating.times do %>
+              <i class="fa-solid fa-star" style="color: #d1c300;"></i>
+            <% end %>
+          </div>
+
+        </div>
+
+      <% end %>
     </div>
+  <% end %>
+<% end %>
 </div>
