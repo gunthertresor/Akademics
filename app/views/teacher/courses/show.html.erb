@@ -46,29 +46,10 @@
                     </div>
 
                     <div class="session-enrollment-container">
-                        <% if classe.start_date > Time.now + 12.hours%>
-                            <% if current_user %>
+                        <p style="color:green">start in : <%= (classe.start_date - Time.now).hour %></p>
+                        <p style="color:green">Enrollment Open</p>
+                        <p style="color:green"> Available seats <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
 
-                                <% if classe.enrollments.any? { |element| element.user_id == current_user.id  } %>
-                                    <p style="color:pink">Already enroll</p>
-                                    <%= button_to "Cancel", enrollment_path(classe.enrollments.select {|k| current_user.id}), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
-                                <% else %>
-                                    <p style="color:green">start in : <%= (classe.start_date - Time.now).hour %></p>
-                                    <p style="color:green">Enrollment Open</p>
-                                    <p style="color:green"> Available seats <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
-                                    <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
-                                <% end %>
-
-                            <% else %>
-
-                                <p style="color:green"> still <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
-                                <p>you have to login if you want enroll</p>
-                                <%= button_to "Login", new_user_session_path, class: "btn-aka-light-login" %>
-                            <% end %>
-                        <% else %>
-                            <p style="color:red">Enrollment Closed</p>
-                            <p>Enrollment close 12h before class date</p>
-                        <% end %>
                          <%= button_to "Delete", teacher_class_path([classe, @course]), method: :delete, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
                     </div>
 
