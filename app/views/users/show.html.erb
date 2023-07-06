@@ -1,5 +1,5 @@
 <div class="container mt-2">
-  <div class="teacher-card-info">
+  <div class="teacher-cardshowing">
     <h2><%= @teacher.first_name %> <%= @teacher.last_name %></h2>
     <div class="teacher-rating">
       <% average_rating = @teacher.courses.average(:rating) %>
