@@ -90,7 +90,7 @@
                     <div data-menutoggle-target="menu" class="d-none menu-profil">
                         <%= link_to "Profil", my_profil_path, class: "dropdown-item" %>
                         <% if current_user.status == 'teacher'  %>
-                            <%= link_to "My courses", teacher_courses_path, class: "dropdown-item" %>
+                            <%= link_to "My Teaching", teacher_courses_path, class: "dropdown-item" %>
                         <% end %>
                         <%= link_to "Dashboard", dashboard_path, class: "dropdown-item" %>
                         <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>

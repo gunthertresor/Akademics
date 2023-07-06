@@ -1,4 +1,4 @@
-<div class ="container">
+<%# <div class ="container"> %>
 <!--------------------------------------->
 <div class = "course-show-container">
   <div class="courses-show-banner-container">
@@ -27,32 +27,7 @@
           </div>
         </div>
 
-       <%# <div class = "teacher-courses">
-            <div class="container">
-              <div class = "row">
-                <% @classes.each do |classe| %>
-                  <%# <div class ="col-4">
-                    <p><%= classe.name %></p>
-                    <%# <p><%= classe.start_date %></p>
-                    <%# <p><%= classe.end_date %></p>
 
-                    <%# <% if classe.start_date > Time.now %>
-                        <%# <p style="color:green">Open </p> %>
-                        <%# <% else%>
-                        <%# <p style="color:red">Closed </p> %>
-                    <%# <% end %>
-                    <%# <%= link_to "Edit class", teacher_course_path(classe), class: "btn-aka mb-5" %>
-                    <%# <%= button_to "Delete", teacher_class_path([classe, @course]), method: :delete, class: 'btn-aka mb-3 mt-3', data: {turbo_confirm: 'are you sure ?'}  %>
-                  <%# </div>
-                <% end %>
-              <%# </div>
-            </div>
-            <div >
-              <%= link_to "Create a new class", new_teacher_course_class_path(@course), class: "btn-aka mt-2" %>
-            <%# </div> %>
-        <%# </div> %>
-    <%# </div> %>
-<%# </div> %>
 <!--------------------------------------->
 <div class = "course-show-container">
     <div class = "session-container">
@@ -96,7 +71,22 @@
                         <% end %>
                          <%= button_to "Delete", teacher_class_path([classe, @course]), method: :delete, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
                     </div>
+
                 </div>
+
+                <div class="enrollment-container-sub">
+                    <h4>Registered Students</h4>
+                    <% @course.course_classes.each do |classe| %>
+                        <% classe.enrollments.each do |enrollment| %>
+                            <%# <div> %>
+                            <i class="fa-solid fa-id-card"></i>
+                            <p><%= enrollment.user.first_name %> <%= enrollment.user.last_name %></p>
+                            <p><%= enrollment.created_at.strftime("%d/%m/%Y") %></p>
+                            <%# </div> %>
+                        <% end %>
+                    <% end %>
+                </div>
+
             <% end %>
         <%# </div> %>
     </div>
@@ -106,4 +96,4 @@
 </div>
 </div>
 <!--------------------------------------->
-</div>
+<%# </div> %>
