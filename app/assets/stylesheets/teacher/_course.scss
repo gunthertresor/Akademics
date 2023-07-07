@@ -104,10 +104,13 @@
 .enrollment-container {
     background-color: $aka-black-color;
     width: 80vw;
-    // margin: 20px 20px 20px 60px;
+    margin: 5px 20px 20px 100px;
     // display: flex;
     border-radius: 15px;
-
+    h4 {
+        font-size: 15px;
+        padding: 5px;
+    }
     .enrollment-container-sub {
         // display: flex;
         // justify-content: center;
@@ -116,15 +119,24 @@
             display: flex;
             // justify-content: center;
             align-items: center;
+            padding: 2px;
+            justify-content: space-between;
 
             .enrollment-student-img-container {
-                width: 50px;
-                height: 50px;
+                width: 40px;
+                height: 40px;
                 overflow: hidden;
                 border-radius: 5px;
+                // padding: 2px;
 
                 .enrollment-student-img {
                     width: 100%;
+                }
+            }
+            .enrollment-student-info {
+                p {
+                    font-size: 14px;
+                    padding: 2px;
                 }
             }
         }
