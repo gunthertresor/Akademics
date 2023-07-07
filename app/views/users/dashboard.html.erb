@@ -72,7 +72,7 @@
                     <div class="aka-line-60-grey"></div>
                 </div>
             <!-------------->
-
+            <h3>Student feedback</h3>
             <h2 class="dashboard-list-title" style="color:red">Terminated Class</h2>
             <% @user.enrollments.each do |enrollment| %>
                 <% if (enrollment.classe.start_date < Time.now) %>
@@ -91,7 +91,6 @@
 
                     <div class="course-classe-container-review">
 
-                        <h3>Student feedback</h3>
                         <% reviews = enrollment.classe.course.reviews.where(user_id: current_user.id) %>
                         <% if reviews.length > 0 %>
                             <% reviews.each do |review| %>
