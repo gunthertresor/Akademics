@@ -50,13 +50,15 @@
                 <% if (enrollment.classe.start_date > Time.now) %>
 
                     <div class="course-classe-container">
-                        <div class="course-category-img-container">
-                            <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
-                        </div>
-                        <div class="course-category-info-container">
-                            <h2><%= enrollment.classe.course.title %></h2>
-                            <h3><%= enrollment.classe.name %></h3>
-                            <p><%= enrollment.classe.start_date %></p>
+                        <div  class="d-flex">
+                            <div class="course-category-img-container">
+                                <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
+                            </div>
+                            <div class="course-category-info-container">
+                                <h2><%= enrollment.classe.course.title %></h2>
+                                <h3><%= enrollment.classe.name %></h3>
+                                <p><%= enrollment.classe.start_date %></p>
+                            </div>
                         </div>
                         <div class="course-category-right-container">
                             <p> duration : <%= enrollment.classe.end_date.hour - enrollment.classe.start_date.hour %>h00</p>
@@ -77,40 +79,39 @@
             <% @user.enrollments.each do |enrollment| %>
                 <% if (enrollment.classe.start_date < Time.now) %>
                     <div class="course-classe-container">
-
-                        <div class="course-category-img-container">
-                            <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
-                        </div>
-                            <h3><%= enrollment.classe.name %></h3>
-                        <div class="course-category-info-container">
-                            <p><%= enrollment.classe.start_date %></p>
+                        <div class="d-flex">
+                            <div class="course-category-img-container">
+                                <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
+                            </div>
+                            <div class="course-category-info-container">
+                                <h3><%= enrollment.classe.name %></h3>
+                                <p><%= enrollment.classe.start_date %></p>
+                            </div>
                         </div>
 
                         <%= button_to "Delete", enrollment_path(enrollment), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
                     </div>
 
                     <div class="course-classe-container-review">
-
-                        <%# <h3>Student feedback</h3> %>
                         <% reviews = enrollment.classe.course.reviews.where(user_id: current_user.id) %>
                         <% if reviews.length > 0 %>
                             <% reviews.each do |review| %>
-                                <div>
-                                    <% if (review.rating != nil)  %>
-                                        <% review.rating.times do %>
-                                            <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                                <div class="d-flex">
+                                    <div>
+                                        <% if (review.rating != nil)  %>
+                                            <% review.rating.times do %>
+                                                <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                                            <% end %>
                                         <% end %>
-                                    <% end %>
-                                    <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
+                                        <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
+                                    </div>
+                                    <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
                                 </div>
-                                <i class="fa-solid fa-trash"></i>
-                                <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
                             <% end %>
 
                         <% else %>
 
                             <%= simple_form_for @review, url: course_reviews_path(enrollment.classe.course),  html: {class: "add-classes-review"} do |f| %>
-                                <%# <div class="add-review"> %>
                                     <%= f.error_notification %>
 
                                     <%= f.input :comment,
@@ -124,7 +125,6 @@
                                             input_html: { class: 'add-review-form-input'}%>
 
                                     <%= f.button :submit, class: "btn-aka-light-login" %>
-                                <%# </div> %>
                             <% end %>
 
                         <% end %>
