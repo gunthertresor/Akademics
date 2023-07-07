@@ -85,8 +85,9 @@
                         <div class="course-category-info-container">
                             <p><%= enrollment.classe.start_date %></p>
                         </div>
-
-                        <%= button_to "Delete", enrollment_path(enrollment), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
+                        <div class = "container w-50 d-flex justify-content-end">
+                          <%= button_to "Delete", enrollment_path(enrollment), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
+                        </div>
                     </div>
 
                     <div class="course-classe-container-review">
@@ -102,8 +103,9 @@
                                     <% end %>
                                     <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
                                 </div>
-                                <i class="fa-solid fa-trash"></i>
-                                <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
+                                <div class = "container d-flex justify-content-end">
+                                  <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
+                                </div>
                             <% end %>
 
                         <% else %>
@@ -121,9 +123,9 @@
                                             value: 6,
                                             placeholder: "Add a rating",
                                             input_html: { class: 'add-review-form-input'}%>
-
-                                    <%= f.button :submit, class: "btn-aka-light-login" %>
-                                <%# </div> %>
+                                    <div class = "container w-50 d-flex justify-content-end">
+                                      <%= f.button :submit, class: "btn-aka-light-login" %>
+                                    </div>
                             <% end %>
 
                         <% end %>
