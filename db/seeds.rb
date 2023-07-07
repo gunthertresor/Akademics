@@ -219,13 +219,13 @@ course_steve3 = Course.create(user_id: steve.id, title: "Creative writing numero
 
 puts "-------------- create Classe --------------"
 class1 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20, start_date: Time.now - 4.days, end_date: Time.now - 4.days + 1.hours)
-class3 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20, start_date: Time.now - 3.hours, end_date: Time.now - 4.hours)
+class3 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20, start_date: Time.now - 3.hours, end_date: Time.now - 2.hours)
 class3 = Classe.create(course_id: course_george1.id, name: "Shakespearean literature class", max_people: 20, start_date: Time.now + 4.days, end_date: Time.now + 4.days + 1.hours)
 class3 = Classe.create(course_id: course_george2.id, name: "Modernist literature class", max_people: 20, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
 class2 = Classe.create(course_id: course_megan1.id, name: "Calculus 101 class", max_people: 20, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
 class4 = Classe.create(course_id: course_jim1.id, name: "learn chimie class", max_people: 20, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)
 class5 = Classe.create(course_id: course_jim1.id, name: "learn chimie class", max_people: 20, start_date: Time.now - 2.days, end_date: Time.now - 2.days + 1.hours)
-class6 = Classe.create(course_id: course_joseph1.id, name: "space geomety chapiter 1", max_people: 20, start_date: Time.now - 3.hours, end_date: Time.now - 4.hours)
+class6 = Classe.create(course_id: course_joseph1.id, name: "space geomety chapiter 1", max_people: 20, start_date: Time.now - 3.hours, end_date: Time.now - 2.hours)
 
 
 class7 = Classe.create(course_id: course_joseph4.id, name: "Movement is like nothing class", max_people: 20, start_date: Time.now + 3.hours, end_date: Time.now + 4.hours)

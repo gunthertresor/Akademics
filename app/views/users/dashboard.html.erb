@@ -103,8 +103,8 @@
                         <% reviews = enrollment.classe.course.reviews.where(user_id: current_user.id) %>
                         <% if reviews.length > 0 %>
                             <% reviews.each do |review| %>
-                                <div class="d-flex">
-                                    <div>
+                                <div class="all-classes-review">
+                                    <div class="classes-review">
                                         <% if (review.rating != nil)  %>
                                             <% review.rating.times do %>
                                                 <i class="fa-solid fa-star" style="color: #e5c006;"></i>
@@ -114,34 +114,28 @@
                                     </div>
                                 </div>
 
-                                <div class = "container d-flex justify-content-end">
-                                  <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
-                                </div>
-
-
+                                    <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
                             <% end %>
 
                         <% else %>
-
-                            <%= simple_form_for @review, url: course_reviews_path(enrollment.classe.course),  html: {class: "add-classes-review"} do |f| %>
-                                    <%= f.error_notification %>
-
-                                    <%= f.input :comment,
-                                            label: false,
-                                            placeholder: "Add a comment", as: :text, :input_html => { class: 'add-review-form-input'}
-                                            %>
-                                    <%= f.input :rating,
-                                            label: false,
-                                            value: 6,
-                                            placeholder: "Add a rating",
-                                            input_html: { class: 'add-review-form-input'}%>
-
-                                    <div class = "container w-50 d-flex justify-content-end">
-                                      <%= f.button :submit, class: "btn-aka-light-login" %>
+                            <%= simple_form_for @review, url: course_reviews_path(enrollment.classe.course),  html: {class: "add-classes-revdwdwiew"} do |f| %>
+                                <div class= "add-classes-review">
+                                    <div class="d-flex">
+                                        <%= f.error_notification %>
+                                        <%= f.input :comment,
+                                                label: false,
+                                                placeholder: "Add a comment", as: :text, :input_html => { class: 'add-review-form-input first-review-input'}
+                                                %>
+                                        <%= f.input :rating,
+                                                label: false,
+                                                value: 6,
+                                                placeholder: "Add a rating",
+                                                input_html: { class: 'add-review-form-input'}%>
                                     </div>
-
-
-
+                                    <div >
+                                        <%= f.button :submit, class: "btn-aka-light-login" %>
+                                    </div>
+                                </div>
 
                             <% end %>
 
