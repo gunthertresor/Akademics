@@ -101,84 +101,32 @@
     }
 }
 
+.enrollment-container {
+    background-color: $aka-black-color;
+    width: 80vw;
+    // margin: 20px 20px 20px 60px;
+    // display: flex;
+    border-radius: 15px;
 
+    .enrollment-container-sub {
+        // display: flex;
+        // justify-content: center;
+        // align-items: center;
+        .enrollment-student-container {
+            display: flex;
+            // justify-content: center;
+            align-items: center;
 
-.teacher-course-number {
-  color: #333;
-  font-size: 2em;
-  margin-bottom: 1em;
-}
+            .enrollment-student-img-container {
+                width: 50px;
+                height: 50px;
+                overflow: hidden;
+                border-radius: 5px;
 
-.course-title {
-  color: #555;
-  font-size: 1.8em;
-  margin-bottom: 0.8em;
-}
-
-.course-name {
-  color: #777;
-  font-size: 1.5em;
-  margin-bottom: 1.2em;
-}
-
-.edit-link {
-  color: #007bff;
-  text-decoration: none;
-  font-size: 1.2em;
-  margin-bottom: 1em;
-}
-
-.delete-button-container {
-  margin-bottom: 2em;
-}
-
-.delete-button {
-  color: white;
-  background-color: #dc3545;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1.2em;
-}
-
-.classes-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 2em;
-}
-
-.class-card {
-  background-color: #f8f9fa;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 20px;
-  width: calc(50% - 10px);
-  margin-bottom: 20px;
-}
-
-.class-name, .class-start-date, .class-end-date {
-  color: #333;
-  margin-bottom: 0.5em;
-}
-
-.edit-class-link, .create-class-link {
-  color: #007bff;
-  text-decoration: none;
-  font-size: 1.2em;
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.delete-class-button {
-  color: white;
-  background-color: #dc3545;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-size: 1.2em;
-}
-
-.teacher-courses{
-  padding: 4rem;
+                .enrollment-student-img {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
