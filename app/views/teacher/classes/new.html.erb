@@ -1,4 +1,4 @@
-<div class="container pt-3">
+<div class="container pt-3 container d-flex justify-content-center">
 
     <%= simple_form_for @classe, url: teacher_course_classes_path(@course), html: {class: "w-50 shadow p-3"} do |f| %>
     <%# <%= simple_form_for @classe, url: new_teacher_course_class_path(@course), html: {class: "w-50 shadow p-3"} do |f| %>
@@ -6,18 +6,27 @@
         <h2 class = "text-center">Create a new class</h2>
         <%= f.error_notification %>
         <%# <%= f.error_notification message: f.object.errors[:base].to_sentence if %>
-        <%= f.input :name %>
-        <%= f.input :max_people %>
+        <%= f.input :name,
+                    label: false,
+                    placeholder: "Name" %>
+        <%= f.input :max_people,
+                    label: false,
+                    placeholder: "Number of people" %>
 
 
 
         <div data-controller="datepickr" data-datepickr-target="date">
-            <%= f.input :start_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
+            <%= f.input :start_date,
+                        as: :string,
+                        label: false,
+                        placeholder: "Staring date",
+                        input_html: { data: { controller: "datepickr" } } %>
         </div>
         <div data-controller="datepickr" data-datepickr-target="date">
-            <%= f.input :end_date, as: :string, input_html: { data: { controller: "datepickr" } } %>
+            <%= f.input :end_date, as: :string, label: false,
+                        placeholder: "Ending date" ,input_html: { data: { controller: "datepickr" } } %>
         </div>
 
-          <%= f.button :submit, class: "btn-aka"%>
+          <%= f.button :submit, class: 'btn-aka-light-login'%>
     <% end %>
 </div>

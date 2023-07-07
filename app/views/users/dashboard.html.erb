@@ -77,7 +77,7 @@
                     <div class="aka-line-60-grey"></div>
                 </div>
             <!-------------->
-
+            <h3 class = "d-flex justify-content-center">Student feedback</h3>
             <h2 class="dashboard-list-title" style="color:red">Terminated Class</h2>
             <% @user.enrollments.each do |enrollment| %>
                 <% if (enrollment.classe.start_date < Time.now) %>
@@ -93,11 +93,13 @@
                                 <p><%= enrollment.classe.start_date %></p>
                             </div>
                         </div>
-
-                        <%= button_to "Delete", enrollment_path(enrollment), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
+                        <div class = "container d-flex justify-content-end">
+                          <%= button_to "Delete", enrollment_path(enrollment), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
+                        </div>
                     </div>
 
                     <div class="course-classe-container-review">
+
                         <% reviews = enrollment.classe.course.reviews.where(user_id: current_user.id) %>
                         <% if reviews.length > 0 %>
                             <% reviews.each do |review| %>
@@ -111,6 +113,7 @@
                                         <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
                                     </div>
                                 </div>
+
                                     <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
                             <% end %>
 
@@ -133,6 +136,7 @@
                                         <%= f.button :submit, class: "btn-aka-light-login" %>
                                     </div>
                                 </div>
+
                             <% end %>
 
                         <% end %>
