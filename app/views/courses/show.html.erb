@@ -35,9 +35,10 @@
         <h2 class="courses-content-Chapiter">Chapiter 1</h2>
         <h2 class="courses-content-title <%= @course.category%>"><%= @course.title %> </h2>
         <p><%= @course.content %>
-        <div class="course-content-container-gradient"></div>
+            <div class="course-content-container-gradient"></div>
         </p>
     </div>
+        <%# <div class= 'gotobottom btn-aka-light square'><i class="fa-solid fa-arrow-down"></i></div> %>
     <%# <p><%= @scrap %>
     <%# <iframe src='https://www.youtube.com/watch?v=LRmhKf8-ZSk&ab_channel=Deep%26Elegant' frameborder='0' allowfullscreen></iframe> %>
     <!-------------->
@@ -71,24 +72,24 @@
             </div>
             <div class="session-enrollment-container">
                 <% if classe.start_date > Time.now + 12.hours%>
-                <% if current_user %>
-                <% if classe.enrollments.any? { |element| element.user_id == current_user.id  } %>
-                <p style="color:pink">Already enroll</p>
-                <%= button_to "Cancel", enrollment_path(classe.enrollments.select {|k| current_user.id}), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+                    <% if current_user %>
+                        <% if classe.enrollments.any? { |element| element.user_id == current_user.id  } %>
+                            <p style="color:pink">Already enroll</p>
+                            <%= button_to "Cancel", enrollment_path(classe.enrollments.select {|k| current_user.id}), method: :delete, class: 'btn-aka', data: {turbo_confirm: 'are you sure ?'}  %>
+                        <% else %>
+                            <p style="color:green"><i class="fa-regular fa-clock"></i> <%= Time.at(classe.start_date - Time.now).utc.strftime("%Hh%Mmin") %></p>
+                            <p style="color:green">Enrollment Open</p>
+                            <p style="color:green"> Available seats <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
+                            <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
+                        <% end %>
+                    <% else %>
+                        <p style="color:green"> still <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
+                        <p>you have to login if you want enroll</p>
+                        <%= button_to "Login", new_user_session_path, class: "btn-aka-light-login" %>
+                    <% end %>
                 <% else %>
-                <p style="color:green"><i class="fa-regular fa-clock"></i> <%= Time.at(classe.start_date - Time.now).utc.strftime("%Hh%Mmin") %></p>
-                <p style="color:green">Enrollment Open</p>
-                <p style="color:green"> Available seats <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
-                <%= button_to "Enroll now", class_enrollments_path(classe), method: :post, class: 'btn-aka-light-login', data: {turbo_confirm: 'are you sure ?'}  %>
-                <% end %>
-                <% else %>
-                <p style="color:green"> still <%=  classe.max_people - classe.enrollments.count %> / <%=  classe.max_people %></p>
-                <p>you have to login if you want enroll</p>
-                <%= button_to "Login", new_user_session_path, class: "btn-aka-light-login" %>
-                <% end %>
-                <% else %>
-                <p style="color:red">Enrollment Closed</p>
-                <p>Enrollment close 12h before class date</p>
+                        <p style="color:red">Enrollment Closed</p>
+                        <p>Enrollment close 12h before class date</p>
                 <% end %>
             </div>
         </div>

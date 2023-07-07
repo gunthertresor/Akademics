@@ -27,21 +27,21 @@
                 <% end %>
 
                 <%= link_to courses_path, class: 'v' do %>
-                    <li class="nav-item <%= active_class(my_profil_path) %>" data-dotaka-target="profil" data-action="mouseover->dotaka#mouseOver2 mouseout->dotaka#mouseOut2">
+                    <li class="nav-item" data-dotaka-target="profil" data-action="mouseover->dotaka#mouseOver2 mouseout->dotaka#mouseOut2">
                         Category
                     </li>
                 <% end %>
 
                 <% if !current_user %>
                     <%= link_to edit_user_registration_path, class: 'd-flex align-middle ' do %>
-                        <li class="nav-item <%= active_class(dashboard_path) %>" data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
+                        <li class="nav-item " data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
                             Become teacher
                             <i class="fa-solid fa-person-chalkboard"></i>
                         </li>
                     <% end %>
                 <% elsif (current_user.status == 'student' || current_user.status == nil)%>
                     <%= link_to edit_user_registration_path, class: 'd-flex align-middle ' do %>
-                        <li class="nav-item <%= active_class(dashboard_path) %>" data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
+                        <li class="nav-item <%= active_class(edit_user_registration_path) %>" data-dotaka-target="dashboard" data-action="mouseover->dotaka#mouseOver3 mouseout->dotaka#mouseOut3">
                             Become teacher
                             <i class="fa-solid fa-person-chalkboard"></i>
                         </li>
@@ -74,8 +74,8 @@
 
             <% if user_signed_in? %>
 
-                <%= link_to "/", class: 'c' do %>
-                    <li class="nav-item">Messages</li>
+                <%= link_to "/", class: 'navbar-message-icon' do %>
+                    <i class="fa-regular fa-message"></i>
                 <% end %>
 
 

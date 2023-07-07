@@ -1,79 +1,139 @@
-    <%# <% if @user.status == "teacher" %>
+<div class="dashboard-container">
+    <div class="dashboard-container-profil">
 
-    <!-------------->
-  <div class="home-container">
-    <div class="home-line-container">
-        <div class="home-line"></div>
+        <div class="dashboard-avatar-container">
+            <div class="dashboard-profil-img-container">
+                <% if current_user.url_avatar %>
+                    <%= image_tag(current_user.url_avatar, class: "dashboard-profil-img") %>
+                <% else %>
+                    <%= image_tag("avatar-neutre.jpg", class: "user-card-img") %>
+                <% end %>
+            </div>
+            <p><%= current_user.first_name %> <%= current_user.last_name %></p>
+            <p><%= current_user.status %></p>
+            <%= link_to "Edit", edit_user_registration_path, class: "btn-aka-light-login btn-profil-edit" %>
+            <p><i class="fa-solid fa-users"></i> 2 followers</p>
+        </div>
+        <!-------------->
+                <div class="aka-line-60-grey-container">
+                    <div class="aka-line-60-grey"></div>
+                </div>
+            <!-------------->
+        <div class="dashboard-list-container">
+            <ul>
+                <li>Parameters</li>
+                <li>Change my status</li>
+                <li>Check my wallet</li>
+                <li>My info</li>
+            </ul>
+        </div>
     </div>
-  </div>
+    <div class="dashboard-container-content">
 
-  <div class="container">
-    <% @user.enrollments.each do |enrollment| %>
-        <div class="enrollment-card">
-            <% if (enrollment.classe.start_date > Time.now) %>
+        <div class="dashboard-list-container">
+            <ul>
+                <li>Following classes</li>
+                <li>Graduation</li>
+                <li>Message</li>
+                <li>My reviews</li>
+                <li>Configuration</li>
+            </ul>
+        </div>
+        <!-------------->
+                <div class="aka-line-80-primary-container">
+                    <div class="aka-line-80-primary"></div>
+                </div>
+        <!-------------->
+        <div class="dashboard-container-centent">
+            <h2 class="dashboard-list-title" style="color:green">Ongoing Class</h2>
+            <% @user.enrollments.each do |enrollment| %>
+                <% if (enrollment.classe.start_date > Time.now) %>
 
-                    <h2><strong>Ongoing Class</strong></h2>
-                    <h2><%= enrollment.classe.course.title %></h2>
-                    <h3><%= enrollment.classe.name %></h3>
-                    <p><%= enrollment.classe.start_date %></p>
-                    <p> duration : <%= enrollment.classe.end_date.hour - enrollment.classe.start_date.hour %>h00</p>
-                    <div class="pt-2">
-                        <%= button_to "Cancel", enrollment_path(enrollment), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
+                    <div class="course-classe-container">
+                        <div class="course-category-img-container">
+                            <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
+                        </div>
+                        <div class="course-category-info-container">
+                            <h2><%= enrollment.classe.course.title %></h2>
+                            <h3><%= enrollment.classe.name %></h3>
+                            <p><%= enrollment.classe.start_date %></p>
+                        </div>
+                        <div class="course-category-right-container">
+                            <p> duration : <%= enrollment.classe.end_date.hour - enrollment.classe.start_date.hour %>h00</p>
+                            <%= button_to "Cancel", enrollment_path(enrollment), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
+                        </div>
                     </div>
 
-            <% else %>
+                <% end %>
+            <% end %>
 
-                <div class ="card bg-black">
-                    <div class = "enrollment-card">
-                        <h2><strong>Terminated Class</strong></h2>
-                        <h2><%= enrollment.classe.course.title %></h2>
+            <!-------------->
+                <div class="aka-line-60-grey-container">
+                    <div class="aka-line-60-grey"></div>
+                </div>
+            <!-------------->
+
+            <h2 class="dashboard-list-title" style="color:red">Terminated Class</h2>
+            <% @user.enrollments.each do |enrollment| %>
+                <% if (enrollment.classe.start_date < Time.now) %>
+                    <div class="course-classe-container">
+
+                        <div class="course-category-img-container">
+                            <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
+                        </div>
+                            <h3><%= enrollment.classe.name %></h3>
+                        <div class="course-category-info-container">
+                            <p><%= enrollment.classe.start_date %></p>
+                        </div>
+
+                        <%= button_to "Delete", enrollment_path(enrollment), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
                     </div>
 
-                    <div class = "card bg-black">
-                        <h3>Student feedback</h3>
+                    <div class="course-classe-container-review">
+
+                        <%# <h3>Student feedback</h3> %>
                         <% reviews = enrollment.classe.course.reviews.where(user_id: current_user.id) %>
                         <% if reviews.length > 0 %>
-
                             <% reviews.each do |review| %>
-                                <div class="">
-                                    <div class = "">
-                                        <div>
-                                        <p>my id :<%= current_user.id %></p>
-                                        <p>course id :<%= review.course_id %></p>
-                                        <p>review user_id :<%= review.user_id %></p>
-                                        <p> rating :<%= review.rating %></p>
-                                        <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
-                                        </div>
-
-
-
-                                        <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
-
-                                    </div>
+                                <div>
+                                    <% if (review.rating != nil)  %>
+                                        <% review.rating.times do %>
+                                            <i class="fa-solid fa-star" style="color: #e5c006;"></i>
+                                        <% end %>
+                                    <% end %>
+                                    <p><i class="fa-sharp fa-regular fa-comment-dots"></i> <%= review.comment %></p>
                                 </div>
+                                <i class="fa-solid fa-trash"></i>
+                                <%= button_to "Delete", review_path(review), method: :delete, class: "btn-aka-light-login", data: {turbo_confirm: 'are you sure ?'}  %>
                             <% end %>
 
                         <% else %>
 
-                            <%= simple_form_for @review, url: course_reviews_path(enrollment.classe.course),  html: {class: "w-75 p-3"} do |f| %>
-                                <h2 class = "text-center">Add a review</h2>
-                                <%= f.error_notification %>
-                                <%= f.input :comment,
-                                        label: false,
-                                        placeholder: "Add a comment" %>
-                                <%= f.input :rating,
-                                        label: false,
-                                        placeholder: "Add a rating" %>
-                                <%= f.button :submit, class: "btn-aka-light-login" %>
+                            <%= simple_form_for @review, url: course_reviews_path(enrollment.classe.course),  html: {class: "add-classes-review"} do |f| %>
+                                <%# <div class="add-review"> %>
+                                    <%= f.error_notification %>
+
+                                    <%= f.input :comment,
+                                            label: false,
+                                            placeholder: "Add a comment", as: :text, :input_html => { class: 'add-review-form-input'}
+                                            %>
+                                    <%= f.input :rating,
+                                            label: false,
+                                            value: 6,
+                                            placeholder: "Add a rating",
+                                            input_html: { class: 'add-review-form-input'}%>
+
+                                    <%= f.button :submit, class: "btn-aka-light-login" %>
+                                <%# </div> %>
                             <% end %>
 
                         <% end %>
 
                     </div>
-                </div>
+                <% end %>
 
             <% end %>
         </div>
-    <% end %>
-  </div>
+
+    </div>
 </div>

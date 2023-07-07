@@ -27,38 +27,40 @@
 
 
 .course-content-container {
-//   padding-bottom: 10rem;
-    // padding: 40px;
     text-align: center;
-    height: 300px;
+    height: 400px;
     position: relative;
-    // padding: 40px;
     overflow: hidden;
     p {
         text-indent: 60px;
         position: relative;
         padding: 40px;
     }
-        .course-content-container-gradient {
-
-            height: 300px;
-            z-index: 4;
-            // padding: 40px;
-            position: absolute;
-            left: 0;
-            top: 0;
-            // height: 400px;
-            background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(255,255,255,0) 97%);
-            // background: red;
-            // display: flex;
-            width: 100vw;
-            height: 100%;
-        }
-
+    p::first-letter {
+        font-size: 40px;
+    }
+    .course-content-container-gradient {
+        height: 400px;
+        z-index: 4;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background: linear-gradient(0deg, rgba(10,10,10,1) 0%, rgba(255,255,255,0) 97%);
+        width: 100vw;
+        height: 100%;
+    }
     .courses-content-title {
         margin-left: auto;
         margin-right: auto;
         padding: 10px 20px;
+    }
+    .gotobottom {
+        // position: absolute;
+        width: 30px;
+        height: 40px;
+        // margin-left: auto;
+        // margin-right: auto;
+        z-index: 522;
     }
 }
 .session-container {
