@@ -52,7 +52,10 @@
                     <div class="course-classe-container">
                         <div  class="d-flex">
                             <div class="course-category-img-container">
-                                <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
+                                <%= link_to course_path(enrollment.classe.course) do %>
+                                    <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
+                                <% end %>
+
                             </div>
                             <div class="course-category-info-container">
                                 <h2><%= enrollment.classe.course.title %></h2>
@@ -81,7 +84,9 @@
                     <div class="course-classe-container">
                         <div class="d-flex">
                             <div class="course-category-img-container">
-                                <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
+                                <%= link_to course_path(enrollment.classe.course) do %>
+                                    <%= image_tag("#{enrollment.classe.course.category}.jpg", class: "course-category-img") %>
+                                <% end %>
                             </div>
                             <div class="course-category-info-container">
                                 <h3><%= enrollment.classe.name %></h3>
