@@ -62,9 +62,20 @@
 
                         <div class="enrollment-container-sub">
                             <% classe.enrollments.each do |enrollment| %>
-                                <i class="fa-solid fa-id-card"></i>
-                                <p><%= enrollment.user.first_name %> <%= enrollment.user.last_name %></p>
-                                <p><%= enrollment.created_at.strftime("%d/%m/%Y") %></p>
+                                <div class="enrollment-student-container">
+                                    <div class="enrollment-student-img-container">
+                                        <% if enrollment.user.url_avatar %>
+                                            <%= image_tag("#{enrollment.user.url_avatar}.jpg", class: "enrollment-student-img") %>
+                                        <% else %>
+                                            <%= image_tag("avatar-neutre.jpg", class: "enrollment-student-img") %>
+                                        <% end %>
+                                    </div>
+                                    <div class="enrollment-student-info">
+                                        <p><%= enrollment.user.first_name %> <%= enrollment.user.last_name %></p>
+                                    </div>
+                                        <p><%= enrollment.created_at.strftime("%d/%m/%Y") %></p>
+                                </div>
+
                             <% end %>
                         </div>
                 </div>
