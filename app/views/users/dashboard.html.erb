@@ -91,7 +91,7 @@
 
                     <div class="course-classe-container-review">
 
-                        <%# <h3>Student feedback</h3> %>
+                        <h3>Student feedback</h3>
                         <% reviews = enrollment.classe.course.reviews.where(user_id: current_user.id) %>
                         <% if reviews.length > 0 %>
                             <% reviews.each do |review| %>
