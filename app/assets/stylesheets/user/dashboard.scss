@@ -77,6 +77,27 @@
                 width: 100%;
             }
         }
+        .course-category-info-container {
+            h2 {
+                font-size: 20px;
+                padding: 10px 0px 0px 20px;
+            }
+            h3 {
+                font-size: 14px;
+                padding: 0px 0px 0px 20px;
+
+            }
+            p {
+                font-size: 15px;
+                padding: 0px 0px 10px 20px;
+            }
+        }
+        .course-category-right-container {
+
+            p {
+                padding: 0px 20px 0px 0px;
+            }
+        }
         .course-classe-container {
             background-color: $aka-black-color;
             border-radius: 15px;
@@ -84,7 +105,8 @@
             margin: 10px;
 
             display: flex;
-            flex-grow: 2;
+            justify-content: space-between;
+            // flex-grow: 2;
             align-items: center;
         }
         .course-classe-container-review {
@@ -93,7 +115,7 @@
             // padding: 10px;
             margin: 10px 10px 40px 60px;
             display: flex;
-            flex-grow: 2;
+            // flex-grow: 2;
             align-items: center;
 
             .add-classes-review {
