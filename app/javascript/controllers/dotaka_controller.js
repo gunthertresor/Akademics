@@ -21,7 +21,7 @@ export default class extends Controller {
                 this.dotakaTarget.style.width = `${this.profilTarget.offsetWidth - 30}px`
                 // this.dotakaTarget.style.transition = 'all 0s'
                 break
-            case '/dashboard':
+            case '/users/edit':
                 this.dotakaTarget.style.left = `${this.dashboardTarget.offsetLeft + 15}px`
                 this.dotakaTarget.style.width = `${this.dashboardTarget.offsetWidth - 30}px`
                 // this.dotakaTarget.style.transition = 'all 0s'

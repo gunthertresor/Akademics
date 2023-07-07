@@ -1,0 +1,117 @@
+.dashboard-container {
+    width: 100vw;
+    // height: 100vh;
+    display: flex;
+
+    .dashboard-container-profil {
+        position: sticky;
+        top: 70px;
+        width: 300px;
+        height: 100%;
+        border-right: 1px solid $aka-primary-color;
+
+        li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        li:hover {
+            transform: translateX(5px);
+            color: $aka-primary-color;
+        }
+        .dashboard-avatar-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            .dashboard-profil-img-container {
+                width: 150px;
+                height: 200px;
+                border-radius: 15px;
+                overflow: hidden;
+                margin: 10px;
+
+                .dashboard-profil-img {
+                    width: 100%;
+                }
+            }
+
+            .btn-profil-edit {
+                margin: 5px;
+            }
+        }
+    }
+    // -------------------
+    .dashboard-container-content {
+        width: 100%;
+        padding-top: 50px;
+
+        .dashboard-list-title {
+            padding: 20px;
+            font-size: 22px;
+        }
+        .dashboard-list-container {
+            // display: flex;
+            padding: 10px;
+            li {
+                display: inline;
+                text-align: center;
+                padding: 10px ;
+            }
+            li:hover {
+                color: $aka-primary-color;
+                cursor: pointer;
+            }
+            li:first-child {
+                color: $aka-primary-color;
+            }
+        }
+        .course-category-img-container {
+            width: 100px;
+            height: 100px;
+            overflow: hidden;
+            border-radius: 15px;
+
+            .course-category-img {
+                width: 100%;
+            }
+        }
+        .course-classe-container {
+            background-color: $aka-black-color;
+            border-radius: 15px;
+            // padding: 10px;
+            margin: 10px;
+
+            display: flex;
+            flex-grow: 2;
+            align-items: center;
+        }
+        .course-classe-container-review {
+            background-color: $aka-black-color;
+            border-radius: 15px;
+            // padding: 10px;
+            margin: 10px 10px 40px 60px;
+            display: flex;
+            flex-grow: 2;
+            align-items: center;
+
+            .add-classes-review {
+                display: flex;
+                // background-color: aqua;
+
+                .add-review-form-input {
+                    background-color: $aka-black-color;
+                    border-radius: 5px;
+                    border: 1px solid $aka-primary-color;
+                    outline: none;
+                    height: 30px;
+                    color: $aka-white-color;
+                }
+                .add-review-form-input:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}

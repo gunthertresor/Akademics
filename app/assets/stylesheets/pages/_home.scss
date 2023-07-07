@@ -69,10 +69,11 @@
         align-items: center;
         justify-content: center;
         padding-bottom: 40px;
-
         .courses-category-link{
+            color: $aka-white-color;
             // justify-content: space-around;
             margin: 0px 10px;
+            font-weight: normal;
         }
     }
     .home-courses-title-container {

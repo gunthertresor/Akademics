@@ -105,7 +105,10 @@
         display: flex;
         align-items: center;
         margin-right: 10px;
-        width: 300px;
+        // width: 300px;
+        .navbar-message-icon {
+            padding: 0px 10px;
+        }
         .avatar {
             width: 40px;
             height: 40px;
@@ -116,7 +119,7 @@
             z-index: 10;
             position: absolute;
             right: -10px;
-            top: 45px;
+            top: 52px;
             background-color: $aka-secondary-color;
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
